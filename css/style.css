@@ -28,6 +28,7 @@ h1{
 	font-size: 20px;
 	margin-left: 8%;
 	margin-right: 8%;
+	word-wrap: break-word;
 }
 
 /** Basic Style */
@@ -39,9 +40,9 @@ h1{
 #header-wrapper{height:185px;}
 
 #header-logo{
-	background: url('../img/logo_low_res.png')no-repeat;
+	background: url('../img/logo.png')no-repeat;
 	height:137px;
-	width:136px;
+	width:408px;
 	float: left;
 	margin-top: 25px;
 }
@@ -85,6 +86,25 @@ ul.level1>li{
     -webkit-transition: all .5s; 
     -o-transition: all .5s; 
     transition: all .5s;
+    position:relative;
+}
+
+ul.level1>li:not(:last-child):not(:first-child):after{
+	content: '';
+	position: absolute;
+	
+	z-index: -1; /* hide shadow behind list-items */
+	
+	/* The Shadow */
+	box-shadow: 0px 12px 8px rgba(0, 0, 0,1);
+	-webkit-box-shadow: 0px 12px 8px rgba(0, 0, 0,1);
+	-moz-box-shadow: 0px 12px 8px rgba(0, 0, 0,1);
+	-box-shadow: 0px 12px 8px rgba(0, 0, 0,1); 
+	
+	width: 100%;
+	left:0%;
+	height: 10px;
+	bottom:  0;
 }
 
 ul.level1>li:hover{
@@ -151,7 +171,11 @@ ul.level1>li:hover ul.level2>li{
 
 .green{background-color: #96f23d;}
 
-.pink{background-color: #c7349c;}
+.pink{background-color: #c7346b;}
+
+.yellow{background-color: #f2ca3d;}
+
+.purple{background-color: #7d3df2;}
 
 /** Font Colors */
 
@@ -163,7 +187,11 @@ ul.level1>li:hover ul.level2>li{
 
 .fgreen{color: #96f23d;}
 
-.fpink{color: #c7349c;}
+.fpink{color: #c7346b;}
+
+.fyellow{color: #f2ca3d;}
+
+.fpurple{color: #7d3df2;}
 
 /** Position */
 
@@ -174,6 +202,24 @@ ul.level1>li:hover ul.level2>li{
 .left,.center,.right{
 	background-color: #080c12;
 	position:absolute;
+}
+
+.left:after,.center:after,.right:after{
+	content: '';
+	position: absolute;
+	
+	z-index: -1; /* hide shadow behind blocks */
+	
+	/* The Shadow */
+	box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
+	-webkit-box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
+	-moz-box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
+	-box-shadow: 10px 10px 8px rgba(0, 0, 0,1); 
+	
+	width: 100%;
+	left:0%;
+	height: 100%;
+	bottom:  0;
 }
 
 /** Blocks */
@@ -209,7 +255,7 @@ ul.level1>li:hover ul.level2>li{
 .grid ul a{
 	text-align: center;
 	display:block;
-	overflow: hidden;
+	word-wrap: break-word;
 }
 
 .grid ul li{
@@ -255,7 +301,7 @@ ul.level1>li:hover ul.level2>li{
 
 #error-subtitle{
 	line-height: 32px;
-	color: #060e1b;
+	color: #050b15;
 	font-size: 32px;
 }
 
@@ -265,10 +311,10 @@ ul.level1>li:hover ul.level2>li{
 	margin: 50px 0;
 }
 
-@media only screen and (min-width: 960px) {
+@media screen and (max-width: 960px) {
     #header-logo{
-        background-image: url('../img/logo.png');
+        background-image: url('../img/logo_low_res.png');
         height:137px;
-		width:408px;
+		width:136px;
     }
 }
