@@ -61,7 +61,6 @@ h1{
 
 nav{
 	height: 60px;
-	width: 100%;
 	margin:0 3%;
 }
 
@@ -98,10 +97,10 @@ ul.level1>li:hover{
 }
 
 ul.level1>li:first-child,ul.level1>li:last-child{
-	width: 15%;
 	height: 0;
 	border: 60px solid;
 	padding: 0 5px;
+	box-sizing: border-box;
 }
 
 ul.level1>li:first-child{
