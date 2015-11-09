@@ -4,7 +4,10 @@
 		<div id="header-logo"></div>
 		<div id="header-user-wrapper">
 			<div id="header-user">
-				<p><a href='<?php echo BASE_URL.'/pages/basket.php'?>'>Panier +</a></p>
+				<p><a href='<?php echo BASE_URL.'/pages/basket.php'?>'>
+					Panier <img src ='<?php echo BASE_URL.'/img/basket_more.png'?>' alt="Dérouler panier">
+					</a>
+				</p>
 				<p id="header-totalBasket">0,00 €</p>
 				<p class="blue-text">Connecté en tant que :</p>
 				<a href='<?php echo BASE_URL.'/pages/profil.php'?>'>Machin</a>

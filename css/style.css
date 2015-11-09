@@ -1,7 +1,7 @@
 /** Main styles **/
 
 html{
-	width: 75%;
+	width: 69%;
 	margin:0 12.5%;
 	overflow-y:scroll;
 }
@@ -39,11 +39,11 @@ h1{
 #header-wrapper{height:185px;}
 
 #header-logo{
-	background:url("../img/logo.png") no-repeat center;
-	height:100%;
-	width:410px;
+	background: url('../img/logo_low_res.png')no-repeat;
+	height:137px;
+	width:136px;
 	float: left;
-	margin-left:3%;
+	margin-top: 25px;
 }
 
 #header-user-wrapper{
@@ -61,7 +61,6 @@ h1{
 
 nav{
 	height: 60px;
-	margin:0 3%;
 }
 
 nav a{display: block;}
@@ -180,7 +179,7 @@ ul.level1>li:hover ul.level2>li{
 /** Blocks */
 
 #container{
-	margin:65px 3%;
+	margin:65px 0;
 	position: relative;
 }
 
@@ -210,6 +209,7 @@ ul.level1>li:hover ul.level2>li{
 .grid ul a{
 	text-align: center;
 	display:block;
+	overflow: hidden;
 }
 
 .grid ul li{
@@ -263,4 +263,12 @@ ul.level1>li:hover ul.level2>li{
 	width: 33%;
 	height: auto;
 	margin: 50px 0;
+}
+
+@media only screen and (min-width: 960px) {
+    #header-logo{
+        background-image: url('../img/logo.png');
+        height:137px;
+		width:408px;
+    }
 }
