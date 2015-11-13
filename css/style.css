@@ -248,6 +248,14 @@ ul.level1>li:hover ul.level2>li{
 
 .next-releases{width: 23.2%;}
 
+/** Register and login */
+.login, .register{
+	background-color: #080c12;
+	width: 45%;
+	height: 200px;
+}
+
+
 /** Grid style */
 
 .grid ul{list-style: none;}
