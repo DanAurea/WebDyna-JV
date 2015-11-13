@@ -1,7 +1,7 @@
 <!DOCTYPE html >
 <html> 	
-	<?php require("/conf/conf.php"); ?>
-	<?php require("/core/datas.php"); ?>
+	<?php include("conf.php"); ?>
+	<?php //include("datas.php"); ?>
 	<head>
 		<title>
 	 		<?php 
@@ -14,22 +14,21 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 	</head>
 	 
-	<body>
-		<?php include('core/header.php'); ?>
+	<body>	
+		<?php 
+		include(ROOT.'/core/header.php'); ?>
 		<div id="container">
 			<?php
 				/** Display page requested*/
-			 	$filename = str_replace('/','',trim(preg_replace('/WD\/(?:pages\/)?(.*).php/','${1}.php',$_SERVER['SCRIPT_NAME'])));
-			 	$file  = str_replace('\\','/',dirname(__FILE__)."/".'contents/'.$filename);
-
-				if(!file_exists($file)){
-					include('/contents/404.php');
+			 	$filename = basename($_SERVER["SCRIPT_NAME"]);
+				if(!file_exists($filename)){
+					include(ROOT.'/contents/404.php');
 				}else{
-					include('/contents/'.$filename);
+					include(ROOT.'/contents/'.$filename);
 				}
 			?>
 
-			<?php include('/core/footer.php'); ?>
+			<?php include(ROOT.'/core/footer.php'); ?>
 		</div>
 	</body>
 
