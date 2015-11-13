@@ -255,6 +255,14 @@ ul.level1>li:hover ul.level2>li{
 	left: 25%;
 }
 
+/** Register and login */
+.login, .register{
+	background-color: #080c12;
+	width: 45%;
+	height: 200px;
+}
+
+
 /** Grid style */
 
 .grid ul{list-style: none;}
