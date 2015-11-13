@@ -248,6 +248,13 @@ ul.level1>li:hover ul.level2>li{
 
 .next-releases{width: 23.2%;}
 
+/** Games page */
+
+.games-reviews{
+	width: 75%;
+	left: 25%;
+}
+
 /** Grid style */
 
 .grid ul{list-style: none;}

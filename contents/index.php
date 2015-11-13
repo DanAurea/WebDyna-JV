@@ -6,19 +6,19 @@
 	<div class="grid">
 		<ul id="grid-news">
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
+				<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.jpg'?>'>
 				<a href="#">Pokémon</a>
 			</li>
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
+				<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.jpg'?>'>
 				<a href="#">Pokémon</a>
 			</li>
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
+				<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.jpg'?>'>
 				<a href="#">Pokémon</a>
 			</li>
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
+				<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.jpg'?>'>
 				<a href="#">Pokémon</a>
 			</li>
 		</ul>
@@ -31,17 +31,17 @@
 	<h1 class="fred">Tests</h1>
 	
 	<article class="reviews">
-		<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
+		<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.jpg'?>'>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 					Integer vitae neque tempor, tempor nunc a, tempor ante. 					Vestibulum mollis enim et nunc blandit fermentum. Sed 					mattis urna ac urna dictum ultrices. Nam vel vestibulum 					sem, feugiat viverra dui. Maecenas vel lectus sit amet mi 				         maximus scelerisque eget quis eros. Nunc id lobortis 					         sem. Sed pretium, nisl vel iaculis pharetra, ipsum nisi 						venenatis magna, quis consequat felis erat vitae massa. 				      Proin id tortor neque. Donec ullamcorper nisi hendrerit urna ultricies, quis aliquam elit ornare. Maecenas fringilla placerat felis. Nullam eget nulla feugiat lectus aliquam malesuada eget ut libero. Mauris fringilla fringilla vulputate. Nullam fringilla non erat vel tristique. Vivamus ac est leo. Integer egestas sodales sagittis. Vestibulum quis ipsum libero. </p>	
 	</article>
 	
 	<article class="reviews">
-		<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
+		<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.jpg'?>'>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 					Integer vitae neque tempor, tempor nunc a, tempor ante. 					Vestibulum mollis enim et nunc blandit fermentum. Sed 					mattis urna ac urna dictum ultrices. Nam vel vestibulum 					sem, feugiat viverra dui. Maecenas vel lectus sit amet mi 				         maximus scelerisque eget quis eros. Nunc id lobortis 					         sem. Sed pretium, nisl vel iaculis pharetra, ipsum nisi 						venenatis magna, quis consequat felis erat vitae massa. 				      Proin id tortor neque. Donec ullamcorper nisi hendrerit urna ultricies, quis aliquam elit ornare. Maecenas fringilla placerat felis. Nullam eget nulla feugiat lectus aliquam malesuada eget ut libero. Mauris fringilla fringilla vulputate. Nullam fringilla non erat vel tristique. Vivamus ac est leo. Integer egestas sodales sagittis. Vestibulum quis ipsum libero. </p>	
 	</article>
 
 	<article class="reviews">
-		<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
+		<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.jpg'?>'>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 					Integer vitae neque tempor, tempor nunc a, tempor ante. 					Vestibulum mollis enim et nunc blandit fermentum. Sed 					mattis urna ac urna dictum ultrices. Nam vel vestibulum 					sem, feugiat viverra dui. Maecenas vel lectus sit amet mi 				         maximus scelerisque eget quis eros. Nunc id lobortis 					         sem. Sed pretium, nisl vel iaculis pharetra, ipsum nisi 						venenatis magna, quis consequat felis erat vitae massa. 				      Proin id tortor neque. Donec ullamcorper nisi hendrerit urna ultricies, quis aliquam elit ornare. Maecenas fringilla placerat felis. Nullam eget nulla feugiat lectus aliquam malesuada eget ut libero. Mauris fringilla fringilla vulputate. Nullam fringilla non erat vel tristique. Vivamus ac est leo. Integer egestas sodales sagittis. Vestibulum quis ipsum libero. </p>	
 	</article>
 
@@ -55,27 +55,27 @@
 	<div class="grid">
 		<ul id="grid-releases">
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
+				<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.jpg'?>'>
 				<a href="#">Pokémon</a>
 			</li>
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
+				<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.jpg'?>'>
 				<a href="#">Pokémon</a>
 			</li>
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
+				<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.jpg'?>'>
 				<a href="#">Pokémon</a>
 			</li>
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
+				<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.jpg'?>'>
 				<a href="#">Pokémon</a>
 			</li>
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
+				<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.jpg'?>'>
 				<a href="#">Pokémon</a>
 			</li>
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
+				<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.jpg'?>'>
 				<a href="#">Pokémon</a>
 			</li>
 		</ul>
