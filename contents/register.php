@@ -1,3 +1,4 @@
+
 <section class="login left outred">
 		<div class="border-top red"></div>
 		<h1 class="fred">Login </h1>
@@ -10,6 +11,7 @@
 		 </p>
 		</form>	
 </section>
+
 <section class="register right outgreen">
 		<div class="border-top green"></div>
 		<h1 class="fgreen"> S'inscrire </h1>
