@@ -72,15 +72,20 @@ nav ul{
 	position: relative;
 }
 
+/* Commons rules for li */
+nav li{
+	background-color: #080c12;
+	line-height: 60px;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+/* Set properties for main buttons */
 ul.level1>li{
 	float: left;
 	width: 20%;
 	height: 55px;
-	line-height: 60px;
-	text-align: center;
-	background-color: #080c12;
-	padding: 0;
-	margin: 0;
 	border-bottom: 5px solid #3db4f2;
 	-moz-transition: all .5s; 
     -webkit-transition: all .5s; 
@@ -89,6 +94,7 @@ ul.level1>li{
     position:relative;
 }
 
+/* Add shadows to main buttons of navigation bar */
 ul.level1>li:not(:last-child):not(:first-child):after{
 	content: '';
 	position: absolute;
@@ -107,6 +113,7 @@ ul.level1>li:not(:last-child):not(:first-child):after{
 	bottom:  0;
 }
 
+/* Transition for border of main buttons */
 ul.level1>li:hover{
 	border-bottom: 5px solid #e7743b;
 	-moz-transition: all .5s; 
@@ -115,6 +122,7 @@ ul.level1>li:hover{
     transition: all .5s;
 }
 
+/* Set properties for first and last child of navigation */
 ul.level1>li:first-child,ul.level1>li:last-child{
 	height: 0;
 	border: 60px solid;
@@ -122,6 +130,7 @@ ul.level1>li:first-child,ul.level1>li:last-child{
 	box-sizing: border-box;
 }
 
+/* Cut one part of start of navigation bar */
 ul.level1>li:first-child{
 	border-left-width: 20px;
 	border-bottom: none;
@@ -129,6 +138,7 @@ ul.level1>li:first-child{
 	border-color: #080c12 #121f32;
 }
 
+/* Cut one part of end of navigation bar */
 ul.level1>li:last-child{
 	border-right-width: 20px;
 	border-bottom: none;
@@ -136,8 +146,8 @@ ul.level1>li:last-child{
 	border-color: #080c12 #121f32;
 }
 
-ul.level2>li{
-	background-color: #080c12;
+/* Hide sliding menu */
+ul.level1 ul{
 	width: 100%;
 	height: 60px;
 	visibility: hidden;
@@ -148,11 +158,8 @@ ul.level2>li{
     transition: all .5s;
 }
 
-ul.level2>li:hover{background-color: #1d314e;}
-
-ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
-
-ul.level1>li:hover ul.level2>li{
+/* Show sliding menu */
+.level1 li:hover ul.level2{
 	opacity:1;
 	visibility:visible;
 	-moz-transition: all .5s; 
@@ -160,6 +167,20 @@ ul.level1>li:hover ul.level2>li{
     -o-transition: all .5s; 
     transition: all .5s;
 }
+
+/* Smooth animation for background-color change */
+ul.level2>li:hover{
+	background-color: #1d314e;
+	opacity:1;
+	-moz-transition: all .5s; 
+    -webkit-transition: all .5s; 
+    -o-transition: all .5s; 
+    transition: all .5s;
+}
+
+/* Set a border for the last element of sliding menu */
+ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
+
 
 /** Background Colors */
 
@@ -179,7 +200,7 @@ ul.level1>li:hover ul.level2>li{
 
 /** Font Colors */
 
-.fblue{background-color: #3db4f2;}
+.fblue{color: #3db4f2;}
 
 .fred{color: #e73b3b;}
 
@@ -192,6 +213,22 @@ ul.level1>li:hover ul.level2>li{
 .fyellow{color: #f2ca3d;}
 
 .fpurple{color: #7d3df2;}
+
+/** Outline Colors */
+
+.outblue{outline: 1px solid #3db4f2;}
+
+.outred{outline: 1px solid #e73b3b;}
+
+.outorange{outline: 1px solid #e7743b;}
+
+.outgreen{outline: 1px solid #96f23d;}
+
+.outpink{outline: 1px solid #c7346b;}
+
+.outyellow{outline: 1px solid #f2ca3d;}
+
+.outpurple{outline: 1px solid #7d3df2;}
 
 /** Position */
 
@@ -236,6 +273,7 @@ ul.level1>li:hover ul.level2>li{
 	height: 6px;
 }
 
+/** Home page */
 .news{
 	background-color: #080c12;
 	width: 23.2%;
@@ -246,7 +284,53 @@ ul.level1>li:hover ul.level2>li{
 	left: 25%;
 }
 
+.title-review{margin:0;}
+
+.reviews{
+	margin: 0 8%;
+	position: relative;
+	padding-bottom: 30px;
+}
+
+.reviews img{
+	width: 22%;
+	float: left;
+	margin-right: 4%;
+	overflow: hidden;
+}
+
+.text-review{
+	margin: 0;
+	height: 85px;
+	overflow: hidden
+}
+
+.news .grid ul li,.next-releases .grid ul li{
+	width:34%;
+	margin: 0 8% 8% 8%;
+}
+
 .next-releases{width: 23.2%;}
+
+/** Games page */
+.games-reviews{
+	width: 75%;
+	left: 25%;
+}
+
+/** Register and login */
+.login, .register{
+	background-color: #080c12;
+	width: 48%;
+	height: 200px;
+}
+
+/** Read more style */
+.more{
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+}
 
 /** Grid style */
 
@@ -266,21 +350,6 @@ ul.level1>li:hover ul.level2>li{
 .grid ul li img{
 	max-width: 100%;
 	height: auto;
-}
-
-/** Contents */
-
-.reviews{margin: 0 8% 8% 8%;}
-
-.reviews img{
-	width: 22%;
-	float: left;
-	margin-right: 4%;
-}
-
-.news .grid ul li,.next-releases .grid ul li{
-	width:34%;
-	margin: 0 8% 8% 8%;
 }
 
 /** Error style */
@@ -311,10 +380,103 @@ ul.level1>li:hover ul.level2>li{
 	margin: 50px 0;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1024px) {
+
+	/** Change logo */
     #header-logo{
         background-image: url('../img/logo_low_res.png');
         height:137px;
 		width:136px;
     }
+	
+	/**	Hide right block */
+    .right{display: none;}
+	
+	/** Resize center block */
+    .center{
+    	width:65%;
+    	left:35%;
+    }
+	
+	/** Resize left block */
+    .left{
+    	width:30%;
+    }
+
+    .grid li a span{display: none;}
+
+}
+
+@media screen and (max-width: 800px) {
+	
+	/** Hide left*/
+    .left{display: none;}
+	
+    .center{
+    	width:100%;
+    	left:0%;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+
+		html{
+			width: 100%;
+			margin:0;
+		}
+		
+		#header-wrapper, .left, .right{
+			display: none;
+		}
+
+		#container{margin: 45px 0;}
+		
+		/* Set center as the main content */
+		.center{
+			left:0%;
+			width:100%;
+		}
+		
+		/** Navigation style */
+		
+		nav{
+			width: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+		
+		/* Commons rules for li*/
+		ul.level1>li{line-height: 55px;}
+		
+		/* Hide text */
+		.level1>li>a{
+			text-indent: 100%;
+    		white-space: nowrap;
+    		overflow: hidden;
+		}
+		
+		/* Set icons for main buttons */
+		ul.level1>li:nth-child(2) a,.level1>li:nth-child(4) a,
+		.level1>li:nth-child(3)>a{
+			background: url("../img/sprites_mobile.png") no-repeat;
+			position: relative;
+			top: 7px;
+			left: 42%;
+			width:37px;
+			height:55px;
+		}
+
+		.level1>li:nth-child(4) a {background-position: -87px 0;}
+		
+		.level1>li:nth-child(3)>a{background-position: -42px 0;}
+
+		ul.level1>li{
+			width: 33.3333333%;
+			height: 50px;
+		}
+
+		/* Hide first and last children of navigation bar */
+		ul.level1>li:first-child,ul.level1>li:last-child{display: none;}
 }

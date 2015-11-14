@@ -1,4 +1,4 @@
-<aside class="news left">
+<aside class="news left outorange">
 	<div class="border-top orange"></div>
 	<div class="border-bottom"></div>
 	<h1 class="forange">Nouveautés</h1>
@@ -6,48 +6,64 @@
 	<div class="grid">
 		<ul id="grid-news">
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
-				<a href="#">Pokémon</a>
+				<a href="#">
+					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
+					<span>Pokémon</span>
+				</a>
 			</li>
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
-				<a href="#">Pokémon</a>
+				<a href="#">
+					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
+					<span>Pokémon</span>
+				</a>
 			</li>
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
-				<a href="#">Pokémon</a>
+				<a href="#">
+					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
+					<span>Pokémon</span>
+				</a>
 			</li>
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
-				<a href="#">Pokémon</a>
+				<a href="#">
+					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
+					<span>Pokémon</span>
+				</a>
 			</li>
 		</ul>
 	</div>
 </aside>
 
-<section class="container-reviews center">
+<section class="container-reviews center outred">
 	<div class="border-top red"></div>
 	<div class="border-bottom"></div>
 	<h1 class="fred">Tests</h1>
 	
 	<article class="reviews">
-		<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 					Integer vitae neque tempor, tempor nunc a, tempor ante. 					Vestibulum mollis enim et nunc blandit fermentum. Sed 					mattis urna ac urna dictum ultrices. Nam vel vestibulum 					sem, feugiat viverra dui. Maecenas vel lectus sit amet mi 				         maximus scelerisque eget quis eros. Nunc id lobortis 					         sem. Sed pretium, nisl vel iaculis pharetra, ipsum nisi 						venenatis magna, quis consequat felis erat vitae massa. 				      Proin id tortor neque. Donec ullamcorper nisi hendrerit urna ultricies, quis aliquam elit ornare. Maecenas fringilla placerat felis. Nullam eget nulla feugiat lectus aliquam malesuada eget ut libero. Mauris fringilla fringilla vulputate. Nullam fringilla non erat vel tristique. Vivamus ac est leo. Integer egestas sodales sagittis. Vestibulum quis ipsum libero. </p>	
+		<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.jpg'?>' alt="Pokémon Emeraude" />
+		<h2 class="fred title-review">Pokémon Emeraude :</h2>
+		<p class="fyellow">Genre du jeu : RPG / Aventure</p>
+		<p class="text-review">Un gosse de 11 ans part braconner des animaux afin de les faire combattre avec d'autres dresseurs, dans le but de blesser mortellement les pauvres créatures et d'extorquer de l'argent aux braconniers. Le but ultime est de vaincre une mafia rampante et de terrasser le Conseil des 4, afin de devenir le plus grand dresseur de tous les temps.</p>
+		<a href="#" class="more">Lire la suite</a>
 	</article>
 	
 	<article class="reviews">
-		<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 					Integer vitae neque tempor, tempor nunc a, tempor ante. 					Vestibulum mollis enim et nunc blandit fermentum. Sed 					mattis urna ac urna dictum ultrices. Nam vel vestibulum 					sem, feugiat viverra dui. Maecenas vel lectus sit amet mi 				         maximus scelerisque eget quis eros. Nunc id lobortis 					         sem. Sed pretium, nisl vel iaculis pharetra, ipsum nisi 						venenatis magna, quis consequat felis erat vitae massa. 				      Proin id tortor neque. Donec ullamcorper nisi hendrerit urna ultricies, quis aliquam elit ornare. Maecenas fringilla placerat felis. Nullam eget nulla feugiat lectus aliquam malesuada eget ut libero. Mauris fringilla fringilla vulputate. Nullam fringilla non erat vel tristique. Vivamus ac est leo. Integer egestas sodales sagittis. Vestibulum quis ipsum libero. </p>	
+		<img src='<?php echo BASE_URL.'/img/pokemon_rubis.png'?>' alt="Pokémon Emeraude" />
+		<h2 class="fred title-review">Pokémon Rubis :</h2>
+		<p class="fyellow">Genre du jeu : RPG / Aventure</p>
+		<p class="text-review">Un gosse de 11 ans part braconner des animaux afin de les faire combattre avec d'autres dresseurs, dans le but de blesser mortellement les pauvres créatures et d'extorquer de l'argent aux braconniers. Le but ultime est de vaincre une mafia rampante et de terrasser le Conseil des 4, afin de devenir le plus grand dresseur de tous les temps.</p>
+		<a href="#" class="more">Lire la suite</a>
 	</article>
 
 	<article class="reviews">
-		<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 					Integer vitae neque tempor, tempor nunc a, tempor ante. 					Vestibulum mollis enim et nunc blandit fermentum. Sed 					mattis urna ac urna dictum ultrices. Nam vel vestibulum 					sem, feugiat viverra dui. Maecenas vel lectus sit amet mi 				         maximus scelerisque eget quis eros. Nunc id lobortis 					         sem. Sed pretium, nisl vel iaculis pharetra, ipsum nisi 						venenatis magna, quis consequat felis erat vitae massa. 				      Proin id tortor neque. Donec ullamcorper nisi hendrerit urna ultricies, quis aliquam elit ornare. Maecenas fringilla placerat felis. Nullam eget nulla feugiat lectus aliquam malesuada eget ut libero. Mauris fringilla fringilla vulputate. Nullam fringilla non erat vel tristique. Vivamus ac est leo. Integer egestas sodales sagittis. Vestibulum quis ipsum libero. </p>	
+		<img src='<?php echo BASE_URL.'/img/pokemon_saphir.png'?>' alt="Pokémon Emeraude" />
+		<h2 class="fred title-review">Pokémon Saphir :</h2>
+		<p class="fyellow">Genre du jeu : RPG / Aventure</p>
+		<p class="text-review">Un gosse de 11 ans part braconner des animaux afin de les faire combattre avec d'autres dresseurs, dans le but de blesser mortellement les pauvres créatures et d'extorquer de l'argent aux braconniers. Le but ultime est de vaincre une mafia rampante et de terrasser le Conseil des 4, afin de devenir le plus grand dresseur de tous les temps.</p>
+		<a href="#" class="more">Lire la suite</a>
 	</article>
-
 </section>
 
-<aside class="next-releases right">
+<aside class="next-releases right outgreen">
 	<div class="border-top green"></div>
 	<div class="border-bottom"></div>
 	<h1 class="fgreen">Prochaines sorties</h1>
@@ -55,30 +71,41 @@
 	<div class="grid">
 		<ul id="grid-releases">
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
-				<a href="#">Pokémon</a>
+				<a href="#">
+					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
+					<span>Pokémon</span>
+				</a>
 			</li>
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
-				<a href="#">Pokémon</a>
+				<a href="#">
+					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
+					<span>Pokémon</span>
+				</a>
 			</li>
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
-				<a href="#">Pokémon</a>
+				<a href="#">
+					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
+					<span>Pokémon</span>
+				</a>
 			</li>
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
-				<a href="#">Pokémon</a>
+				<a href="#">
+					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
+					<span>Pokémon</span>
+				</a>
 			</li>
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
-				<a href="#">Pokémon</a>
+				<a href="#">
+					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
+					<span>Pokémon</span>
+				</a>
 			</li>
 			<li>
-				<img src='<?php echo BASE_URL.'/img/poke.jpg'?>'>
-				<a href="#">Pokémon</a>
+				<a href="#">
+					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
+					<span>Pokémon</span>
+				</a>
 			</li>
 		</ul>
 	</div>
-
 </aside>

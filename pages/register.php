@@ -1,0 +1,1 @@
+<?php  $title="S'inscrire"; include('../index.php');?>
