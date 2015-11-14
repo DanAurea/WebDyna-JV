@@ -6,7 +6,7 @@ html{
 	overflow-y:scroll;
 }
 
-body,ul,textarea,figure,label{
+body,ul,textarea,figure,label, form, form ol, form ol li{
 	margin: 0;
 	padding: 0;
 }
@@ -30,6 +30,59 @@ h1{
 	margin-right: 8%;
 	word-wrap: break-word;
 }
+
+/** Form styles */
+form{margin: 0 8%;}
+
+form ol{
+	list-style: none;
+}
+
+form ol li{
+  line-height: 40px;
+  list-style: none;
+}
+
+form label{
+	font-weight: bold;
+	float: left;
+	width: 30%;
+	overflow: hidden;
+	word-wrap:normal;
+	white-space: nowrap;
+}
+
+input{
+	background-color: #06090e;
+	border: 1px solid #253244;
+	border-radius: 5px;
+	color:white;
+	width: 35%;
+	height: 25px;
+	font-size: 14px;
+	padding:0 10px;
+	box-sizing: padding-box;
+	-moz-transition: all .5s; 
+    -webkit-transition: all .5s; 
+    -o-transition: all .5s; 
+    transition: all .5s;
+}
+
+input:focus:not([type=submit]){
+	background-color: #18212f;
+	-moz-transition: all .5s; 
+    -webkit-transition: all .5s; 
+    -o-transition: all .5s; 
+    transition: all .5s;
+}
+
+input[type=submit] {
+	padding: 0 30px;
+	height:30px;
+	margin-top:20px;
+}
+
+input[type=submit]:active{background-color: #0f1e34;}
 
 /** Basic Style */
 
@@ -323,8 +376,10 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 .login, .register{
 	background-color: #080c12;
 	width: 48%;
-	height: 200px;
+	height: 250px;
 }
+
+#login{margin-top: 60px;}
 
 /** Read more style */
 .more{
@@ -400,9 +455,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
     }
 	
 	/** Resize left block */
-    .left{
-    	width:30%;
-    }
+    .left{width:30%;}
 
     .grid li a span{display: none;}
 
@@ -427,9 +480,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 			margin:0;
 		}
 		
-		#header-wrapper, .left, .right{
-			display: none;
-		}
+		#header-wrapper, .left, .right{display: none;}
 
 		#container{margin: 45px 0;}
 		

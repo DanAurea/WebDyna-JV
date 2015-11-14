@@ -3,12 +3,18 @@
 		<div class="border-top red"></div>
 		<h1 class="fred">Login </h1>
 		<form method="post" action="connexion.php">
-		<p> 
-			Pseudo : <input type="text"/></br>
-			Mot de passe : <input type="password"/></br>
-			<input type="submit" value="Valider" />
-
-		 </p>
+			<ol>
+				<li>
+					<label for="login">Pseudo:</label>
+					<input type="text" name="login" placeholder="Login"/>
+				</li>
+				<li>
+					<label for="password">Mot de passe:</label>
+					<input type="password" name="password" placeholder="******"/>
+				</li>
+			</ol>
+			
+			<input id="login" type="submit" value="Se connecter" />
 		</form>	
 </section>
 
@@ -16,14 +22,24 @@
 		<div class="border-top green"></div>
 		<h1 class="fgreen"> S'inscrire </h1>
 		<form method="post" action="inscription.php">
-		<p> 
-			Pseudo : <input type="text"/></br>
-			Adresse mail : <input type="text"/></br>
-			Mot de passe <input type="password"/></br>
-			<input type="submit" value="Valider" />
-
+		<ol>
+			<li>
+				<label for="login">Pseudo :</label>
+				<input type="text" name="login" placeholder="Login"/>
+			</li>
+			<li>
+				<label for="email">Adresse email:</label>
+				<input type="text" name="email" placeholder="John.Doe@gmail.com"/>
+			</li>
+			<li>
+				<label for="password">Mot de passe:</label>
+				<input type="password" name="password" placeholder="******"/>
+			</li>
+		</ol>
 			
-		</p>
+			
+			
+			<input type="submit" value="S'inscrire" />
 		</form>
 </section>
 		
