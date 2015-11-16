@@ -1,7 +1,8 @@
 <!DOCTYPE html >
-<html> 	
-	<?php include("conf.php"); ?>
-	<?php //include("datas.php"); ?>
+<html>
+	<?php include("const.php"); ?>
+	<?php include(ROOT."/conf/conf.php"); ?>
+	<?php //include(ROOT."/core/datas.php"); ?>
 	<head>
 		<title>
 	 		<?php 
@@ -17,7 +18,7 @@
 	 
 	<body>	
 		<?php 
-		include(ROOT.'/core/header.php'); ?>
+		include(ROOT."/core/header.php"); ?>
 		<div id="container">
 			
 			<?php
