@@ -337,8 +337,9 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	left: 25%;
 }
 
-.title-review{
-	margin:0;
+.title-review{margin:0;}
+
+.title-review, .type{
 	white-space: nowrap;
 	overflow: hidden;
   	-o-text-overflow: ellipsis; /* pour Opera 9 */
@@ -459,10 +460,23 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	
 	.grid ul li {float:none;}
 
-	.next-releases .grid ul li, .news .grid ul li{
+	.news .grid ul li{
 		width: 50%;
 		margin-left: 25%;
 	}
+
+	.next-releases{
+		display: none;
+	}
+
+	/** Resize center block */
+    .center{
+    	width:68.2%;
+    	left:31.8%;
+    }
+
+    /** Resize left block */
+    .left{width:30%;}
 
 }
 
@@ -475,18 +489,6 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 		width:136px;
     }
 	
-	/**	Hide right block */
-    .right{display: none;}
-	
-	/** Resize center block */
-    .center{
-    	width:65%;
-    	left:35%;
-    }
-	
-	/** Resize left block */
-    .left{width:30%;}
-
 }
 
 /**

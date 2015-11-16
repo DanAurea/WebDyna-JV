@@ -19,6 +19,7 @@
 		<?php 
 		include(ROOT.'/core/header.php'); ?>
 		<div id="container">
+			
 			<?php
 				/** Display page requested*/
 			 	$filename = basename($_SERVER["SCRIPT_NAME"]);

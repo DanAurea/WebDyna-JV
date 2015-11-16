@@ -22,6 +22,7 @@
 		<div class="border-top green"></div>
 		<h1 class="fgreen"> S'inscrire </h1>
 		<form method="post" action="inscription.php">
+		
 		<ol>
 			<li>
 				<label for="login">Pseudo :</label>
@@ -35,9 +36,7 @@
 				<label for="password">Mot de passe:</label>
 				<input type="password" name="password" placeholder="******"/>
 			</li>
-		</ol>
-			
-			
+		</ol>	
 			
 			<input type="submit" value="S'inscrire" />
 		</form>
