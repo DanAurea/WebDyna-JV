@@ -326,7 +326,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	height: 6px;
 }
 
-/** Home page */
+/** Home page*/
 .news{
 	background-color: #080c12;
 	width: 23.2%;
@@ -337,25 +337,29 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	left: 25%;
 }
 
-.title-review{margin:0;}
+.title-review{
+	margin:0;
+	white-space: nowrap;
+	overflow: hidden;
+  	-o-text-overflow: ellipsis; /* pour Opera 9 */
+  	text-overflow: ellipsis; /* pour le reste du monde */
+}
 
 .reviews{
-	margin: 0 8%;
+	margin: 0 8% 30px 8%;
 	position: relative;
-	padding-bottom: 30px;
+	height:200px;
 }
 
 .reviews img{
 	width: 22%;
 	float: left;
-	margin-right: 4%;
-	overflow: hidden;
 }
 
 .text-review{
 	margin: 0;
-	height: 85px;
-	overflow: hidden
+	overflow: hidden;
+	height: 105px;
 }
 
 .news .grid ul li,.next-releases .grid ul li{
@@ -364,6 +368,25 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 }
 
 .next-releases{width: 23.2%;}
+
+/** Home page & Game page */
+
+.reviews p, .reviews h2{
+	box-sizing:padding-box;
+	width: 75%;
+	position: absolute;
+	right: 0;
+}
+
+.reviews .fyellow{top: 10%;}
+
+.text-review{top: 30%;}
+
+.more{
+	position: absolute;
+	right: 0;
+	bottom: 0px;
+}
 
 /** Games page */
 
@@ -380,13 +403,6 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 }
 
 #login{margin-top: 60px;}
-
-/** Read more style */
-.more{
-	position: absolute;
-	right: 0;
-	bottom: 5px;
-}
 
 /** Grid style */
 
@@ -436,6 +452,20 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	margin: 50px 0;
 }
 
+
+/** Media queries */
+
+@media screen and (max-width: 1340px) {
+	
+	.grid ul li {float:none;}
+
+	.next-releases .grid ul li, .news .grid ul li{
+		width: 50%;
+		margin-left: 25%;
+	}
+
+}
+
 @media screen and (max-width: 1024px) {
 
 	/** Change logo */
@@ -457,13 +487,12 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	/** Resize left block */
     .left{width:30%;}
 
-    .grid li a span{display: none;}
-
 }
 
-@media screen and (max-width: 800px) {
+/**
+@media screen and (max-width: 960px) {
 	
-	/** Hide left*/
+	
     .left{display: none;}
 	
     .center{
@@ -471,9 +500,9 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
     	left:0%;
     }
 
-}
+}*/
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 960px) {
 
 		html{
 			width: 100%;
@@ -531,4 +560,6 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 
 		/* Hide first and last children of navigation bar */
 		ul.level1>li:first-child,ul.level1>li:last-child{display: none;}
+
+		.outblue, .outred, .outorange, .outgreen, .outpink, .outyellow, .outpurple{outline: 0;}
 }
