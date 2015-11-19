@@ -8,23 +8,24 @@
             $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
 
         }catch(PDOException $e){
-         	die('Impossible de se connecter à la base de donnée'); // Faire une fonction erreur
+          die('Impossible de se connecter à la base de donnée'); // Faire une fonction erreur
         } 
 
         /*
           Nettoie les champs passé en paramètres.
+          @fields Champs à mettre en forme proprement
           @return Retourne une chaîne de caractère
          */
         function cleanFields($fields){
           if(is_array($fields)){
-            return implode(', ', $fields); // Permet de transformer le tableau en chaîne de caractères
-          }else{
-            return $fields; // Retourne la chaîne comportant le/les champs
+            $fields = implode(', ', $fields); // Permet de transformer le tableau en chaîne de caractères
           }
+            return $fields; // Retourne la chaîne comportant le/les champs
         }
 
         /*
           Sélectionne la table demandée ou la jointure saisie
+          @req Requête à éxécuter
           @return Retourne la table sélectionnée ou la/les jointures 
          */
         function selectTable($req = array()){
@@ -70,7 +71,7 @@
 
                             }else if(!is_array($type) && !is_array($right)){ // Jointure unique
                               $sql .=  $type.' '.$right.' ';
-                           
+  
                             }else{
                               return false;
                             }
@@ -88,7 +89,7 @@
                   return false;
                 }
 
-          }else{
+          }else{ // Tableau de requête mal construit
             return false;
           }
 
@@ -97,6 +98,7 @@
         
         /*
         	Construit une requête SQL à partir d'un tableau de paramètres
+          @bdd Base de donnée PDO
         	@req Tableau associatif comportant les éléments de la requête
           @return Retourne false si requête mal construite sinon le résultat
          */
@@ -192,10 +194,49 @@
 
         /*
           Retourne le premier résultat trouvé par la requête SQL
+          @bdd Base de données PDO
+          @req Requête à éxécuter
           @return Premier élément trouvé
          */
         function findFirst($bdd, $req){
           return current(find($bdd, $req));
         }
-      
+
+        /*
+          Insère dans la bdd les valeurs passées en paramètre
+          @bdd Base de données PDO
+          @data Données à insérer/mettre à jour
+          @primaryKey Définis la clé primaire pour l'update
+          */
+        function save($bdd, $data, $primaryKey = false){
+          $fields =  array(); // Champs à mettre à jour
+          $d = array(); // Tableau des données formatées
+          
+          foreach($data as $k=>$v){
+            if($k != $primaryKey && $k != "table"){ // Formate les clés et ne prends pas en compte la clé primaire pour l'insert
+              $fields[] = "$k=:$k";
+              $d[":$k"] = ( is_array($v) ) ? serialize( $v ) : $v ; // Linéarise la valeur si c'est un tableau + formate les données
+            }elseif(!empty($v) && $k != "table"){
+              $d[":$k"] = $v;
+            }          
+          }
+
+          /*  Met à jour les tuples concernés si la clé primaire a été définis 
+              et sa valeur n'est pas vide sinon insère les données
+            */
+          if(isset($primaryKey)){
+              $sql = 'UPDATE '.$data['table'].' SET '.implode(',',$fields).' WHERE '.$primaryKey.'=:'.$primaryKey;
+              $action = 'update';
+          }
+          else
+          {
+              $sql = 'INSERT INTO '.$data['table'].' SET '.implode(',',$fields);
+              $action = 'insert';
+          }
+   
+          $pre = $bdd->prepare($sql);
+          $pre->execute($d); // Exécute la requête préparée en y intégrant les données formatées
+
+          return true;
+        }
 ?>
