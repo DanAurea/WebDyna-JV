@@ -5,34 +5,31 @@
 	<div class="border-top red"></div>
 	<div class="border-bottom"></div>
 	<h1 class="fred">Jeux</h1>
-
-	<article class="reviews">
-		<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.jpg'?>' alt="Pokémon Emeraude" />
-		<h2 class="fred title-review">Pokémon Emeraude :</h2>
-		<p class="type fyellow">Genre du jeu : RPG / Aventure</p>
-		<p class="text-review">
-			Un gosse de 11 ans part braconner des animaux afin de les faire combattre avec d'autres dresseurs, dans le but de blesser mortellement les pauvres créatures et d'extorquer de l'argent aux braconniers. Le but ultime est de vaincre une mafia rampante et de terrasser le Conseil des 4, afin de devenir le plus grand dresseur de tous les temps.
-		</p>
-		<a href="#" class="more">Lire la suite</a>
-	</article>
 	
-	<article class="reviews">
-		<img src='<?php echo BASE_URL.'/img/pokemon_rubis.png'?>' alt="Pokémon Rubis" />
-		<h2 class="fred title-review">Pokémon Rubis :</h2>
-		<p class="type fyellow">Genre du jeu : RPG / Aventure</p>
-		
+	<!-- //Récupération des informations sur tous les jeux -->
+	<?php 	$games = array("table"=>"VR_grp4_Jeux_Test");
+		$games = find($bdd, $games);
+	?>
+	
+	<!-- Création d'un article par jeu dans la BdD -->
+	<?php foreach($games as $game): ?>
+	
+	<?php
+	$link_review = "game_review.php/?id=" .$game->ID;
+	
+	echo '<article class="reviews">
+		<img src="' .BASE_URL. '/img/' .$game->ID. '.png" alt="$game->Nom" />
+		<h2 class="fred title-review">
+			' .$game->Nom. '
+		</h2>
+		<p class="type fyellow"> Genre du jeu : ' .$game->Genre. '</p>
 		<p class="text-review">
-			
-			Un gosse de 11 ans part braconner des animaux afin de les faire combattre avec d'autres dresseurs, dans le but de blesser mortellement les pauvres créatures et d'extorquer de l'argent aux braconniers. Le but ultime est de vaincre une mafia rampante et de terrasser le Conseil des 4, afin de devenir le plus grand dresseur de tous les temps.
+			' .troncate($game->Desc, 300). '
 		</p>
-		<a href="#" class="more">Lire la suite</a>
-	</article>
-
-	<article class="reviews">
-		<img src='<?php echo BASE_URL.'/img/pokemon_saphir.png'?>' alt="Pokémon Saphir" />
-		<h2 class="fred title-review">Pokémon Saphir :</h2>
-		<p class="type fyellow">Genre du jeu : RPG / Aventure</p>
-		<p class="text-review">Un gosse de 11 ans part braconner des animaux afin de les faire combattre avec d'autres dresseurs, dans le but de blesser mortellement les pauvres créatures et d'extorquer de l'argent aux braconniers. Le but ultime est de vaincre une mafia rampante et de terrasser le Conseil des 4, afin de devenir le plus grand dresseur de tous les temps.</p>
-		<a href="#" class="more">Lire la suite</a>
-	</article>
+		<a href="' .$link_review. '"class="more">Lire la suite</a>
+	</article>';
+	
+	?>
+	
+	<?php endforeach; ?>
 </section>

@@ -39,7 +39,7 @@
 	<h1 class="fred">Tests</h1>
 	
 	<article class="reviews">
-		<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.jpg'?>' alt="Pokémon Emeraude" />
+		<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.png'?>' alt="Pokémon Emeraude" />
 		<h2 class="fred title-review">Pokémon Emeraude :</h2>
 		<p class="type fyellow">Genre du jeu : RPG / Aventure</p>
 		<p class="text-review">Un gosse de 11 ans part braconner des animaux afin de les faire combattre avec d'autres dresseurs, dans le but de blesser mortellement les pauvres créatures et d'extorquer de l'argent aux braconniers. Le but ultime est de vaincre une mafia rampante et de terrasser le Conseil des 4, afin de devenir le plus grand dresseur de tous les temps.</p>
