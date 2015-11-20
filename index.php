@@ -1,6 +1,6 @@
 <!DOCTYPE html >
 <html>
-	<?php 	// Inclusion de toutes ce qui est nécéssaire pour gérer le site
+	<?php 	// Include of all is needed to manage site
 			require_once("const.php");
 			require_once(ROOT."/conf/conf.php"); 
 			require_once(ROOT."/core/datas.php"); 
@@ -10,6 +10,7 @@
 	<head>
 		<title>
 	 		<?php 
+	 			// Define title page in default case and home page
 	 		 	if (basename($_SERVER['SCRIPT_NAME']) == "index.php") $title = 'Accueil';
 	 			if(isset($title)) echo $title;
 	 			else echo "Jeux-Video";
@@ -20,8 +21,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5">
 	</head>
 	<body>	
-		<?php 
-		require_once(ROOT."/core/header.php"); ?>
+		<?php require_once(ROOT."/core/header.php");// Display banner, logo and others informations ?>
 		<div id="container">
 			
 			<?php
@@ -34,9 +34,10 @@
 					require_once(ROOT.'/contents/'.$filename);
 				}
 			?>
-
-			<?php require_once(ROOT.'/core/footer.php'); ?>
+		
+		<?php require_once(ROOT.'/core/footer.php');// Informations rapides sur le site ?>
 		</div>
 	</body>
 
 </html>
+<?php $bdd = null; // Ferme la connexion à la bdd ?>

@@ -17,7 +17,7 @@
 	<article class="reviews">
 		<img src="<?php echo BASE_URL."/img/".$game->ID.".png"; ?>" alt="<?php echo $game->Nom; ?>" />
 		<h2 class="fred title-review">
-			<?php echo $game->Nom; ?>
+			<?php echo $game->Nom; ?> :
 		</h2>
 		<p class="type fyellow"> Genre du jeu : <?php echo $game->Genre; ?></p>
 		<p class="text-review">

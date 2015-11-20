@@ -1,6 +1,3 @@
-<aside class="search left">
-</aside>
-
 <section class="container-review center outred">
 	<div class="border-top red"></div>
 	<div class="border-bottom"></div>
@@ -12,10 +9,11 @@
 
 			if(!$game) redirect("/pages/games.php"); // Redirige si aucun résultat
 	?>
-		
+
 	<!-- Création d'un article par jeu dans la BdD -->
 		<article class="container-review">
 			<img src="<?php echo BASE_URL."/img/".$game->ID.".png" ?>" alt="<?php echo $game->Nom ?>" />
+
 			<section class="brief">
 				<h2 class="fred title-review">
 					<?php echo $game->Nom; ?>

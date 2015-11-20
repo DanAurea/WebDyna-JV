@@ -57,6 +57,8 @@ input{
 	border: 1px solid #253244;
 	border-radius: 5px;
 	color:white;
+	position: relative;
+	left: 5%;
 	width: 35%;
 	height: 25px;
 	font-size: 14px;
@@ -78,7 +80,6 @@ input:focus:not([type=submit]){
 }
 
 input[type=submit] {
-	padding: 0 30px;
 	height:30px;
 	margin-top:20px;
 }
@@ -287,13 +288,15 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 
 /** Position */
 
-.right{ right:0%;}
+.right{ left:3%;}
 
 .left{ left:0%;}
 
 .left,.center,.right{
 	background-color: #080c12;
-	position:absolute;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
 }
 
 .left:after,.center:after:not(.error),.right:after{
@@ -336,7 +339,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 
 .container-reviews{
 	width: 50%;
-	left: 25%;
+	left: 1.8%;
 }
 
 .title-review{margin:0;}
@@ -402,6 +405,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 /** Game review page */
 
 /** Style of a game review */
+
 .container-review{
 	width: 75%;
 	left: 12.5%;
@@ -409,20 +413,27 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 }
 
 .type{margin: 10px 0;}/** Game type list style */
+.type li{margin: 5px 0;}
 
-/*
-	Brief style for text of a game review
- */
+.container-review .text-review{
+	margin-top: 8%;
+	padding-bottom: 8%;
+	height:auto;
+}
+
+
+/** Brief style for text of a game review */
 .brief{
 	position:relative;
 	left: 4%;
 }
 
+
 /** Register and login */
 .login, .register{
 	background-color: #080c12;
 	width: 48%;
-	height: 250px;
+	height: 300px;
 }
 
 #login{margin-top: 60px;}
@@ -446,6 +457,8 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	max-width: 100%;
 	height: auto;
 }
+
+footer p{text-align: center;}
 
 /** Error style */
 
@@ -492,13 +505,13 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	}
 
 	/** Resize center block */
-    .center{
+    .container-reviews{
     	width:68.2%;
-    	left:31.8%;
+    	left:1.4%;
     }
 
     /** Resize left block */
-    .left{width:30%;}
+    .news{width:30%;}
 
 }
 
@@ -510,19 +523,37 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
         height:137px;
 		width:136px;
     }
+
+    .login,.register{
+    	width:100%;
+    	position: relative;
+    	margin-top:100px;
+    }
 	
 }
 
-@media screen and (max-width: 960px) {
+/* Mobile version */
+@media screen and (max-width: 800px) {
 
-		html{
+		html, body{
 			width: 100%;
+			height: 100%;
 			margin:0;
 		}
 		
+		/* Set border of container to none */
+		.border-top{background:none;}
+		
+		/* Hide not mandatory blocks */
 		#header-wrapper, .left, .right{display: none;}
-
-		#container{margin: 45px 0;}
+		
+		/* Initialize margin then set margin top to main container*/
+		#container{
+			margin:0;
+			margin-top: 45px;
+			height: 100%;
+			overflow: hidden;
+		}
 		
 		/* Set center as the main content */
 		.center{
@@ -559,11 +590,14 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 			width:37px;
 			height:55px;
 		}
-
-		.level1>li:nth-child(4) a {background-position: -87px 0;}
 		
+		/* Change position of sprites mobile for the second displayed button */
 		.level1>li:nth-child(3)>a{background-position: -42px 0;}
 
+		/* Change position of sprites mobile for the third displayed button */
+		.level1>li:nth-child(4) a {background-position: -87px 0;}
+		
+		/* Set size of each navigation button*/
 		ul.level1>li{
 			width: 33.3333333%;
 			height: 50px;
@@ -571,6 +605,23 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 
 		/* Hide first and last children of navigation bar */
 		ul.level1>li:first-child,ul.level1>li:last-child{display: none;}
-
+		
+		/* Hide outline of any blocks*/
 		.outblue, .outred, .outorange, .outgreen, .outpink, .outyellow, .outpurple{outline: 0;}
+		
+		/* Change display of login and register blocks form*/
+		.login, .register{
+			display:block;
+			margin:0;
+			height:50%;
+			position: relative;
+			left: 0;
+		}
+}
+
+@media screen and (max-width: 540px) {
+	
+	/** In case of too low screen resolution, fix some items width */
+	html,body{width:540px;} 
+   .reviews img{width:100px;}
 }

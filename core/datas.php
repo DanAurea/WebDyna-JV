@@ -3,9 +3,10 @@
 
         // Connexion à la base donnée
 	      try{
-      		$bdd = new PDO(
-            		$servInfo,$config['login'],$config['password']); 
-            $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
+      		$bdd = new PDO($servInfo,$config['login'],$config['password']); 
+          
+          $bdd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING); // Active les erreurs PDO
+          $bdd->exec("SET CHARACTER SET utf8"); // Définis l'encodage UTF8 pour la bdd
 
         }catch(PDOException $e){
           die('Impossible de se connecter à la base de donnée'); // Faire une fonction erreur
