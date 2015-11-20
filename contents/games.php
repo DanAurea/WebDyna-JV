@@ -14,17 +14,22 @@
 	<!-- Création d'un article par jeu dans la BdD -->
 	<?php foreach($games as $game): ?>
 	
-	<article class="reviews">
-		<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.png'?>' alt="Pokémon Emeraude" />
+	<?php
+	$link_review = "game_review.php/?id=" .$game->ID;
+	
+	echo '<article class="reviews">
+		<img src="' .BASE_URL. '/img/' .$game->ID. '.png" alt="$game->Nom" />
 		<h2 class="fred title-review">
-			<?php echo $game->Nom; ?>	
+			' .$game->Nom. '
 		</h2>
-		<p class="type fyellow"><?php echo "Genre du jeu : " .$game->Genre; ?></p>
+		<p class="type fyellow"> Genre du jeu : ' .$game->Genre. '</p>
 		<p class="text-review">
-			<?php echo troncate($game->Desc, 300); ?>
+			' .troncate($game->Desc, 300). '
 		</p>
-		<a href="#" class="more">Lire la suite</a>
-	</article>
+		<a href="' .$link_review. '"class="more">Lire la suite</a>
+	</article>';
+	
+	?>
 	
 	<?php endforeach; ?>
 </section>
