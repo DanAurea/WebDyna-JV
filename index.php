@@ -3,7 +3,8 @@
 	<?php 	include("const.php");
 			include(ROOT."/conf/conf.php"); 
 			include(ROOT."/core/datas.php"); 
-			include(ROOT."/core/url.php"); 
+			include(ROOT."/core/url.php");
+			include(ROOT."/core/fonctions.php");
 	?>
 	<head>
 		<title>

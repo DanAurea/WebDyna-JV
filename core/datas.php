@@ -186,7 +186,7 @@
                $pre = $bdd->prepare($sql);
                $pre->execute();
                
-               //return $sql; Débug de la requête SQL
+               //return $sql; //Débug de la requête SQL
                
                return $pre->fetchAll(PDO::FETCH_OBJ);
         }
