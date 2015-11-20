@@ -1,10 +1,11 @@
 <!DOCTYPE html >
 <html>
-	<?php 	include("const.php");
-			include(ROOT."/conf/conf.php"); 
-			include(ROOT."/core/datas.php"); 
-			include(ROOT."/core/url.php");
-			include(ROOT."/core/fonctions.php");
+	<?php 	// Inclusion de toutes ce qui est nécéssaire pour gérer le site
+			require_once("const.php");
+			require_once(ROOT."/conf/conf.php"); 
+			require_once(ROOT."/core/datas.php"); 
+			require_once(ROOT."/core/url.php");
+			require_once(ROOT."/core/fonctions.php");
 	?>
 	<head>
 		<title>
@@ -20,7 +21,7 @@
 	</head>
 	<body>	
 		<?php 
-		include(ROOT."/core/header.php"); ?>
+		require_once(ROOT."/core/header.php"); ?>
 		<div id="container">
 			
 			<?php
@@ -30,11 +31,11 @@
 				if(!file_exists($filename)){
 					e404();
 				}else{
-					include(ROOT.'/contents/'.$filename);
+					require_once(ROOT.'/contents/'.$filename);
 				}
 			?>
 
-			<?php include(ROOT.'/core/footer.php'); ?>
+			<?php require_once(ROOT.'/core/footer.php'); ?>
 		</div>
 	</body>
 

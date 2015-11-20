@@ -129,7 +129,7 @@
                   $sql .= 'WHERE ';
                
                  if(!is_array($req['conditions'])){
-                    $sql .= $req['condi$pseudotions'];
+                    $sql .= $req['conditions'];
                  }else{
                    $cond = array();
                    
@@ -141,9 +141,9 @@
                    }
                    
                    /* 
-                   Lie le champ + l'opérateur avec la valeur
-                   Par exemple "nom=" => "Marvin" : "nom= Marvin"
-                   Ne pas oublier d'inclure l'opérateur dans l'indice
+                     Lie le champ + l'opérateur avec la valeur
+                     Par exemple "nom=" => "Marvin" : "nom= Marvin"
+                     Ne pas oublier d'inclure l'opérateur dans l'indice
                    */
                    $cond[] = "$k $v";
                    }

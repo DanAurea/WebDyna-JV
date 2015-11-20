@@ -1,74 +1,66 @@
 <aside class="news left outorange">
+	<!-- Bordure haute du conteneur -->
 	<div class="border-top orange"></div>
 	<div class="border-bottom"></div>
 	<h1 class="forange">Nouveautés</h1>
 	
+	<!-- Grille des nouveautés -->
 	<div class="grid">
 		<ul id="grid-news">
-			<li>
-				<a href="#">
-					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
-					<span>Pokémon</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
-					<span>Pokémon</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
-					<span>Pokémon</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
-					<span>Pokémon</span>
-				</a>
-			</li>
+			
+			<!-- //Récupération des informations sur toutes les nouveautés -->
+			<?php 	$news = array("table"=>"VR_grp4_Jeux_Test", "order" => "id", "sortBy" => "DESC", "limit" => "6");
+					$news = find($bdd, $news);
+			?>
+
+			<!-- Création d'un item par nouveauté -->
+			<?php foreach($news as $new): ?>
+				<li>
+					<a href="#">
+						<img src="<?php echo BASE_URL."/img/".$new->ID.".png"; ?>" alt="<?php echo $new->Nom; ?>">
+						<span><?php echo $new->Nom; ?></span>
+					</a>
+				</li>
+			<?php endforeach; ?>
+			
 		</ul>
 	</div>
+	
 </aside>
 
 <section class="container-reviews center outred">
+	<!-- Bordure haute du conteneur -->
 	<div class="border-top red"></div>
 	<div class="border-bottom"></div>
 	<h1 class="fred">Tests</h1>
-	
-	<article class="reviews">
-		<img src='<?php echo BASE_URL.'/img/pokemon_emeraude.png'?>' alt="Pokémon Emeraude" />
-		<h2 class="fred title-review">Pokémon Emeraude :</h2>
-		<p class="type fyellow">Genre du jeu : RPG / Aventure</p>
-		<p class="text-review">Un gosse de 11 ans part braconner des animaux afin de les faire combattre avec d'autres dresseurs, dans le but de blesser mortellement les pauvres créatures et d'extorquer de l'argent aux braconniers. Le but ultime est de vaincre une mafia rampante et de terrasser le Conseil des 4, afin de devenir le plus grand dresseur de tous les temps.</p>
-		<a href="#" class="more">Lire la suite</a>
-	</article>
-	
-	<article class="reviews">
-		<img src='<?php echo BASE_URL.'/img/pokemon_rubis.png'?>' alt="Pokémon Emeraude" />
-		<h2 class="fred title-review">Pokémon Rubis :</h2>
-		<p class="type fyellow">Genre du jeu : RPG / Aventure</p>
-		<p class="text-review">Un gosse de 11 ans part braconner des animaux afin de les faire combattre avec d'autres dresseurs, dans le but de blesser mortellement les pauvres créatures et d'extorquer de l'argent aux braconniers. Le but ultime est de vaincre une mafia rampante et de terrasser le Conseil des 4, afin de devenir le plus grand dresseur de tous les temps.</p>
-		<a href="#" class="more">Lire la suite</a>
-	</article>
 
-	<article class="reviews">
-		<img src='<?php echo BASE_URL.'/img/pokemon_saphir.png'?>' alt="Pokémon Emeraude" />
-		<h2 class="fred title-review">Pokémon Saphir :</h2>
-		<p class="type fyellow">Genre du jeu : RPG / Aventure</p>
-		<p class="text-review">Un gosse de 11 ans part braconner des animaux afin de les faire combattre avec d'autres dresseurs, dans le but de blesser mortellement les pauvres créatures et d'extorquer de l'argent aux braconniers. Le but ultime est de vaincre une mafia rampante et de terrasser le Conseil des 4, afin de devenir le plus grand dresseur de tous les temps.</p>
-		<a href="#" class="more">Lire la suite</a>
-	</article>
+	<!-- //Récupération des informations sur tous les jeux -->
+	<?php 	$games = array("table"=>"VR_grp4_Jeux_Test");
+			$games = find($bdd, $games);
+	?>
+	
+	<!-- Création d'un article par jeu dans la BdD -->
+	<?php foreach($games as $game): ?>
+		<article class="reviews">
+			
+			<img src="<?php echo BASE_URL."/img/".$game->ID.".png";?>" alt="<?php echo $game->Nom; ?>" /> <!-- Affiche l'image correspondante -->
+			<h2 class="fred title-review"> <?php echo $game->Nom; ?> :</h2> <!-- Affiche le nom correspondant -->
+			<p class="type fyellow">Genre du jeu : <?php echo $game->Genre; ?></p> <!-- Affiche le genre correspondant -->
+			<p class="text-review"><?php echo troncate($game->Desc, 300); ?></p> <!-- Affiche un court résumé -->
+			<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$game->ID; ?>" class="more">Lire la suite</a>
+		
+		</article>
+	<?php endforeach; ?>
 
 </section>
 
 <aside class="next-releases right outgreen">
+	<!-- Bordure haute du conteneur -->
 	<div class="border-top green"></div>
 	<div class="border-bottom"></div>
 	<h1 class="fgreen">Prochaines sorties</h1>
-
+	
+	<!-- Grille des prochaines sorties -->
 	<div class="grid">
 		<ul id="grid-releases">
 			<li>
@@ -77,37 +69,6 @@
 					<span>Pokémon</span>
 				</a>
 			</li>
-			<li>
-				<a href="#">
-					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
-					<span>Pokémon</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
-					<span>Pokémon</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
-					<span>Pokémon</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
-					<span>Pokémon</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
-					<span>Pokémon</span>
-				</a>
-			</li>
-
 		</ul>
 	</div>
 </aside>

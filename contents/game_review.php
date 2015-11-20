@@ -1,34 +1,40 @@
 <aside class="search left">
 </aside>
 
-<section class="games-reviews center outred">
+<section class="container-review center outred">
 	<div class="border-top red"></div>
 	<div class="border-bottom"></div>
 	<h1 class="fred">Jeux</h1>
-	
+
 	<!-- //Récupération des informations sur tous les jeux -->
-	<?php 	$games = array("table"=>"VR_grp4_Jeux_Test");
-		$games = find($bdd, $games);
+	<?php 	$req = array("table"=>"VR_grp4_Jeux_Test", "conditions" => "id =".$_GET['id']);
+			$game = findFirst($bdd, $req);
+
+			if(!$game) redirect("/pages/games.php"); // Redirige si aucun résultat
 	?>
-	
+		
 	<!-- Création d'un article par jeu dans la BdD -->
-	<?php 	foreach($games as $game):
-		if($_GET['id'] == $game->ID) {
-			echo '<article class="reviews">
-				<img src="' .BASE_URL. '/img/' .$game->ID. '.png" alt="$game->Nom" />
+		<article class="container-review">
+			<img src="<?php echo BASE_URL."/img/".$game->ID.".png" ?>" alt="<?php echo $game->Nom ?>" />
+			<section class="brief">
 				<h2 class="fred title-review">
-					' .$game->Nom. '
+					<?php echo $game->Nom; ?>
 				</h2>
-				<p class="type fyellow"> Genre du jeu : ' .$game->Genre. '</p>
-				<p class="type fyellow"> Âge : ' .$game->Ages. '</p>
-				<p class="type fyellow"> Support : ' .$game->Support. '</p>
-				<p class="type fyellow"> Nombre de joueurs : ' .$game->NbJoueurs. '</p>
+				
+				<!-- Affiche le type du jeu -->
+				<ul class="type">
+					<li class="fyellow">Genre du jeu :  <?php echo $game->Genre; ?></li>
+					<li class="fyellow">Âge :  <?php echo $game->Ages; ?></li>
+					<li class="fyellow">Support : <?php echo $game->Support; ?></li>
+					<li class="fyellow">Nombre de joueurs : <?php  echo $game->NbJoueurs?></li>
+				</ul>
+				
+				<!-- Affiche une description du jeu -->
 				<p class="text-review">
-					' .$game->Desc. '
+					<?php echo $game->Desc; ?>
 				</p>
-			</article>';
-		}
-	?>
-	
-	<?php endforeach; ?>
+
+			</section>
+		</article>
+
 </section>

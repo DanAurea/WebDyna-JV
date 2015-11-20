@@ -8,28 +8,23 @@
 	
 	<!-- //Récupération des informations sur tous les jeux -->
 	<?php 	$games = array("table"=>"VR_grp4_Jeux_Test");
-		$games = find($bdd, $games);
+			$games = find($bdd, $games);
 	?>
 	
 	<!-- Création d'un article par jeu dans la BdD -->
 	<?php foreach($games as $game): ?>
 	
-	<?php
-	$link_review = "game_review.php/?id=" .$game->ID;
-	
-	echo '<article class="reviews">
-		<img src="' .BASE_URL. '/img/' .$game->ID. '.png" alt="$game->Nom" />
+	<article class="reviews">
+		<img src="<?php echo BASE_URL."/img/".$game->ID.".png"; ?>" alt="<?php echo $game->Nom; ?>" />
 		<h2 class="fred title-review">
-			' .$game->Nom. '
+			<?php echo $game->Nom; ?>
 		</h2>
-		<p class="type fyellow"> Genre du jeu : ' .$game->Genre. '</p>
+		<p class="type fyellow"> Genre du jeu : <?php echo $game->Genre; ?></p>
 		<p class="text-review">
-			' .troncate($game->Desc, 300). '
+			<?php echo troncate($game->Desc, 300); ?> 
 		</p>
-		<a href="' .$link_review. '"class="more">Lire la suite</a>
-	</article>';
-	
-	?>
+		<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$game->ID; ?>"class="more">Lire la suite</a>
+	</article>
 	
 	<?php endforeach; ?>
 </section>

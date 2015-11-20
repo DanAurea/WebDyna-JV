@@ -13,7 +13,7 @@
 		if(!$res)
 			echo "Il y a eu un probleme a l'inscription";
 		else
-			header("Location: ".ROOT."test");
+			redirect("/?test=3");
 	}
 
 ?>
