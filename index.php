@@ -1,8 +1,10 @@
 <!DOCTYPE html >
 <html>
-	<?php include("const.php"); ?>
-	<?php include(ROOT."/conf/conf.php"); ?>
-	<?php //include(ROOT."/core/datas.php"); ?>
+	<?php 	include("const.php");
+			include(ROOT."/conf/conf.php"); 
+			include(ROOT."/core/datas.php"); 
+			include(ROOT."/core/url.php"); 
+	?>
 	<head>
 		<title>
 	 		<?php 
@@ -15,17 +17,17 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5">
 	</head>
-	 
 	<body>	
 		<?php 
 		include(ROOT."/core/header.php"); ?>
 		<div id="container">
 			
 			<?php
-				/** Display page requested*/
+				/** Display page requested */
 			 	$filename = basename($_SERVER["SCRIPT_NAME"]);
+
 				if(!file_exists($filename)){
-					include(ROOT.'/contents/404.php');
+					e404();
 				}else{
 					include(ROOT.'/contents/'.$filename);
 				}

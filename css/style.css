@@ -294,7 +294,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	position:absolute;
 }
 
-.left:after,.center:after,.right:after{
+.left:after,.center:after:not(.error),.right:after{
 	content: '';
 	position: absolute;
 	
