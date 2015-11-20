@@ -43,6 +43,7 @@ form ol li{
   list-style: none;
 }
 
+/* Set style to label of input */
 form label{
 	font-weight: bold;
 	float: left;
@@ -52,6 +53,7 @@ form label{
 	white-space: nowrap;
 }
 
+/* Set default style to input */
 input{
 	background-color: #06090e;
 	border: 1px solid #253244;
@@ -71,6 +73,7 @@ input{
     transition: all .5s;
 }
 
+/* Set focus style on inputs*/
 input:focus:not([type=submit]){
 	background-color: #18212f;
 	-moz-transition: all .5s; 
@@ -79,6 +82,7 @@ input:focus:not([type=submit]){
     transition: all .5s;
 }
 
+/* Dimensions */
 input[type=submit] {
 	height:30px;
 	margin-top:20px;
@@ -94,6 +98,7 @@ input[type=submit]:active{background-color: #0f1e34;}
 
 #header-wrapper{height:185px;}
 
+/* Display logo*/
 #header-logo{
 	background: url('../img/logo.png')no-repeat;
 	height:137px;
@@ -292,6 +297,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 
 .left{ left:0%;}
 
+/* Position of each block */
 .left,.center,.right{
 	background-color: #080c12;
 	display: inline-block;
@@ -299,6 +305,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	position: relative;
 }
 
+/* Display porjected shadow behind selected blocks */
 .left:after,.center:after:not(.error),.right:after{
 	content: '';
 	position: absolute;
@@ -326,6 +333,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 
 .border-top{height: 10px;}
 
+/* Little sharp shadow made to be pasted to border-top */
 .border-bottom{
 	background-color: #000000;
 	height: 6px;
@@ -337,6 +345,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	width: 23.2%;
 }
 
+/* Set dimensions of container reviews*/
 .container-reviews{
 	width: 50%;
 	left: 1.8%;
@@ -344,13 +353,15 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 
 .title-review{margin:0;}
 
+/* Manage overflow of title and type from review */
 .title-review, .type{
 	white-space: nowrap;
 	overflow: hidden;
-  	-o-text-overflow: ellipsis; /* pour Opera 9 */
-  	text-overflow: ellipsis; /* pour le reste du monde */
+  	-o-text-overflow: ellipsis; /* Opera 9 */
+  	text-overflow: ellipsis; /* all others */
 }
 
+/* Style for article review*/
 .reviews{
 	margin: 0 8% 30px 8%;
 	position: relative;
@@ -362,6 +373,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	float: left;
 }
 
+/* Brief review style */
 .text-review{
 	margin: 0;
 	overflow: hidden;
@@ -382,6 +394,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	left: 25%;
 }
 
+/* Style of reviews on home page principally*/
 .reviews p, .reviews h2{
 	box-sizing:padding-box;
 	-moz-box-sizing:padding-box;
@@ -394,6 +407,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 
 .text-review{top: 30%;}
 
+/* Style to read more */
 .more{
 	position: absolute;
 	right: 0;
@@ -445,14 +459,15 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 .grid ul a{
 	text-align: center;
 	display:block;
-	word-wrap: break-word;
 }
 
+/* Put list item side by side */
 .grid ul li{
 	float: left;
 	display: block;
 }
 
+/* Responsive img for grid img */
 .grid ul li img{
 	max-width: 100%;
 	height: auto;
@@ -462,6 +477,7 @@ footer p{text-align: center;}
 
 /** Error style */
 
+/* Container of error content*/
 .error{ 
 	width:80%;
 	left:10%;
@@ -476,12 +492,14 @@ footer p{text-align: center;}
 
 #error-message{margin:65px 0 30px 0;}
 
+/* Style for personalized message */
 #error-subtitle{
 	line-height: 32px;
 	color: #050b15;
 	font-size: 32px;
 }
 
+/* Style for responsive error img */
 .error img{
 	width: 33%;
 	height: auto;
@@ -523,18 +541,22 @@ footer p{text-align: center;}
         height:137px;
 		width:136px;
     }
-
+	
+	/* Stack login and register blocks to be responsive*/
     .login,.register{
     	width:100%;
     	position: relative;
-    	margin-top:100px;
+		left: 0;
     }
+	
+    .register{margin-top:50px;}
 	
 }
 
 /* Mobile version */
 @media screen and (max-width: 800px) {
-
+		
+		/* Page displayed in fullscreen */
 		html, body{
 			width: 100%;
 			height: 100%;
@@ -614,8 +636,6 @@ footer p{text-align: center;}
 			display:block;
 			margin:0;
 			height:50%;
-			position: relative;
-			left: 0;
 		}
 }
 

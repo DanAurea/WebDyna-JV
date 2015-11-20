@@ -16,7 +16,7 @@
 			<!-- Création d'un item par nouveauté -->
 			<?php foreach($news as $new): ?>
 				<li>
-					<a href="#">
+					<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$new->ID ?>">
 						<img src="<?php echo BASE_URL."/img/".$new->ID.".png"; ?>" alt="<?php echo $new->Nom; ?>">
 						<span><?php echo $new->Nom; ?></span>
 					</a>
