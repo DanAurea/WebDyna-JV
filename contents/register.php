@@ -2,11 +2,11 @@
 <section class="login left outred">
 		<div class="border-top red"></div>
 		<h1 class="fred">Login </h1>
-		<form method="post" action="connexion.php">
+		<form method="post" action="login.php">
 			<ol>
 				<li>
-					<label for="login">Pseudo:</label>
-					<input type="text" name="login" placeholder="Login"/>
+					<label for="pseudo">Pseudo:</label>
+					<input type="text" name="pseudo" placeholder="Pseudo"/>
 				</li>
 				<li>
 					<label for="password">Mot de passe:</label>
@@ -25,8 +25,8 @@
 		
 		<ol>
 			<li>
-				<label for="login">Pseudo :</label>
-				<input type="text" name="login" placeholder="Login"/>
+				<label for="pseudo">Pseudo :</label>
+				<input type="text" name="pseudo" placeholder="Pseudo"/>
 			</li>
 			<li>
 				<label for="email">Adresse email:</label>
@@ -35,6 +35,10 @@
 			<li>
 				<label for="password">Mot de passe:</label>
 				<input type="password" name="password" placeholder="******"/>
+			</li>
+			<li>
+				<label for="pass_conf"> Confirmation:</label>
+				<input type="password" name="pass_conf" placeholder="******"/>
 			</li>
 		</ol>	
 			

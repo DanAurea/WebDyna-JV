@@ -129,7 +129,7 @@
                   $sql .= 'WHERE ';
                
                  if(!is_array($req['conditions'])){
-                    $sql .= $req['conditions'];
+                    $sql .= $req['condi$pseudotions'];
                  }else{
                    $cond = array();
                    
@@ -224,7 +224,7 @@
           /*  Met à jour les tuples concernés si la clé primaire a été définis 
               et sa valeur n'est pas vide sinon insère les données
             */
-          if(isset($primaryKey)){
+          if($primaryKey){
               $sql = 'UPDATE '.$data['table'].' SET '.implode(',',$fields).' WHERE '.$primaryKey.'=:'.$primaryKey;
               $action = 'update';
           }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <aside class="news left outorange">
 	<div class="border-top orange"></div>
 	<div class="border-bottom"></div>
@@ -111,3 +112,11 @@
 		</ul>
 	</div>
 </aside>
+=======
+<?php
+	$pseudo=$_POST["pseudo"];
+	$password=$_POST["password"];
+	$user=array("table"=>"Utilisateur","conditions"=>array("Login="=>$pseudo,"MotDePasse="=>$password));
+	var_dump(findFirst($bdd,$user));
+?>
+>>>>>>> ecdeed828d8f5fa2eb3c16cb533436d438c11552
