@@ -129,7 +129,7 @@
                   $sql .= 'WHERE ';
                
                  if(!is_array($req['conditions'])){
-                    $sql .= $req['conditions'];
+                    $sql .= $req['condi$pseudotions'];
                  }else{
                    $cond = array();
                    
@@ -186,7 +186,7 @@
                $pre = $bdd->prepare($sql);
                $pre->execute();
                
-               //return $sql; Débug de la requête SQL
+               //return $sql; //Débug de la requête SQL
                
                return $pre->fetchAll(PDO::FETCH_OBJ);
         }
@@ -224,7 +224,7 @@
           /*  Met à jour les tuples concernés si la clé primaire a été définis 
               et sa valeur n'est pas vide sinon insère les données
             */
-          if(isset($primaryKey)){
+          if($primaryKey){
               $sql = 'UPDATE '.$data['table'].' SET '.implode(',',$fields).' WHERE '.$primaryKey.'=:'.$primaryKey;
               $action = 'update';
           }
