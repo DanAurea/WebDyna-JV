@@ -30,10 +30,11 @@
 			<li>
 				<a href='<?php echo BASE_URL.'/pages/games.php'?>'>Jeux</a>
 				<ul class="level2">
-					<li><a href='<?php echo BASE_URL.'/pages/news.php'?>'>Nouveautés</a></li>
-					<li><a href='<?php echo BASE_URL.'/pages/next-releases.php'?>'>Prochaines Sorties</a></li>
+					<li><a href='<?php echo BASE_URL.'/pages/news.php';?>'>Nouveautés</a></li>
+					<li><a href='<?php echo BASE_URL.'/pages/next-releases.php';?>'>Prochaines Sorties</a></li>
 				</ul>
 			</li>
+			<li id="basket-nav"><a href="<?php echo BASE_URL.'/pages/basket.php'; ?>">Panier</a></li>
 			<li>
 				<a href='<?php 
 							if(isLogged())

@@ -121,9 +121,7 @@ input[type=submit]:active{background-color: #0f1e34;}
 
 /** Navigation style */
 
-nav{
-	height: 60px;
-}
+nav{height: 60px;}
 
 nav a{display: block;}
 
@@ -154,6 +152,9 @@ ul.level1>li{
     transition: all .5s;
     position:relative;
 }
+
+/* Hide basket button when not in mobile version */
+#basket-nav{display:none;}
 
 /* Add shadows to main buttons of navigation bar */
 ul.level1>li:not(:last-child):not(:first-child):after{
@@ -308,14 +309,13 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 
 /* Display porjected shadow behind selected blocks */
 .left:after,.center:not(.error):after,.right:after{
-	/*content: '';
+	content: '';
 	position: absolute;
-	float: left;*/
 	
 	z-index: -1; /* hide shadow behind blocks */
 	
 	/* The Shadow */
-	/*box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
+	box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
 	-webkit-box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
 	-moz-box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
 	-box-shadow: 10px 10px 8px rgba(0, 0, 0,1); 
@@ -323,7 +323,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	width: 100%;
 	left: 0%;
 	height: 100%;
-	bottom:  0;*/
+	bottom:  0;
 }
 
 /** Blocks */
@@ -560,8 +560,9 @@ footer p{text-align: center;}
 @media screen and (max-width: 800px) {
 		
 		/* Page displayed in fullscreen */
-		html, body{
-			width: 100%;
+		html,body,#container,.center, nav, ul{
+			width:100%;
+			max-width: 100%;
 			margin:0;
 		}
 		
@@ -575,15 +576,7 @@ footer p{text-align: center;}
 		#container{
 			margin:0;
 			margin-top: 45px;
-			height: 100%;
 			overflow: hidden;
-		}
-		
-		/* Set footer position on bottom of container content */
-		footer{
-			position: absolute;
-			bottom: 0;
-			margin: 0 25%;
 		}
 		
 		/* Set center as the main content */
@@ -596,14 +589,15 @@ footer p{text-align: center;}
 		/** Navigation style */
 		
 		nav{
-			width: 100%;
 			position: fixed;
 			top: 0;
 			left: 0;
 		}
-		
+
+		#basket-nav{display:inline-block;}
+
 		/* Commons rules for li*/
-		ul.level1>li{line-height: 55px;}
+		ul.level1>li{line-height: 55px;width:50%}
 		
 		/* Hide text */
 		.level1>li>a{
@@ -631,15 +625,39 @@ footer p{text-align: center;}
 		
 		/* Set size of each navigation button*/
 		ul.level1>li{
-			width: 33.3333333%;
+			width:33.333333%;
+			max-width: 33.3333333%;
 			height: 50px;
 		}
 
 		/* Hide first and last children of navigation bar */
-		ul.level1>li:first-child,ul.level1>li:last-child{display: none;}
+		ul.level1>li:first-child,ul.level1>li:last-child,.level1>li:nth-child(5){display: none;}
 		
 		/* Hide outline of any blocks*/
 		.outblue, .outred, .outorange, .outgreen, .outpink, .outyellow, .outpurple{outline: 0;}
+		
+		/* Set size of brief on home page*/
+		.reviews p.text-review{
+			width:75%;
+			max-width: 75%;
+		}
+		
+		/* Set size of article for one review */
+		article.container-review{
+			width:100%;
+			max-width: 90%;
+			left:0%;
+		}
+
+		/* Set off margin on brief in a review*/
+		.container-review .text-review{margin:0;}
+		
+		/* Change position of img in a review */
+		.container-review img{
+			position: absolute;
+			left:230px;
+			float:initial;
+		}
 		
 		/* Change display of login and register blocks form*/
 		.login, .register{
@@ -647,11 +665,11 @@ footer p{text-align: center;}
 			margin:0;
 			height:50%;
 		}
-}
 
-@media screen and (max-width: 540px) {
-	
-	/** In case of too low screen resolution, fix some items width */
-	html,body{width:540px;} 
-   .reviews img{width:100px;}
+		/* Set footer position on bottom of container content */
+		footer{
+			position: absolute;
+			bottom: 0;
+			width:100%;
+		}
 }
