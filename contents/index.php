@@ -46,7 +46,7 @@
 			<img src="<?php echo BASE_URL."/img/".$game->ID.".png";?>" alt="<?php echo $game->Nom; ?>" /> <!-- Affiche l'image correspondante -->
 			<h2 class="fred title-review"> <?php echo $game->Nom; ?> :</h2> <!-- Affiche le nom correspondant -->
 			<p class="type fyellow">Genre du jeu : <?php echo $game->Genre; ?></p> <!-- Affiche le genre correspondant -->
-			<p class="text-review"><?php echo troncate($game->Desc, 300); ?></p> <!-- Affiche un court résumé -->
+			<p class="text-review"><?php echo troncate($game->Desc, 200); ?></p> <!-- Affiche un court résumé -->
 			<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$game->ID; ?>" class="more">Lire la suite</a>
 		
 		</article>

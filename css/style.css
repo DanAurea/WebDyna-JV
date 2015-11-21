@@ -306,7 +306,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 }
 
 /* Display porjected shadow behind selected blocks */
-.left:after,.center:after:not(.error),.right:after{
+.left::after,.center::after:not(.error),.right::after{
 	content: '';
 	position: absolute;
 	
@@ -401,6 +401,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	width: 75%;
 	position: absolute;
 	right: 0;
+	line-height: 16px;
 }
 
 .reviews .fyellow{top: 10%;}
