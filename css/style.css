@@ -65,9 +65,10 @@ input{
 	height: 25px;
 	font-size: 14px;
 	padding:0 10px;
-	box-sizing: padding-box;
+	box-sizing: padding-box; /* Take padding in width %*/
 	-moz-box-sizing: padding-box;
-	-moz-transition: all .5s; 
+
+	-moz-transition: all .5s; /* Set animation start */
     -webkit-transition: all .5s; 
     -o-transition: all .5s; 
     transition: all .5s;
@@ -76,7 +77,7 @@ input{
 /* Set focus style on inputs*/
 input:focus:not([type=submit]){
 	background-color: #18212f;
-	-moz-transition: all .5s; 
+	-moz-transition: all .5s; /* Get change state to animate input */
     -webkit-transition: all .5s; 
     -o-transition: all .5s; 
     transition: all .5s;
@@ -306,22 +307,23 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 }
 
 /* Display porjected shadow behind selected blocks */
-.left::after,.center::after:not(.error),.right::after{
-	content: '';
+.left:after,.center:not(.error):after,.right:after{
+	/*content: '';
 	position: absolute;
+	float: left;*/
 	
 	z-index: -1; /* hide shadow behind blocks */
 	
 	/* The Shadow */
-	box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
+	/*box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
 	-webkit-box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
 	-moz-box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
 	-box-shadow: 10px 10px 8px rgba(0, 0, 0,1); 
 	
 	width: 100%;
-	left:0%;
+	left: 0%;
 	height: 100%;
-	bottom:  0;
+	bottom:  0;*/
 }
 
 /** Blocks */
@@ -412,7 +414,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 .more{
 	position: absolute;
 	right: 0;
-	bottom: 0px;
+	bottom: 5px;
 }
 
 
@@ -560,7 +562,6 @@ footer p{text-align: center;}
 		/* Page displayed in fullscreen */
 		html, body{
 			width: 100%;
-			height: 100%;
 			margin:0;
 		}
 		
@@ -578,10 +579,18 @@ footer p{text-align: center;}
 			overflow: hidden;
 		}
 		
+		/* Set footer position on bottom of container content */
+		footer{
+			position: absolute;
+			bottom: 0;
+			margin: 0 25%;
+		}
+		
 		/* Set center as the main content */
 		.center{
 			left:0%;
 			width:100%;
+			padding-bottom: 60px; 
 		}
 		
 		/** Navigation style */

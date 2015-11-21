@@ -7,4 +7,6 @@
 		define('ROOT',dirname($_SERVER['SCRIPT_FILENAME']));
 		$title = 'Accueil';
 	}
+
+	$today = date('Y-m-d');
 ?>

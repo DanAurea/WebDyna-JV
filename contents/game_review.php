@@ -21,7 +21,11 @@
 				
 				<!-- Affiche le type du jeu -->
 				<ul class="type">
+
+					<?php $Sortie = formatDate($game->Sortie); ?>
+					
 					<li class="fyellow">Genre du jeu :  <?php echo $game->Genre; ?></li>
+					<li class="fyellow">Date de sortie :  <?php echo $Sortie; ?></li>
 					<li class="fyellow">Âge :  <?php echo $game->Ages; ?></li>
 					<li class="fyellow">Support : <?php echo $game->Support; ?></li>
 					<li class="fyellow">Nombre de joueurs : <?php  echo $game->NbJoueurs?></li>

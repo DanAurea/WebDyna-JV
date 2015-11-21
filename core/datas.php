@@ -158,7 +158,7 @@
                
                // Groupe les champs si précisé
                if(isset($req['group'])){
-                 $sql .= 'GROUP BY '.cleanFields($req['group']).' ';
+                 $sql .= ' GROUP BY '.cleanFields($req['group']).' ';
                  
                  // Condition sur le groupe
                  if(isset($req['having'])){
@@ -168,7 +168,7 @@
                
                // Tri des données avec condition si existante
                if(isset($req['order'])){
-                 $sql .= 'ORDER BY '.cleanFields($req['order']).' ';
+                 $sql .= ' ORDER BY '.cleanFields($req['order']).' ';
                  if(isset($req['sortBy'])){
                     $sql .= $req['sortBy'].' ';
                  }

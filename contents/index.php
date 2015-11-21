@@ -9,7 +9,9 @@
 		<ul id="grid-news">
 			
 			<!-- //Récupération des informations sur toutes les nouveautés -->
-			<?php 	$news = array("table"=>"VR_grp4_Jeux_Test", "order" => "id", "sortBy" => "DESC", "limit" => "6");
+			<?php 	$news = array("table"=>"VR_grp4_Jeux_Test", 
+					"order" => "id", "sortBy" => "DESC", "limit" => "6", 
+					"conditions" => "Sortie<"."'".$today."'");
 					$news = find($bdd, $news);
 			?>
 
@@ -35,7 +37,7 @@
 	<h1 class="fred">Tests</h1>
 
 	<!-- //Récupération des informations sur tous les jeux -->
-	<?php 	$games = array("table"=>"VR_grp4_Jeux_Test");
+	<?php 	$games = array("table"=>"VR_grp4_Jeux_Test", "order" => "id", "sortBy" => "DESC");
 			$games = find($bdd, $games);
 	?>
 	
@@ -63,12 +65,22 @@
 	<!-- Grille des prochaines sorties -->
 	<div class="grid">
 		<ul id="grid-releases">
-			<li>
-				<a href="#">
-					<img src='<?php echo BASE_URL.'/img/poke.jpg'?>' alt="pokemon emeraude">
-					<span>Pokémon</span>
-				</a>
-			</li>
+			
+			<!-- //Récupération des informations sur toutes les prochaines sorties -->
+			<?php 	$nextReleases = array("table"=>"VR_grp4_Jeux_Test", "order" => "Sortie", 
+					"sortBy" => "ASC", "limit" => "6", 
+					"conditions" => "Sortie>'".$today."'");
+					$nextReleases = find($bdd, $nextReleases);
+			?>
+			
+			<?php foreach ($nextReleases as $release): ?>
+				<li>
+					<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$release->ID ?>">
+						<img src="<?php echo BASE_URL."/img/".$release->ID.".png" ?>" alt="<?php echo $release->Nom; ?>">
+						<span><?php echo $release->Nom; ?></span>
+					</a>
+				</li>
+			<?php endforeach; ?>
 		</ul>
 	</div>
 </aside>
