@@ -8,5 +8,8 @@
 		$title = 'Accueil';
 	}
 
-	$today = date('Y-m-d');
+	$today = date('Y-m-d'); // Date actuelle au format aaaa-mm-jj
+
+	define('PRE_SALT',"MvDmBd");
+	define('SUF_SALT',"JnBnCs");
 ?>

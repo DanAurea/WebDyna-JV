@@ -1,11 +1,17 @@
 <?php
 	$pseudo=$_POST["pseudo"];
-	$password=$_POST["password"];
-	$log=array("table"=>"Utilisateur","conditions"=>array("Login="=>$pseudo,"MotDePasse="=>$password));
-	$user=findFirst($bdd,$log);
+	$password=md5(PRE_SALT.$_POST["password"].SUF_SALT); // Hash le mot de passe saisi
+
+	// Cherche les informations saisie dans la bdd
+	$user=array("table"=>"Utilisateur","conditions"=>array("Login="=>$pseudo,"MotDePasse="=>$password));
+	$user=findFirst($bdd,$user);
 	
-	if($user)
-		echo "Vous etes connecté";
-	else
-		echo " Vous pseudo ou votre mot de passe sont incorrect";
+	if($user){
+		echo "Vous etes connecté, redirection dans 5 secondes !"; // Utilisateur trouvé
+		refreshUrl("/",5);
+	}else{
+		echo "<p>Votre pseudo et votre mot de passe ne correspondent pas ! </p>";
+		echo "<p>Vous allez être redirigé dans 5 secondes !</p>";
+		refreshUrl("/",5);
+	}
 ?>
