@@ -1,4 +1,5 @@
 <?php 
+	// Définis les constantes pour le chemin absolu
 	if (basename($_SERVER['SCRIPT_NAME']) != "index.php"){	
 		define('BASE_URL',dirname(dirname($_SERVER['SCRIPT_NAME'])));
 		define('ROOT',dirname(dirname($_SERVER['SCRIPT_FILENAME'])));
@@ -10,6 +11,6 @@
 
 	$today = date('Y-m-d'); // Date actuelle au format aaaa-mm-jj
 
-	define('PRE_SALT',"MvDmBd");
-	define('SUF_SALT',"JnBnCs");
+	define('PRE_SALT',"MvDmBd"); // Sel préfixé pour le md5
+	define('SUF_SALT',"JnBnCs"); // Sel suffixé pour le md5
 ?>

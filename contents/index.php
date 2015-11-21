@@ -37,7 +37,8 @@
 	<h1 class="fred">Tests</h1>
 
 	<!-- //Récupération des informations sur tous les jeux -->
-	<?php 	$games = array("table"=>"VR_grp4_Jeux_Test", "order" => "id", "sortBy" => "DESC");
+	<?php 	$games = array("table"=>"VR_grp4_Jeux_Test", 
+							"order" => "id", "sortBy" => "DESC");
 			$games = find($bdd, $games);
 	?>
 	

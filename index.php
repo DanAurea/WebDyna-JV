@@ -6,6 +6,11 @@
 			require_once(ROOT."/core/datas.php"); 
 			require_once(ROOT."/core/url.php");
 			require_once(ROOT."/core/fonctions.php");
+			require_once(ROOT."/core/session.php");
+			
+			// Si l'utilisateur se déconnecte alors on supprime la session
+			if(isset($_GET['logout']) && $_GET['logout'] == 1)
+				unset($_SESSION['user']);
 	?>
 	<head>
 		<title>
@@ -25,7 +30,7 @@
 		<div id="container">
 			
 			<?php
-				/** Display page requested */
+				// Display page requested
 			 	$filename = basename($_SERVER["SCRIPT_NAME"]);
 
 				if(!file_exists($filename)){
