@@ -18,6 +18,7 @@
 			<!-- Création d'un item par nouveauté -->
 			<?php foreach($news as $new): ?>
 				<li>
+					<a class ="addBasket" href="<?php echo BASE_URL."/pages/basket.php?id=".$new->ID; ?>">+</a>
 					<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$new->ID ?>">
 						<img src="<?php echo BASE_URL."/img/".$new->ID.".png"; ?>" alt="<?php echo $new->Nom; ?>">
 						<span><?php echo $new->Nom; ?></span>
@@ -76,6 +77,7 @@
 			
 			<?php foreach ($nextReleases as $release): ?>
 				<li>
+					<a class ="addBasket" href="<?php echo BASE_URL."/pages/basket.php?id=".$release->ID; ?>">+</a>
 					<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$release->ID ?>">
 						<img src="<?php echo BASE_URL."/img/".$release->ID.".png" ?>" alt="<?php echo $release->Nom; ?>">
 						<span><?php echo $release->Nom; ?></span>

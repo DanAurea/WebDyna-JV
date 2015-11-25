@@ -1,4 +1,4 @@
-<?php require_once("../core/basket.php"); ?>
+<?php require_once(ROOT."/core/basket.php"); ?>
 <table id="basket-table">
 	<tr>
 		<th>

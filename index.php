@@ -3,9 +3,11 @@
 	<?php 	
 			require_once("core/includes.php");
 			
-			// Si l'utilisateur se déconnecte alors on supprime la session
-			if(isset($_GET['logout']) && $_GET['logout'] == 1)
+			// Si l'utilisateur se déconnecte alors on supprime la session et on rafraichît la page
+			if(isset($_GET['logout']) && $_GET['logout'] == 1){
 				session_destroy();
+				refreshUrl("/", 0);
+			}
 	?>
 	<head>
 		<title>
