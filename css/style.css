@@ -83,17 +83,46 @@ input:focus:not([type=submit]){
     transition: all .5s;
 }
 
-/* Dimensions */
+/* Dimensions Submit button */
 input[type=submit] {
 	height:30px;
 	margin-top:20px;
 }
 
+/* Color when clicked */
 input[type=submit]:active{background-color: #0f1e34;}
 
-/** Basic Style */
+/** Table style */
 
-.blue-text{color:#3db4f2;}
+/** Basket table styles */
+#basket-table{
+	width:100%;
+	border-collapse: collapse; /* Set each elements linked and not separated */
+}
+
+/** Cells styles */
+th, td{
+	border: 1px solid #818181;
+	background-color: #080c12;
+	text-align: center;
+}
+
+#img-td{
+	width:12%;
+}
+
+td img{
+	width: 100%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#trash{
+	background: url("../img/trash_bin.png");
+	width: 26px;
+	height: 29px;
+	display: inline-block;
+}
 
 /** Header Style */
 
@@ -370,6 +399,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	height:200px;
 }
 
+/* Set dimensions of img on reviews */
 .reviews img, .games-reviews img, .container-review img{
 	width: 22%;
 	float: left;
@@ -382,6 +412,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	height: 105px;
 }
 
+/* Set width and margin of each list item on the main page */
 .news .grid ul li,.next-releases .grid ul li{
 	width:34%;
 	margin: 0 8% 8% 8%;
@@ -406,8 +437,10 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	line-height: 16px;
 }
 
+/* Set a space between short informations from a review and its name*/
 .reviews .fyellow{top: 10%;}
 
+/** Position of brief from the article */
 .text-review{top: 30%;}
 
 /* Style to read more */
@@ -432,6 +465,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 .type{margin: 10px 0;}/** Game type list style */
 .type li{margin: 5px 0;}
 
+/* Brief style in game review page*/
 .container-review .text-review{
 	margin-top: 8%;
 	padding-bottom: 8%;
@@ -476,6 +510,7 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 	height: auto;
 }
 
+/* Credentials style for group project */
 footer p{text-align: center;}
 
 /** Error style */
@@ -514,16 +549,17 @@ footer p{text-align: center;}
 
 @media screen and (max-width: 1340px) {
 	
+	/** Return in cascade style for list item, no more float */
 	.grid ul li {float:none;}
-
+	
+	/** Resize news list items */
 	.news .grid ul li{
 		width: 50%;
 		margin-left: 25%;
 	}
-
-	.next-releases{
-		display: none;
-	}
+	
+	/** Hide next-release block when low res */
+	.next-releases{display: none;}
 
 	/** Resize center block */
     .container-reviews{
@@ -552,18 +588,20 @@ footer p{text-align: center;}
 		left: 0;
     }
 	
+	/** Set a space between login and register blocks */
     .register{margin-top:50px;}
 	
 }
 
 /* Mobile version */
 @media screen and (max-width: 800px) {
-		
+
 		/* Page displayed in fullscreen */
 		html,body,#container,.center, nav, ul{
 			width:100%;
 			max-width: 100%;
 			margin:0;
+			background-color: #080c12;
 		}
 		
 		/* Set border of container to none */
@@ -593,13 +631,14 @@ footer p{text-align: center;}
 			top: 0;
 			left: 0;
 		}
-
+		
+		/** Set display of button basket from navigation bar */
 		#basket-nav{display:inline-block;}
 
 		/* Commons rules for li*/
 		ul.level1>li{line-height: 55px;width:50%}
 		
-		/* Hide text */
+		/* Hide text of any list items in menu */
 		.level1>li>a{
 			text-indent: 100%;
     		white-space: nowrap;
@@ -665,11 +704,11 @@ footer p{text-align: center;}
 			margin:0;
 			height:50%;
 		}
+		
+		/** Set more space between top of screen and table of products */
+		#basket-table{margin: 100px 0; }
+		
+		/** Change color of error subtitle message */
+		p#error-subtitle{color: #3DB4F2;}
 
-		/* Set footer position on bottom of container content */
-		footer{
-			position: absolute;
-			bottom: 0;
-			width:100%;
-		}
 }

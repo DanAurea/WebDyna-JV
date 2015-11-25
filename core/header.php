@@ -9,7 +9,7 @@
 					</a>
 				</p>
 				<p id="header-totalBasket">0,00 €</p>
-				<p class="blue-text">Connecté en tant que :</p>
+				<p class="fblue">Connecté en tant que :</p>
 
 				<a href='<?php echo BASE_URL.'/pages/profil.php'?>'>
 					<?php 	
@@ -44,7 +44,7 @@
 				>
 					<?php
 						// Affiche le bouton correspondant à l'état de l'utilisateur (connecté/déconnecté) 
-						if(isLogged()) echo "Se déconnecter"; else echo "S'inscrire"; 
+						if(isLogged()) echo "Se déconnecter"; else echo "Se connecter"; 
 					?>
 				</a>
 			</li>

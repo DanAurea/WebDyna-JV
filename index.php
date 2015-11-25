@@ -1,16 +1,11 @@
 <!DOCTYPE html >
 <html>
-	<?php 	// Include of all is needed to manage site
-			require_once("const.php");
-			require_once(ROOT."/conf/conf.php"); 
-			require_once(ROOT."/core/datas.php"); 
-			require_once(ROOT."/core/url.php");
-			require_once(ROOT."/core/fonctions.php");
-			require_once(ROOT."/core/session.php");
+	<?php 	
+			require_once("core/includes.php");
 			
 			// Si l'utilisateur se déconnecte alors on supprime la session
 			if(isset($_GET['logout']) && $_GET['logout'] == 1)
-				unset($_SESSION['user']);
+				session_destroy();
 	?>
 	<head>
 		<title>
@@ -42,7 +37,7 @@
 		
 		<?php require_once(ROOT.'/core/footer.php');// Informations rapides sur le site ?>
 		</div>
+		
 	</body>
-
 </html>
 <?php $bdd = null; // Ferme la connexion à la bdd ?>
