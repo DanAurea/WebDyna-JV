@@ -1,4 +1,36 @@
+<!-- //Récupération des informations sur tous les jeux -->
+<?php 	
+		$games = array("table"=>"vr_grp4_jeux_test");
+		$games = find($bdd, $games);
+		$genres = array("distinct"=>"Genre", "fields"=>"Genre", "table"=>"vr_grp4_jeux_test");
+		$genres = find($bdd, $genres);
+		$supports = array("distinct"=>"Support", "fields"=>"Support", "table"=>"vr_grp4_jeux_test");
+		$supports = find($bdd, $supports);
+		
+		//var_dump($supports);
+?>
+
 <aside class="search left">
+	<form action="research.php" method="post">
+		Recherche :
+		Nom : <input name="search_name">
+		Genre : <select name="search_genre">
+				<?php foreach($genres as $genre): ?>
+					<option value="<?php echo $genre->Genre; ?>"><?php echo $genre->Genre; ?></option>
+				<?php endforeach; ?>
+			</select>
+		Age: <input name="search_age">
+		Support : <select name="search_support">
+				<?php foreach($supports as $support): ?>
+					<option value="<?php echo $support->Support; ?>"><?php echo $support->Support; ?></option>
+				<?php endforeach; ?>
+			</select>
+		Multijoueur : 	<select name="search_players">
+				<option value="players_solo" selected="selected">Jeu avec un seul joueur</option>
+				<option value="players_multi">Jeu en multijoueur</option>
+				</select>
+		<input type="submit" value="Rechercher" name="research_done">
+	</form>
 </aside>
 
 <section class="games-reviews center outred">
@@ -20,12 +52,6 @@
 	</div>
 
 	<h1 class="fred">Jeux</h1>
-	
-	<!-- //Récupération des informations sur tous les jeux -->
-	<?php 	
-			$games = array("table"=>"vr_grp4_jeux_test");
-			$games = find($bdd, $games);
-	?>
 
 	<?php if(!isset($details)): ?>
 		<div class="grid">
