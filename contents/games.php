@@ -23,7 +23,11 @@
 	
 	<!-- //Récupération des informations sur tous les jeux -->
 	<?php 	
+<<<<<<< HEAD
 			$games = array("table"=>"vr_grp4_jeux_test");
+=======
+			$games = array("table"=>"VR_grp4_Jeux_Test");
+>>>>>>> b7453e09ff8d8831f8bf979558a8e9231b60a8e8
 			$games = find($bdd, $games);
 	?>
 
@@ -51,7 +55,11 @@
 	<?php endif; ?>
 			
 			<!-- //Récupération des informations sur toutes les prochaines sorties -->
+<<<<<<< HEAD
 			<?php 	$nextReleases = array("table"=>"vr_grp4_jeux_test", "order" => "Sortie", 
+=======
+			<?php 	$nextReleases = array("table"=>"VR_grp4_Jeux_Test", "order" => "Sortie", 
+>>>>>>> b7453e09ff8d8831f8bf979558a8e9231b60a8e8
 					"sortBy" => "ASC", "limit" => "6", 
 					"conditions" => "Sortie>'".$today."'");
 					$nextReleases = find($bdd, $nextReleases);
