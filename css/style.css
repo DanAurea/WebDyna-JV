@@ -46,7 +46,7 @@
 	/* Set style to label of input */
 	form label{
 		font-weight: bold;
-		float: left;
+position: absolute;
 		width: 30%;
 		overflow: hidden;
 		word-wrap:normal;
@@ -54,13 +54,13 @@
 	}
 
 	/* Set default style to input */
-	input, #reservation{
+	input, #reservation, select{
 		background-color: #06090e;
 		border: 1px solid #253244;
 		border-radius: 5px;
 		color:white;
 		position: relative;
-		left: 5%;
+		left: 40%;
 		width: 35%;
 		height: 25px;
 		font-size: 14px;
@@ -91,9 +91,9 @@
 		left: 0;
 	}
 
-	.profil input[type=submit]{
-		margin-bottom: 5%;
-	}
+	.profil input[type=submit],.search input[type=submit]{margin-bottom: 20px;}
+
+	.search input,.search select{width:55%;}
 
 	/* Color when clicked */
 	input[type=submit]:active{background-color: #0f1e34;}
@@ -430,7 +430,11 @@
 
 	.games-reviews{
 		width:75%;
-		left: 25%;
+		left: 3%;
+	}
+
+	.search{
+		width:22%;
 	}
 
 	#view{float:right; margin-right:15px;}

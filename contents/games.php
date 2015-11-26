@@ -2,35 +2,67 @@
 <?php 	
 		$games = array("table"=>"vr_grp4_jeux_test");
 		$games = find($bdd, $games);
+		
 		$genres = array("distinct"=>"Genre", "fields"=>"Genre", "table"=>"vr_grp4_jeux_test");
 		$genres = find($bdd, $genres);
+		
 		$supports = array("distinct"=>"Support", "fields"=>"Support", "table"=>"vr_grp4_jeux_test");
 		$supports = find($bdd, $supports);
 		
-		//var_dump($supports);
+		$nbJoueurs = array("distinct"=>"NbJoueurs", "fields"=>"NbJoueurs", "table"=>"vr_grp4_jeux_test");
+		$nbJoueurs = find($bdd, $nbJoueurs);
 ?>
 
-<aside class="search left">
+<aside class="search left outorange">
+	<div class="border-top orange"></div>
+	<div class="border-bottom"></div>
+
 	<form action="research.php" method="post">
-		Recherche :
-		Nom : <input name="search_name">
-		Genre : <select name="search_genre">
-				<?php foreach($genres as $genre): ?>
-					<option value="<?php echo $genre->Genre; ?>"><?php echo $genre->Genre; ?></option>
-				<?php endforeach; ?>
-			</select>
-		Age: <input name="search_age">
-		Support : <select name="search_support">
-				<?php foreach($supports as $support): ?>
-					<option value="<?php echo $support->Support; ?>"><?php echo $support->Support; ?></option>
-				<?php endforeach; ?>
-			</select>
-		Multijoueur : 	<select name="search_players">
-				<option value="players_solo" selected="selected">Jeu avec un seul joueur</option>
-				<option value="players_multi">Jeu en multijoueur</option>
+		<h2 class="forange">Recherche :</h2>
+
+		<ol>
+			<li> 
+				<label for="Nom">Nom :</label> 
+				<input type="text" name="Nom"/>
+			</li>
+
+			<li>
+				<label for="Genre">Genre : </label>
+				<select name="Genre">
+					<?php foreach($genres as $genre): ?>
+						<option value="<?php echo $genre->Genre; ?>"><?php echo $genre->Genre; ?></option>
+					<?php endforeach; ?>
 				</select>
+			</li>
+
+			<li>
+				<label>Age:</label>
+				<input type="text" name="Age">
+			</li>
+
+			<li>
+				<label for="Support">Support : </label>
+				<select name="Support">
+					<?php foreach($supports as $support): ?>
+						<option value="<?php echo $support->Support; ?>"><?php echo $support->Support; ?></option>
+					<?php endforeach; ?>
+				</select>
+			</li>
+
+			<li>
+				<label for="NbJoueurs">Multijoueur :</label>
+				<select name="NbJoueurs">
+					<?php foreach($nbJoueurs as $nb): ?>
+						<option value="<?php echo $support->Support; ?>"><?php echo $nb->NbJoueurs; ?></option>
+					<?php endforeach; ?>
+				</select>
+			</li>
+
+		</ol>
+
 		<input type="submit" value="Rechercher" name="research_done">
 	</form>
+
 </aside>
 
 <section class="games-reviews center outred">
