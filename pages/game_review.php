@@ -7,7 +7,7 @@
 	// On vérifie bien que le paramètre est passé
 	if(isset($_GET['id'])){
 		// On cherche dans la BDD le premier résultat correspondant
-		$req = array("table"=>"VR_grp4_Jeux_Test", "conditions" => "ID_JEUX =".$_GET['id'], "fields" => "Nom");
+		$req = array("table"=>"vr_grp4_jeux_test", "conditions" => "ID_JEUX =".$_GET['id'], "fields" => "Nom");
 		$game = findFirst($bdd, $req);
 	}
 
