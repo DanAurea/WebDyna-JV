@@ -1,8 +1,7 @@
-
 <section class="login left outred">
 		<div class="border-top red"></div>
 		<h1 class="fred">Login </h1>
-		<form method="post" action="login.php">
+		<form method="Post" action="login.php">
 			<ol>
 				<li>
 					<label for="pseudo">Pseudo:</label>
@@ -21,7 +20,7 @@
 <section class="register right outgreen">
 		<div class="border-top green"></div>
 		<h1 class="fgreen"> S'inscrire </h1>
-		<form method="post" action="inscription.php">
+		<form method="Post" action="inscription.php">
 		
 		<ol>
 			<li>

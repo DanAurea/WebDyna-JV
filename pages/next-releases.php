@@ -4,5 +4,5 @@
 		$details = true;
 	}
 
-	$title="Jeux"; include('../index.php');
+	$title="Prochaines sorties"; include('../index.php');
 ?>

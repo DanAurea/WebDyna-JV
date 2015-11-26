@@ -1,1 +1,1 @@
-<?php  $title="Page 404 Introuvable"; include('../index.php');?>
+<?php  $title="Page 404 Introuvable"; require_once('../index.php');?>

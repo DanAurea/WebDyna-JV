@@ -5,7 +5,16 @@
 		*/
     	function redirect($url){
         	header("Location: ".BASE_URL.$url);
-      	}
+      }
+
+      /* 
+        Redirige une page vers la cible passé en paramètre
+        @url Url vers laquelle rediriger
+        @time Temps avant le rafraichissement de la page
+      */
+      function refreshUrl($url, $time){
+          header("refresh:".$time.";url= ".BASE_URL.$url);
+      }
 
       	/*
       		Redirige vers une page 404 en cas d'erreur

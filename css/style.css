@@ -1,485 +1,645 @@
 /** Main styles **/
 
-html{
-	width: 69%;
-	margin:0 12.5%;
-	overflow-y:scroll;
-}
+	html{
+		width: 69%;
+		margin:0 12.5%;
+		overflow-y:scroll;
+	}
 
-body,ul,textarea,figure,label, form, form ol, form ol li{
-	margin: 0;
-	padding: 0;
-}
+	body,ul,textarea,figure,label, form, form ol, form ol li{
+		margin: 0;
+		padding: 0;
+	}
 
-body{
-	font: 14px "Arial", sans-serif;
-	background: #121f32;
-	color: #dfdfdf;
-}
+	body{
+		font: 14px "Arial", sans-serif;
+		background: #121f32;
+		color: #dfdfdf;
+	}
 
-a{
-	text-decoration: none;
-	color: #dfdfdf;
-	font-weight: bold;
-	font-size: 16px;
-}
+	a{
+		text-decoration: none;
+		color: #dfdfdf;
+		font-weight: bold;
+		font-size: 16px;
+	}
 
-h1{
-	font-size: 20px;
-	margin-left: 8%;
-	margin-right: 8%;
-	word-wrap: break-word;
-}
+	h1{
+		font-size: 20px;
+		margin-left: 8%;
+		margin-right: 8%;
+		word-wrap: break-word;
+	}
 
 /** Form styles */
-form{margin: 0 8%;}
+	form{margin: 0 8%;}
 
-form ol{
-	list-style: none;
-}
+	form ol{
+		list-style: none;
+	}
 
-form ol li{
-  line-height: 40px;
-  list-style: none;
-}
+	form ol li{
+	  line-height: 40px;
+	  list-style: none;
+	}
 
-form label{
-	font-weight: bold;
-	float: left;
-	width: 30%;
-	overflow: hidden;
-	word-wrap:normal;
-	white-space: nowrap;
-}
+	/* Set style to label of input */
+	form label{
+		font-weight: bold;
+		float: left;
+		width: 30%;
+		overflow: hidden;
+		word-wrap:normal;
+		white-space: nowrap;
+	}
 
-input{
-	background-color: #06090e;
-	border: 1px solid #253244;
-	border-radius: 5px;
-	color:white;
-	width: 35%;
-	height: 25px;
-	font-size: 14px;
-	padding:0 10px;
-	box-sizing: padding-box;
-	-moz-box-sizing: padding-box;
-	-moz-transition: all .5s; 
-    -webkit-transition: all .5s; 
-    -o-transition: all .5s; 
-    transition: all .5s;
-}
+	/* Set default style to input */
+	input, #reservation{
+		background-color: #06090e;
+		border: 1px solid #253244;
+		border-radius: 5px;
+		color:white;
+		position: relative;
+		left: 5%;
+		width: 35%;
+		height: 25px;
+		font-size: 14px;
+		padding:0 10px;
+		box-sizing: padding-box; /* Take padding in width %*/
+		-moz-box-sizing: padding-box;
 
-input:focus:not([type=submit]){
-	background-color: #18212f;
-	-moz-transition: all .5s; 
-    -webkit-transition: all .5s; 
-    -o-transition: all .5s; 
-    transition: all .5s;
-}
+		-moz-transition: all .5s; /* Set animation start */
+	    -webkit-transition: all .5s; 
+	    -o-transition: all .5s; 
+	    transition: all .5s;
+	}
 
-input[type=submit] {
-	padding: 0 30px;
-	height:30px;
-	margin-top:20px;
-}
+	/* Set focus style on inputs*/
+	input:focus:not([type=submit]){
+		background-color: #18212f;
+		-moz-transition: all .5s; /* Get change state to animate input */
+	    -webkit-transition: all .5s; 
+	    -o-transition: all .5s; 
+	    transition: all .5s;
+	}
 
-input[type=submit]:active{background-color: #0f1e34;}
+	/* Dimensions Submit button */
+	input[type=submit], #reservation{
+		height:30px;
+		margin-top:20px;
+	}
 
-/** Basic Style */
+	/* Color when clicked */
+	input[type=submit]:active{background-color: #0f1e34;}
 
-.blue-text{color:#3db4f2;}
+/** Table style */
+
+	/** Basket table styles */
+	#basket-table{
+		width:100%;
+		border-collapse: collapse; /* Set each elements linked and not separated */
+	}
+
+	/** Cells styles */
+	th, td{
+		border: 1px solid #818181;
+		background-color: #080c12;
+		text-align: center;
+	}
+
+	#img-td{
+		width:12%;
+	}
+
+	td img{
+		width: 100%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	#trash{
+		background: url("../img/trash_bin.png");
+		width: 26px;
+		height: 29px;
+		display: inline-block;
+	}
 
 /** Header Style */
 
-#header-wrapper{height:185px;}
+	#header-wrapper{height:185px;}
 
-#header-logo{
-	background: url('../img/logo.png')no-repeat;
-	height:137px;
-	width:408px;
-	float: left;
-	margin-top: 25px;
-}
+	/* Display logo*/
+	#header-logo{
+		background: url('../img/logo.png')no-repeat;
+		height:137px;
+		width:408px;
+		float: left;
+		margin-top: 25px;
+	}
 
-#header-user-wrapper{
-	font-weight: bold;
-	text-align: center;
-	height:100%;
-	float:right;
-	margin-right: 5%;
-}
+	#header-user-wrapper{
+		font-weight: bold;
+		text-align: center;
+		height:100%;
+		float:right;
+		margin-right: 5%;
+	}
 
-#header-user{margin-top:25px;}
+	#header-user{margin-top:25px;}
 
 
 /** Navigation style */
 
-nav{
-	height: 60px;
-}
+	nav{height: 60px;}
 
-nav a{display: block;}
+	nav a{display: block;}
 
-nav ul{
-	list-style: none;
-	z-index: 50;
-	position: relative;
-}
+	nav ul{
+		list-style: none;
+		z-index: 50;
+		position: relative;
+	}
 
-/* Commons rules for li */
-nav li{
-	background-color: #080c12;
-	line-height: 60px;
-	text-align: center;
-	padding: 0;
-	margin: 0;
-}
+	/* Commons rules for li */
+	nav li{
+		background-color: #080c12;
+		line-height: 60px;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+	}
 
-/* Set properties for main buttons */
-ul.level1>li{
-	float: left;
-	width: 20%;
-	height: 55px;
-	border-bottom: 5px solid #3db4f2;
-	-moz-transition: all .5s; 
-    -webkit-transition: all .5s; 
-    -o-transition: all .5s; 
-    transition: all .5s;
-    position:relative;
-}
+	/* Set properties for main buttons */
+	ul.level1>li{
+		float: left;
+		width: 20%;
+		height: 55px;
+		border-bottom: 5px solid #3db4f2;
+		-moz-transition: all .5s; 
+	    -webkit-transition: all .5s; 
+	    -o-transition: all .5s; 
+	    transition: all .5s;
+	    position:relative;
+	}
 
-/* Add shadows to main buttons of navigation bar */
-ul.level1>li:not(:last-child):not(:first-child):after{
-	content: '';
-	position: absolute;
-	
-	z-index: -1; /* hide shadow behind list-items */
-	
-	/* The Shadow */
-	box-shadow: 0px 12px 8px rgba(0, 0, 0,1);
-	-webkit-box-shadow: 0px 12px 8px rgba(0, 0, 0,1);
-	-moz-box-shadow: 0px 12px 8px rgba(0, 0, 0,1);
-	-box-shadow: 0px 12px 8px rgba(0, 0, 0,1); 
-	
-	width: 100%;
-	left:0%;
-	height: 10px;
-	bottom:  0;
-}
+	/* Hide basket button when not in mobile version */
+	#basket-nav{display:none;}
 
-/* Transition for border of main buttons */
-ul.level1>li:hover{
-	border-bottom: 5px solid #e7743b;
-	-moz-transition: all .5s; 
-    -webkit-transition: all .5s; 
-    -o-transition: all .5s; 
-    transition: all .5s;
-}
+	/* Add shadows to main buttons of navigation bar */
+	ul.level1>li:not(:last-child):not(:first-child):after{
+		content: '';
+		position: absolute;
+		
+		z-index: -1; /* hide shadow behind list-items */
+		
+		/* The Shadow */
+		box-shadow: 0px 12px 8px rgba(0, 0, 0,1);
+		-webkit-box-shadow: 0px 12px 8px rgba(0, 0, 0,1);
+		-moz-box-shadow: 0px 12px 8px rgba(0, 0, 0,1);
+		-box-shadow: 0px 12px 8px rgba(0, 0, 0,1); 
+		
+		width: 100%;
+		left:0%;
+		height: 10px;
+		bottom:  0;
+	}
 
-/* Set properties for first and last child of navigation */
-ul.level1>li:first-child,ul.level1>li:last-child{
-	height: 0;
-	border: 60px solid;
-	padding: 0 5px;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-}
+	/* Transition for border of main buttons */
+	ul.level1>li:hover{
+		border-bottom: 5px solid #e7743b;
+		-moz-transition: all .5s; 
+	    -webkit-transition: all .5s; 
+	    -o-transition: all .5s; 
+	    transition: all .5s;
+	}
 
-/* Cut one part of start of navigation bar */
-ul.level1>li:first-child{
-	border-left-width: 20px;
-	border-bottom: none;
-	border-right: none;
-	border-color: #080c12 #121f32;
-}
+	/* Set properties for first and last child of navigation */
+	ul.level1>li:first-child,ul.level1>li:last-child{
+		height: 0;
+		border: 60px solid;
+		padding: 0 5px;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+	}
 
-/* Cut one part of end of navigation bar */
-ul.level1>li:last-child{
-	border-right-width: 20px;
-	border-bottom: none;
-	border-left: none;
-	border-color: #080c12 #121f32;
-}
+	/* Cut one part of start of navigation bar */
+	ul.level1>li:first-child{
+		border-left-width: 20px;
+		border-bottom: none;
+		border-right: none;
+		border-color: #080c12 #121f32;
+	}
 
-/* Hide sliding menu */
-ul.level1 ul{
-	width: 100%;
-	height: 60px;
-	visibility: hidden;
-	opacity:0;
-	-moz-transition: all .5s; 
-    -webkit-transition: all .5s; 
-    -o-transition: all .5s; 
-    transition: all .5s;
-}
+	/* Cut one part of end of navigation bar */
+	ul.level1>li:last-child{
+		border-right-width: 20px;
+		border-bottom: none;
+		border-left: none;
+		border-color: #080c12 #121f32;
+	}
 
-/* Show sliding menu */
-.level1 li:hover ul.level2{
-	opacity:1;
-	visibility:visible;
-	-moz-transition: all .5s; 
-    -webkit-transition: all .5s; 
-    -o-transition: all .5s; 
-    transition: all .5s;
-}
+	/* Hide sliding menu */
+	ul.level1 ul{
+		width: 100%;
+		height: 60px;
+		visibility: hidden;
+		opacity:0;
+		-moz-transition: all .5s; 
+	    -webkit-transition: all .5s; 
+	    -o-transition: all .5s; 
+	    transition: all .5s;
+	}
 
-/* Smooth animation for background-color change */
-ul.level2>li:hover{
-	background-color: #1d314e;
-	opacity:1;
-	-moz-transition: all .5s; 
-    -webkit-transition: all .5s; 
-    -o-transition: all .5s; 
-    transition: all .5s;
-}
+	/* Show sliding menu */
+	.level1 li:hover ul.level2{
+		opacity:1;
+		visibility:visible;
+		-moz-transition: all .5s; 
+	    -webkit-transition: all .5s; 
+	    -o-transition: all .5s; 
+	    transition: all .5s;
+	}
+
+	/* Smooth animation for background-color change */
+	ul.level2>li:hover{
+		background-color: #1d314e;
+		opacity:1;
+		-moz-transition: all .5s; 
+	    -webkit-transition: all .5s; 
+	    -o-transition: all .5s; 
+	    transition: all .5s;
+	}
 
 /* Set a border for the last element of sliding menu */
-ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
+	ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 
 
 /** Background Colors */
 
-.blue{background-color: #3db4f2;}
+	.blue{background-color: #3db4f2;}
 
-.red{background-color: #e73b3b;}
+	.red{background-color: #e73b3b;}
 
-.orange{background-color: #e7743b;}
+	.orange{background-color: #e7743b;}
 
-.green{background-color: #96f23d;}
+	.green{background-color: #96f23d;}
 
-.pink{background-color: #c7346b;}
+	.pink{background-color: #c7346b;}
 
-.yellow{background-color: #f2ca3d;}
+	.yellow{background-color: #f2ca3d;}
 
-.purple{background-color: #7d3df2;}
+	.purple{background-color: #7d3df2;}
 
 /** Font Colors */
 
-.fblue{color: #3db4f2;}
+	.fblue{color: #3db4f2;}
 
-.fred{color: #e73b3b;}
+	.fred{color: #e73b3b;}
 
-.forange{color: #e7743b;}
+	.forange{color: #e7743b;}
 
-.fgreen{color: #96f23d;}
+	.fgreen{color: #96f23d;}
 
-.fpink{color: #c7346b;}
+	.fpink{color: #c7346b;}
 
-.fyellow{color: #f2ca3d;}
+	.fyellow{color: #f2ca3d;}
 
-.fpurple{color: #7d3df2;}
+	.fpurple{color: #7d3df2;}
 
 /** Outline Colors */
 
-.outblue{outline: 1px solid #3db4f2;}
+	.outblue{outline: 1px solid #3db4f2;}
 
-.outred{outline: 1px solid #e73b3b;}
+	.outred{outline: 1px solid #e73b3b;}
 
-.outorange{outline: 1px solid #e7743b;}
+	.outorange{outline: 1px solid #e7743b;}
 
-.outgreen{outline: 1px solid #96f23d;}
+	.outgreen{outline: 1px solid #96f23d;}
 
-.outpink{outline: 1px solid #c7346b;}
+	.outpink{outline: 1px solid #c7346b;}
 
-.outyellow{outline: 1px solid #f2ca3d;}
+	.outyellow{outline: 1px solid #f2ca3d;}
 
-.outpurple{outline: 1px solid #7d3df2;}
+	.outpurple{outline: 1px solid #7d3df2;}
 
 /** Position */
 
-.right{ right:0%;}
+	.right{ left:3%;}
 
-.left{ left:0%;}
+	.left{ left:0%;}
 
-.left,.center,.right{
-	background-color: #080c12;
-	position:absolute;
-}
+/* Position of each block */
+	.left,.center,.right{
+		background-color: #080c12;
+		display: inline-block;
+		vertical-align: top;
+		position: relative;
+	}
 
-.left:after,.center:after:not(.error),.right:after{
-	content: '';
-	position: absolute;
-	
-	z-index: -1; /* hide shadow behind blocks */
-	
-	/* The Shadow */
-	box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
-	-webkit-box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
-	-moz-box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
-	-box-shadow: 10px 10px 8px rgba(0, 0, 0,1); 
-	
-	width: 100%;
-	left:0%;
-	height: 100%;
-	bottom:  0;
-}
+	/* Display projected shadow behind selected blocks */
+	.left:after,.center:not(.error):after,.right:after{
+		content: '';
+		position: absolute;
+		
+		z-index: -1; /* hide shadow behind blocks */
+		
+		/* The Shadow */
+		box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
+		-webkit-box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
+		-moz-box-shadow: 10px 10px 8px rgba(0, 0, 0,1);
+		-box-shadow: 10px 10px 8px rgba(0, 0, 0,1); 
+		
+		width: 100%;
+		left: 0%;
+		height: 100%;
+		bottom:  0;
+	}
 
 /** Blocks */
 
-#container{
-	margin:65px 0;
-	position: relative;
-}
+	#container{
+		margin:65px 0;
+		position: relative;
+	}
 
-.border-top{height: 10px;}
+	.border-top{height: 10px;}
 
-.border-bottom{
-	background-color: #000000;
-	height: 6px;
-}
+	/* Little sharp shadow made to be pasted to border-top */
+	.border-bottom{
+		background-color: #000000;
+		height: 6px;
+	}
 
 /** Home page*/
-.news{
-	background-color: #080c12;
-	width: 23.2%;
-}
 
-.container-reviews{
-	width: 50%;
-	left: 25%;
-}
+	.news{
+		background-color: #080c12;
+		width: 23.2%;
+	}
 
-.title-review{margin:0;}
+	/* Set dimensions of container reviews*/
+	.container-reviews{
+		width: 50%;
+		left: 1.8%;
+	}
 
-.title-review, .type{
-	white-space: nowrap;
-	overflow: hidden;
-  	-o-text-overflow: ellipsis; /* pour Opera 9 */
-  	text-overflow: ellipsis; /* pour le reste du monde */
-}
+	.title-review{margin:0;}
 
-.reviews{
-	margin: 0 8% 30px 8%;
-	position: relative;
-	height:200px;
-}
+	/* Manage overflow of title and type from review */
+	.title-review, .type{
+		white-space: nowrap;
+		overflow: hidden;
+	  	-o-text-overflow: ellipsis; /* Opera 9 */
+	  	text-overflow: ellipsis; /* all others */
+	}
 
-.reviews img{
-	width: 22%;
-	float: left;
-}
+	/* Style for article review*/
+	.reviews{
+		margin: 0 8% 30px 8%;
+		position: relative;
+		height:200px;
+	}
 
-.text-review{
-	margin: 0;
-	overflow: hidden;
-	height: 105px;
-}
+	/* Set dimensions of img on reviews */
+	.reviews img, .games-reviews img, .container-review img{
+		width: 22%;
+		float: left;
+	}
 
-.news .grid ul li,.next-releases .grid ul li{
-	width:34%;
-	margin: 0 8% 8% 8%;
-}
+	/* Brief review style */
+	.text-review{
+		margin: 0;
+		overflow: hidden;
+		height: 105px;
+	}
 
-.next-releases{width: 23.2%;}
+	.next-releases{width: 23.2%;}
+
 
 /** Home page & Game page */
 
-.reviews p, .reviews h2{
-	box-sizing:padding-box;
-	-moz-box-sizing:padding-box;
-	width: 75%;
-	position: absolute;
-	right: 0;
-}
+	.games-reviews{
+		width:75%;
+		left: 25%;
+	}
 
-.reviews .fyellow{top: 10%;}
+	#view{float:right; margin-right:15px;}
 
-.text-review{top: 30%;}
+	#change-view{font-size: 14px;}
 
-.more{
-	position: absolute;
-	right: 0;
-	bottom: 0px;
-}
+	/* Style of reviews on home page principally*/
+	.reviews p, .reviews h2{
+		box-sizing:padding-box;
+		-moz-box-sizing:padding-box;
+		width: 75%;
+		position: absolute;
+		right: 0;
+		line-height: 16px;
+	}
 
-/** Games page */
+	/* Set a space between short informations from a review and its name*/
+	.reviews .fyellow{top: 10%;}
 
-.games-reviews{
-	width: 75%;
-	left: 25%;
-}
+	/** Position of brief from the article */
+	.text-review{top: 30%;}
 
+	/* Style to read more */
+	.more{
+		position: absolute;
+		right: 0;
+		bottom: 5px;
+	}
+
+/* News page*/
+	
+	.news-page, .next-page{
+		width:90%;
+		left:5%;
+	}
+	
+	.news-page img, .next-page img{width:18%; }
+
+/** Game review page */
+
+/** Style of a game review */
+
+	.container-review{
+		width: 75%;
+		left: 12.5%;
+		position:relative;
+	}
+
+	.type{margin: 10px 0;}/** Game type list style */
+	.type li{margin: 5px 0;}
+
+	/* Brief style in game review page*/
+	.container-review .text-review{
+		margin-top: 8%;
+		padding-bottom: 8%;
+		height:auto;
+	}
+
+
+	/** Brief style for text of a game review */
+	.brief{
+		position:relative;
+		left: 4%;
+	}
+	
+	/** Set side by side */
+	#short-infos, #reservation{display:inline-block;}
+
+	/* Color when hover */
+	#reservation:hover{background-color: #0f1e34;}
+	
+	#reservation{
+		text-align: center;
+		line-height: 30px;
+	}
+	
 /** Register and login */
-.login, .register{
-	background-color: #080c12;
-	width: 48%;
-	height: 250px;
-}
+	.login, .register{
+		background-color: #080c12;
+		width: 48%;
+		height: 300px;
+	}
 
-#login{margin-top: 60px;}
+	#login{margin-top: 60px;}
 
 /** Grid style */
 
-.grid ul{list-style: none;}
+	.grid ul{list-style: none;}
 
-.grid ul a{
-	text-align: center;
-	display:block;
-	word-wrap: break-word;
-}
+	.grid ul a{
+		text-align: center;
+		display:block;
+	}
 
-.grid ul li{
-	float: left;
-	display: block;
-}
+	/* Put list item side by side */
+	.grid ul li{
+		display: inline-block;
+		position: relative;
+	}
+	.grid ul li a{float: left;width:100%;}
 
-.grid ul li img{
-	max-width: 100%;
-	height: auto;
-}
+
+	/* Responsive img for grid img */
+	.grid ul li img{
+		max-width: 100%;
+		height: auto;
+	}
+
+
+	/* Change size of grid list item in game page */
+	.games-reviews .grid ul{margin: 0 8%;}
+
+	/* Change size of grid list item in game page */
+	.games-reviews .grid ul li{
+		width:32.33333%;
+		margin-bottom: 50px;
+	}
+
+	/* Set an ellipsis if name of game is too long */
+	.games-reviews .grid ul li p{
+		white-space: nowrap;
+		overflow: hidden;
+	  	-o-text-overflow: ellipsis; /* Opera 9 */
+	  	text-overflow: ellipsis; /* all others */
+	}
+
+	/* Change style of grid img in game page */
+	.games-reviews .grid ul li img{
+		float:none;
+		width:50%;
+	}
+
+	/* Set width and margin of each list item on the main page */
+	.news .grid ul li,.next-releases .grid ul li{
+		width:33%;
+		margin: 0 8% 8% 8%;
+	}
+	
+	
+	/* Set size for addButton on grid list item */
+	.grid ul li a.addBasket{
+		width:25%;
+		height:25%;
+	}
+	
+	/* Set position for addButon on grid list item*/
+	.addBasket {
+		    font-size: 35px;
+		    position: absolute;
+		    right: -15%;
+		    z-index: 5; /* Set addButon on foreground*/
+		    top: -22px;
+		    width:30px;
+		}
+
+	.addBasket.large{
+		right: 12%;
+	}
+
+/* Credentials style for group project */
+	footer p{text-align: center;}
 
 /** Error style */
 
-.error{ 
-	width:80%;
-	left:10%;
-	text-align: center;
-	font-size: 40px;
-	font-weight: bold;
-	background: none;
-	margin:0;
-}
+/* Container of error content*/
+	.error{ 
+		width:80%;
+		left:10%;
+		text-align: center;
+		font-size: 40px;
+		font-weight: bold;
+		background: none;
+		margin:0;
+	}
 
-.error p{margin:0;}
+	.error p{margin:0;}
 
-#error-message{margin:65px 0 30px 0;}
+	#error-message{margin:65px 0 30px 0;}
 
-#error-subtitle{
-	line-height: 32px;
-	color: #050b15;
-	font-size: 32px;
-}
+	/* Style for personalized message */
+	#error-subtitle{
+		line-height: 32px;
+		color: #050b15;
+		font-size: 32px;
+	}
 
-.error img{
-	width: 33%;
-	height: auto;
-	margin: 50px 0;
-}
+	/* Style for responsive error img */
+	.error img{
+		width: 33%;
+		height: auto;
+		margin: 50px 0;
+	}
 
 
 /** Media queries */
 
 @media screen and (max-width: 1340px) {
 	
+	/** Return in cascade style for list item, no more float */
 	.grid ul li {float:none;}
 
+	
+	/** Resize news list items */
 	.news .grid ul li{
 		width: 50%;
 		margin-left: 25%;
 	}
-
-	.next-releases{
-		display: none;
-	}
+	
+	/** Hide next-release block when low res */
+	.next-releases{display: none;}
 
 	/** Resize center block */
-    .center{
+    .container-reviews{
     	width:68.2%;
-    	left:31.8%;
+    	left:1.4%;
     }
 
     /** Resize left block */
-    .left{width:30%;}
+    .news{width:30%;}
 
 }
 
@@ -492,51 +652,61 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 		width:136px;
     }
 	
+	/* Stack login and register blocks to be responsive*/
+    .login,.register{
+    	width:100%;
+    	position: relative;
+		left: 0;
+    }
+	
+	/** Set a space between login and register blocks */
+    .register{margin-top:50px;}
+	
 }
 
-/**
-@media screen and (max-width: 960px) {
-	
-	
-    .left{display: none;}
-	
-    .center{
-    	width:100%;
-    	left:0%;
-    }
-
-}*/
-
+/* Mobile version */
 @media screen and (max-width: 960px) {
 
-		html{
-			width: 100%;
+		/* Page displayed in fullscreen */
+		html,body,#container,.center, nav, ul{
+			width:100%;
+			max-width: 100%;
 			margin:0;
+			background-color: #080c12;
 		}
 		
-		#header-wrapper, .left, .right{display: none;}
-
-		#container{margin: 45px 0;}
+		/* Hide not mandatory blocks */
+		#header-wrapper, .left, .right, .border-top, .border-bottom, #view{display: none;}
+		
+		/* Initialize margin then set margin top to main container*/
+		#container{
+			margin:0;
+			margin-top: 100px;
+			overflow: hidden;
+		}
 		
 		/* Set center as the main content */
 		.center{
 			left:0%;
 			width:100%;
+			padding-bottom: 60px; 
 		}
 		
 		/** Navigation style */
 		
 		nav{
-			width: 100%;
 			position: fixed;
 			top: 0;
 			left: 0;
 		}
 		
+		/** Set display of button basket from navigation bar */
+		#basket-nav{display:inline-block;}
+
 		/* Commons rules for li*/
-		ul.level1>li{line-height: 55px;}
+		ul.level1>li{line-height: 55px;width:50%}
 		
-		/* Hide text */
+		/* Hide text of any list items in menu */
 		.level1>li>a{
 			text-indent: 100%;
     		white-space: nowrap;
@@ -553,18 +723,58 @@ ul.level2>li:last-child{border-bottom: 5px solid #3db4f2;}
 			width:37px;
 			height:55px;
 		}
-
-		.level1>li:nth-child(4) a {background-position: -87px 0;}
 		
+		/* Change position of sprites mobile for the second displayed button */
 		.level1>li:nth-child(3)>a{background-position: -42px 0;}
 
+		/* Change position of sprites mobile for the third displayed button */
+		.level1>li:nth-child(4) a {background-position: -87px 0;}
+		
+		/* Set size of each navigation button*/
 		ul.level1>li{
-			width: 33.3333333%;
+			width:33.333333%;
+			max-width: 33.3333333%;
 			height: 50px;
 		}
 
 		/* Hide first and last children of navigation bar */
-		ul.level1>li:first-child,ul.level1>li:last-child{display: none;}
-
+		ul.level1>li:first-child,ul.level1>li:last-child,.level1>li:nth-child(5){display: none;}
+		
+		/* Hide outline of any blocks*/
 		.outblue, .outred, .outorange, .outgreen, .outpink, .outyellow, .outpurple{outline: 0;}
+		
+		/* Set size of brief on home page*/
+		.reviews p.text-review{
+			width:75%;
+			max-width: 75%;
+		}
+		
+		/* Set size of article for one review */
+		article.container-review{
+			width:100%;
+			max-width: 90%;
+			left:0%;
+		}
+
+		/* Set off margin on brief in a review*/
+		.container-review .text-review{margin:0;}
+		
+		/* Change position of img in a review */
+		.container-review img{
+			position: absolute;
+			left:230px;
+			float:initial;
+			z-index: 2; /* Passe l'image au premier plan */
+		}
+		
+		/* Change display of login and register blocks form*/
+		.login, .register{
+			display:block;
+			margin:0;
+			height:50%;
+		}
+		
+		/** Change color of error subtitle message */
+		p#error-subtitle{color: #3DB4F2;}
+
 }
