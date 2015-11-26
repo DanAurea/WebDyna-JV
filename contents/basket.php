@@ -50,7 +50,13 @@
 	   		</td>
 	   		<td>
 	   			<p>
-	   				<?php echo $product->NbJeuxDispos;  ?>
+	   				<?php 
+	   					if($product->NbJeuxDispos == 0){ 
+	   						echo "Dernier jeu";
+	   					}else{
+	   						echo $product->NbJeuxDispos;
+	   					}  
+	   				?>
 	   			</p>
 	   		</td>
 	   		<td>

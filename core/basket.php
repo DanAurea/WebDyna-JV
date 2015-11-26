@@ -20,12 +20,11 @@
 				$product = array("join" => array("left" => "vr_grp4_jeux_test", "joinType" => "NATURAL JOIN", "right" => "vr_grp4_jeuxludotheque"), "conditions" => "ID_JEUX=".$_GET['id']); // Cherche les informations dans la bdd
 				$product = findFirst($bdd, $product);
 
-				if($product->NbJeuxDispos != 0){
+				if($product && $product->NbJeuxDispos != 0){ // Vérifie que le produit est dans la bdd et disponible
 					$inBasket = array("table" => "vr_grp4_paniers", "conditions" => array("ID_JEUX=" => $_GET['id'],"Client=" => $client));
 					$inBasket = find($bdd, $inBasket);
 					
 					if(!$inBasket){ // Ajoute le produit au panier si pas déjà présent
-						if($product){ // Vérifie que le produit est bien dans la bdd
 						
 							$saveProduct = array("table" => "vr_grp4_paniers", "ID_JEUX" => $_GET['id'], "Client" => $client);
 							save($bdd, $saveProduct); // Enregistre en bdd le produit avec le numéro de client
@@ -34,12 +33,9 @@
 							save($bdd, $updateProduct, "ID_JEUX"); // Met à jour les informations du produit
 							
 							refreshUrl("/pages/basket.php", 0);
-						}else{
-							$find = false; // Produit non trouvé;
-						}
 					}
 				}else{
-					echo "<p> Produit non disponible !</p>";
+					echo "<p> Produit non disponible ou introuvable !</p>";
 				}
 
 			}else{
