@@ -29,7 +29,7 @@
 			</li>
 			<li>
 				<label for="email">Adresse email:</label>
-				<input type="text" name="email" placeholder="John.Doe@gmail.com"/>
+				<input type="email" name="email" placeholder="John.Doe@gmail.com"/>
 			</li>
 			<li>
 				<label for="password">Mot de passe:</label>

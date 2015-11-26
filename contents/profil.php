@@ -26,7 +26,7 @@
 		</li>
 		<li>
 			<label for"Email">Adresse mail : </label>
-			<input type="text" name="Email" placeholder="<?php echo $_SESSION['user']->Email; ?>"/>
+			<input type="email" name="Email" placeholder="<?php echo $_SESSION['user']->Email; ?>"/>
 		</li>
 	</ol>
 	<input type="submit" value="Modifier"/>

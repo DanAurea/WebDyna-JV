@@ -1,23 +1,9 @@
-<!-- //Récupération des informations sur tous les jeux -->
-<?php 	
-		$games = array("table"=>"vr_grp4_jeux_test");
-		$games = find($bdd, $games);
-		
-		$genres = array("distinct"=>"Genre", "fields"=>"Genre", "table"=>"vr_grp4_jeux_test");
-		$genres = find($bdd, $genres);
-		
-		$supports = array("distinct"=>"Support", "fields"=>"Support", "table"=>"vr_grp4_jeux_test");
-		$supports = find($bdd, $supports);
-		
-		$nbJoueurs = array("distinct"=>"NbJoueurs", "fields"=>"NbJoueurs", "table"=>"vr_grp4_jeux_test");
-		$nbJoueurs = find($bdd, $nbJoueurs);
-?>
-
+<?php include(ROOT."/core/games.php"); ?>
 <aside class="search left outorange">
 	<div class="border-top orange"></div>
 	<div class="border-bottom"></div>
 
-	<form action="research.php" method="post">
+	<form action="<?php echo BASE_URL."/pages/games.php"; ?>" method="post">
 		<h2 class="forange">Recherche :</h2>
 
 		<ol>
@@ -53,7 +39,7 @@
 				<label for="NbJoueurs">Multijoueur :</label>
 				<select name="NbJoueurs">
 					<?php foreach($nbJoueurs as $nb): ?>
-						<option value="<?php echo $support->Support; ?>"><?php echo $nb->NbJoueurs; ?></option>
+						<option value="<?php echo $nb->NbJoueurs; ?>"><?php echo $nb->NbJoueurs; ?></option>
 					<?php endforeach; ?>
 				</select>
 			</li>
