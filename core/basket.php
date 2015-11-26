@@ -3,7 +3,8 @@
 		if(!isLogged()){
 			if(isset($_GET['id'])){
 				echo "<p>Vous ne pouvez réaliser cette action sans être connecté !</p>";
-			}	
+			}
+			$products = array();
 		}else{
 
 			$client = $_SESSION['user']->Client;
