@@ -38,7 +38,7 @@
 	
 	<?php if(isset($details)): ?>
 		<article class="reviews">
-			<img src="<?php echo BASE_URL."/img/".$game->ID.".png"; ?>" alt="<?php echo $game->Nom; ?>" />
+			<img src="<?php echo BASE_URL."/img/".$game->ID_JEUX.".png"; ?>" alt="<?php echo $game->Nom; ?>" />
 			<h2 class="fred title-review">
 				<?php echo $game->Nom; ?> :
 			</h2>
@@ -46,7 +46,7 @@
 			<p class="text-review">
 				<?php echo troncate($game->Desc, 300); ?> 
 			</p>
-			<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$game->ID; ?>"class="more">Lire la suite</a>
+			<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$game->ID_JEUX; ?>"class="more">Lire la suite</a>
 		</article>
 	<?php endif; ?>
 			
@@ -59,9 +59,9 @@
 			
 			<?php if(!isset($details)): ?>
 				<li>
-					<a class ="addBasket large" href="<?php echo BASE_URL."/pages/basket.php?id=".$game->ID; ?>">+</a>
-					<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$game->ID ?>">
-						<img src="<?php echo BASE_URL."/img/".$game->ID.".png" ?>" alt="<?php echo $game->Nom; ?>">
+					<a class ="addBasket large" href="<?php echo BASE_URL."/pages/basket.php?id=".$game->ID_JEUX; ?>">+</a>
+					<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$game->ID_JEUX ?>">
+						<img src="<?php echo BASE_URL."/img/".$game->ID_JEUX.".png" ?>" alt="<?php echo $game->Nom; ?>">
 						<p><?php echo $game->Nom; ?></p>
 					</a>
 				</li>

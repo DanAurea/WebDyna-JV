@@ -108,7 +108,7 @@
                      
                // Distingue les doublons
                if(isset($req['distinct'])){
-                  $sql .= 'DISTINCT '.cleanFields($req['distinct']).' ';
+                  $sql .= ' DISTINCT '.cleanFields($req['distinct']).' ';
                }else{
                  // Sélectionne les attributs à récupérer
                  if (isset($req['fields'])) {
@@ -124,45 +124,44 @@
                }else{
                   $sql .= selectTable($req);
                }
-                     
+     
                // Construction des conditions
                if(isset($req['conditions'])){
-                  $sql .= 'WHERE ';
+                  $sql .= ' WHERE ';
                
-                 if(!is_array($req['conditions'])){
+                  if(!is_array($req['conditions'])){
                     $sql .= $req['conditions'];
-                 }else{
+                  }else{
                    $cond = array();
                    
-                   // Traitement des conditions
-                   foreach($req['conditions'] as $k=>$v){
+                  // Traitement des conditions
+                  foreach($req['conditions'] as $k=>$v){
                    // Protection injection SQL
-                   if(!is_numeric($v)){
-                   $v = $bdd->quote($v);
-                   }
+                  if(!is_numeric($v)){
+                    $v = $bdd->quote($v);
+                  }
                    
-                   /* 
-                     Lie le champ + l'opérateur avec la valeur
-                     Par exemple "nom=" => "Marvin" : "nom= Marvin"
-                     Ne pas oublier d'inclure l'opérateur dans l'indice
-                   */
-                   $cond[] = "$k $v";
-                   }
+                     /* 
+                       Lie le champ + l'opérateur avec la valeur
+                       Par exemple "nom=" => "Marvin" : "nom= Marvin"
+                       Ne pas oublier d'inclure l'opérateur dans l'indice
+                     */
+                    $cond[] = "$k $v";
+                  }
                    
                    // Inclus toutes les conditions dans la requête
                    $sql .= implode(' AND ',$cond);
                  }
                
                }
-               
-               
+
                // Groupe les champs si précisé
                if(isset($req['group'])){
                  $sql .= ' GROUP BY '.cleanFields($req['group']).' ';
                  
                  // Condition sur le groupe
                  if(isset($req['having'])){
-                    $sql .= 'HAVING '.$req['having'];
+                    $sql .= ' HAVING '.$req['having'];
                  }
                }
                
@@ -176,17 +175,17 @@
                
                // Limite le nombre de résultat
                if(isset($req['limit'])){
-                  $sql .= 'LIMIT '.cleanFields($req['limit']).' ';
+                  $sql .= ' LIMIT '.cleanFields($req['limit']).' ';
                }
                
                // Décale le début des résultats
                if(isset($req['offset'])){
-                  $sql .= 'OFFSET '.$req['offset'];
+                  $sql .= ' OFFSET '.$req['offset'];
                }
                
                $pre = $bdd->prepare($sql);
                $pre->execute();
-               
+          
                //return $sql; //Débug de la requête SQL
                
                return $pre->fetchAll(PDO::FETCH_OBJ);
@@ -238,6 +237,53 @@
           $pre = $bdd->prepare($sql);
           $pre->execute($d); // Exécute la requête préparée en y intégrant les données formatées
 
-          return true;
+          return $sql;
         }
+
+     /**
+      * Permet de supprimer un tuple dans la BDD
+      * @param  boolean $id  [description]
+      * @param  array   $req [description]
+      * @return [type]       [description]
+      */
+      function delete($bdd, $req = array()){
+        $sql = "DELETE FROM ";
+        
+        if(!empty($req)){ // Vérifie que la requête n'est pas vide
+
+          if(isset($req['table'])){ // Vérifie que la table a été définie
+            $sql .= $req['table'];
+          }else{
+            return false;
+          }
+
+          $sql .= " WHERE ";
+
+            if(isset($req['conditions'])){ // Vérifie que les condtions ont été définies
+            
+                if(!is_array($req['conditions'])){ // Traitement des données
+                    $sql .= $req['conditions'];
+                }else{
+
+                    $cond = array();
+                   
+                    foreach($req['conditions'] as $k=>$v){
+                        if(!is_numeric($v) && !is_array($v)){
+                            $v = $bdd->quote($v);
+                        }
+                       
+                        $cond[] = "$k=$v";
+                    }
+                    $sql .= implode(' AND ',$cond);
+                }
+
+            }else{
+                return false;
+            }
+
+        }
+
+        $bdd->query($sql);
+        return $sql;
+     }
 ?>

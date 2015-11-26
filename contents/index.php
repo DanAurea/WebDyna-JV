@@ -10,7 +10,7 @@
 			
 			<!-- //Récupération des informations sur toutes les nouveautés -->
 			<?php 	$news = array("table"=>"VR_grp4_Jeux_Test", 
-					"order" => "id", "sortBy" => "DESC", "limit" => "6", 
+					"order" => "ID_JEUX", "sortBy" => "DESC", "limit" => "6", 
 					"conditions" => "Sortie<"."'".$today."'");
 					$news = find($bdd, $news);
 			?>
@@ -18,9 +18,9 @@
 			<!-- Création d'un item par nouveauté -->
 			<?php foreach($news as $new): ?>
 				<li>
-					<a class ="addBasket" href="<?php echo BASE_URL."/pages/basket.php?id=".$new->ID; ?>">+</a>
-					<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$new->ID ?>">
-						<img src="<?php echo BASE_URL."/img/".$new->ID.".png"; ?>" alt="<?php echo $new->Nom; ?>">
+					<a class ="addBasket" href="<?php echo BASE_URL."/pages/basket.php?id=".$new->ID_JEUX; ?>">+</a>
+					<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$new->ID_JEUX ?>">
+						<img src="<?php echo BASE_URL."/img/".$new->ID_JEUX.".png"; ?>" alt="<?php echo $new->Nom; ?>">
 						<span><?php echo $new->Nom; ?></span>
 					</a>
 				</li>
@@ -39,7 +39,7 @@
 
 	<!-- //Récupération des informations sur tous les jeux -->
 	<?php 	$games = array("table"=>"VR_grp4_Jeux_Test", 
-							"order" => "id", "sortBy" => "DESC");
+							"order" => "ID_JEUX", "sortBy" => "DESC");
 			$games = find($bdd, $games);
 	?>
 	
@@ -47,11 +47,11 @@
 	<?php foreach($games as $game): ?>
 		<article class="reviews">
 			
-			<img src="<?php echo BASE_URL."/img/".$game->ID.".png";?>" alt="<?php echo $game->Nom; ?>" /> <!-- Affiche l'image correspondante -->
+			<img src="<?php echo BASE_URL."/img/".$game->ID_JEUX.".png";?>" alt="<?php echo $game->Nom; ?>" /> <!-- Affiche l'image correspondante -->
 			<h2 class="fred title-review"> <?php echo $game->Nom; ?> :</h2> <!-- Affiche le nom correspondant -->
 			<p class="type fyellow">Genre du jeu : <?php echo $game->Genre; ?></p> <!-- Affiche le genre correspondant -->
 			<p class="text-review"><?php echo troncate($game->Desc, 200); ?></p> <!-- Affiche un court résumé -->
-			<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$game->ID; ?>" class="more">Lire la suite</a>
+			<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$game->ID_JEUX; ?>" class="more">Lire la suite</a>
 		
 		</article>
 	<?php endforeach; ?>
@@ -77,9 +77,9 @@
 			
 			<?php foreach ($nextReleases as $release): ?>
 				<li>
-					<a class ="addBasket" href="<?php echo BASE_URL."/pages/basket.php?id=".$release->ID; ?>">+</a>
-					<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$release->ID ?>">
-						<img src="<?php echo BASE_URL."/img/".$release->ID.".png" ?>" alt="<?php echo $release->Nom; ?>">
+					<a class ="addBasket" href="<?php echo BASE_URL."/pages/basket.php?id=".$release->ID_JEUX; ?>">+</a>
+					<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$release->ID_JEUX ?>">
+						<img src="<?php echo BASE_URL."/img/".$release->ID_JEUX.".png" ?>" alt="<?php echo $release->Nom; ?>">
 						<span><?php echo $release->Nom; ?></span>
 					</a>
 				</li>

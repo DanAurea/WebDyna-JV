@@ -54,7 +54,7 @@
 	}
 
 	/* Set default style to input */
-	input{
+	input, #reservation{
 		background-color: #06090e;
 		border: 1px solid #253244;
 		border-radius: 5px;
@@ -84,7 +84,7 @@
 	}
 
 	/* Dimensions Submit button */
-	input[type=submit] {
+	input[type=submit], #reservation{
 		height:30px;
 		margin-top:20px;
 	}
@@ -485,8 +485,18 @@
 		position:relative;
 		left: 4%;
 	}
+	
+	/** Set side by side */
+	#short-infos, #reservation{display:inline-block;}
 
-
+	/* Color when hover */
+	#reservation:hover{background-color: #0f1e34;}
+	
+	#reservation{
+		text-align: center;
+		line-height: 30px;
+	}
+	
 /** Register and login */
 	.login, .register{
 		background-color: #080c12;

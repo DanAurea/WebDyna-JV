@@ -3,19 +3,20 @@
 	if(isset($_POST)){
 		if(!empty($_POST["pseudo"]) && !empty($_POST["password"])){
 			$pseudo = $_POST["pseudo"];
+			$client = substr(md5(PRE_SALT.$pseudo.SUF_SALT), 0, 10);
 			$email = $_POST["email"];
 			$password = md5(PRE_SALT.$_POST["password"].SUF_SALT); // Hash le mot de passe saisi
 			$pass_conf = $_POST["pass_conf"];
 			
 			// Recherche l'utilisateur dans la bdd
-			$user = array("table"=>"Utilisateur","conditions"=>array("Login="=>$pseudo, "Email="=>$email));
+			$user = array("table"=>"vr_grp4_clients","conditions"=>array("Login="=>$pseudo, "Email="=>$email));
 			$user = findFirst($bdd, $user);
 		
 			// On enregistre l'utilisateur s'il n'est pas déjà existant.
 			if(!$user){
 
 				// On inscrit l'utilisateur dans la bdd
-				$inscription=array("table"=>"Utilisateur", "Login"=>$pseudo,"MotDePasse"=>$password,"Email"=>$email);
+				$inscription=array("table"=>"vr_grp4_clients", "Login"=>$pseudo,"MotDePasse"=>$password,"Email"=>$email, "Client" => $client);
 				$res = save($bdd,$inscription);
 			
 				if(!$res){
