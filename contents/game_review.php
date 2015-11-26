@@ -4,11 +4,7 @@
 	<h1 class="fred">Jeux</h1>
 
 	<!-- //Récupération des informations sur tous les jeux -->
-<<<<<<< HEAD
 	<?php 	$req = array("table"=>"vr_grp4_jeux_test", "conditions" => "ID_JEUX =".$_GET['id']);
-=======
-	<?php 	$req = array("table"=>"VR_grp4_Jeux_Test", "conditions" => "ID_JEUX =".$_GET['id']);
->>>>>>> b7453e09ff8d8831f8bf979558a8e9231b60a8e8
 			$game = findFirst($bdd, $req);
 
 			if(!$game) redirect("/pages/games.php"); // Redirige si aucun résultat
