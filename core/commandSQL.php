@@ -1,6 +1,11 @@
 <?php	
 	
-	// Construit le DISTINCT de la requête
+	/**
+	 * Construit la clause DISTINCT
+	 * @param   $bdd Base de données
+	 * @param   $req La requête
+	 * @return 	Retourne la clause correctement définie 
+	 */
 	function distinct($bdd, $req){
 		// Distingue les doublons
 		if(isset($req['distinct'])){
@@ -16,7 +21,12 @@
 		return $sql;
 	}
 
-	// Construit le WHERE de la requête
+	/**
+	 * Construit la clause WHERE
+	 * @param   $bdd Base de données
+	 * @param   $req La requête
+	 * @return 	Retourne la clause correctement définie 
+	 */
 	function where($bdd, $req){
 		// Construction des conditions
 		if(isset($req['conditions'])){
@@ -51,6 +61,12 @@
 		}
 	}
 
+	/**
+	 * Groupe les résultats
+	 * @param   $bdd Base de données
+	 * @param   $req La requête
+	 * @return 	Retourne la clause correctement définie 
+	 */
 	function groupBy($bdd, $req){
 		// Groupe les champs si précisé
 		if(isset($req['group'])){
@@ -65,6 +81,12 @@
 		return '';
 	}
 
+	/**
+	 * Ordonne les résultats
+	 * @param   $bdd Base de données
+	 * @param   $req La requête
+	 * @return 	Retourne la clause correctement définie 
+	 */
 	function orderBy($bdd, $req){
 		// Tri des données avec condition si existante
         if(isset($req['order'])){
@@ -77,6 +99,12 @@
         return '';
 	}
 
+	/**
+	 * Limite les résultats
+	 * @param   $bdd Base de données
+	 * @param   $req La requête
+	 * @return 	Retourne la clause correctement définie 
+	 */
 	function limit($bdd, $req){
 		// Limite le nombre de résultat
         if(isset($req['limit'])){

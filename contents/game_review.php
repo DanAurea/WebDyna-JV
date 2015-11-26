@@ -31,8 +31,73 @@
 					<li class="fyellow">Nombre de joueurs : <?php  echo $game->NbJoueurs?></li>
 				</ul>
 			</div>
+			<div id="reservation-block">
+				<?php 
+					$today = formatDate($today);
+					$day   = substr($today, 0, 2); // Récupère le jour actuel
+					$month   = substr($today, 4, 4); // Récupère le mois actuel
+					$year   = substr($today, 9, 5); // Récupère l'année actuelle
+				?>
+				<form method="post" action="<?php echo BASE_URL."/pages/basket.php?id=".$game->ID_JEUX ?>">
+					<div id="hours">
+						<label for = "Horaire">Horaire : </label> 
+						<select name="Heure">
+							<?php for($i = 8; $i <= 17; $i++): ?>
+								<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+							<?php endfor; ?>
+						</select>
+						
+						<select name="Minute">
+							<?php for($i = 0; $i <= 59; $i++): ?>
+								<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+							<?php endfor; ?>
+						</select>
+					</div>
 
-			<a id="reservation" href="<?php echo BASE_URL."/pages/basket.php?id=".$game->ID_JEUX; ?>">Réserver</a>
+					
+						<label for = "Date">Date : </label> 
+						<select name="Jour">
+							<?php for($i = 1; $i <= 31; $i++): ?>
+
+								<?php if($i == $day): // Sélectionne le jour actuel ?>
+									<option value="<?php echo $i; ?>" selected><?php echo $i; ?></option>
+								<?php endif; ?>
+								<?php if($i != $day): // Remplis le select ?>
+									<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+								<?php endif; ?>
+
+							<?php endfor; ?>
+						</select>
+					
+					<select name="Mois">
+						<?php for($i = 1; $i <= 12; $i++): ?>
+
+							<?php if($i == $month): // Sélectionne le mois actuel ?>
+								<option value="<?php echo $i; ?>" selected><?php echo $i; ?></option>
+							<?php endif; ?>
+							<?php if($i != $month): // Remplis le select ?>
+								<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+							<?php endif; ?>
+
+						<?php endfor; ?>
+					</select>
+
+					<select name="Annee">
+						<?php for($i = $year; $i <= $year + 1; $i++): ?>
+
+							<?php if($i == $year): // Sélectionne le mois actuel ?>
+								<option value="<?php echo $i; ?>" selected><?php echo $i; ?></option>
+							<?php endif; ?>
+							<?php if($i != $year): // Remplis le select ?>
+								<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+							<?php endif; ?>
+
+						<?php endfor; ?>
+					</select>
+					
+					<input id="reservation" type="submit" value="Réserver">
+				</form>
+			</div>
 
 			<!-- Affiche une description du jeu -->
 			<p class="text-review">

@@ -1,4 +1,4 @@
-<?php require_once(ROOT."/core/basket.php"); ?>
+<?php require_once(ROOT."/core/controller/basket.php"); ?>
 <table id="basket-table">
 	<tr>
 		<th>
@@ -61,7 +61,10 @@
 	   		</td>
 	   		<td>
 	   			<p>
-	   				<?php echo "10/01/2016 10h30"; ?>
+	   				<?php 
+	   					$heure = date("H\hi",$product->Timestamp);
+	   					echo formatDate($product->Date)." ".$heure; 
+	   				?>
 	   			</p>
 	   		</td>
 	   		<td>

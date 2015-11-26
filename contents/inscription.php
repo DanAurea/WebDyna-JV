@@ -20,24 +20,24 @@
 				$res = save($bdd,$inscription);
 			
 				if(!$res){
-					echo "<p>Il y a eu un problème à l'inscription</p>";
+					echo "<p class=\"fred ferror\">Il y a eu un problème à l'inscription</p>";
 					refreshUrl("/pages/register",5);
 				}else{
-					echo "<p>Inscription réussie vous allez être redirigé dans 5 secondes !</p>";
+					echo "<p class=\"fred ferror\">Inscription réussie vous allez être redirigé dans 5 secondes !</p>";
 					refreshUrl("/",5); // L'inscription s'est bien déroulée on redirige vers l'accueil
 				}
 			}else{
-				echo "<p>Utilisateur déjà existant !</p>";
+				echo "<p class=\"fred ferror\">Utilisateur déjà existant !</p>";
 				refreshUrl("/",5);
 			}
 
 		}else{
-			echo "<p>Champs vide !</p>";
+			echo "<p class=\"fred ferror\">Champs vide !</p>";
 			refreshUrl("/pages/register.php", 1);
 		}
 		
 	}else{
-		echo "<p>Vous n'avez rien à faire ici !</p>";
+		echo "<p class=\"fred ferror\">Vous n'avez rien à faire ici !</p>";
 		refreshUrl("/",5);
 	}
 

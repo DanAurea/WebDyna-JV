@@ -81,6 +81,12 @@ position: absolute;
 	    -webkit-transition: all .5s; 
 	    -o-transition: all .5s; 
 	    transition: all .5s;
+
+	    /* The Shadow */
+		box-shadow: 0px 0px 6px #04bad0;
+		-webkit-box-shadow: 0px 0px 6px #04bad0;
+		-moz-box-shadow: 0px 0px 6px #04bad0;
+		-box-shadow: 0px 0px 6px #04bad0;
 	}
 
 	/* Dimensions Submit button */
@@ -467,8 +473,8 @@ position: absolute;
 /* News page*/
 	
 	.news-page, .next-page{
-		width:90%;
-		left:5%;
+		width:75%;
+		left:3%;
 	}
 	
 	.news-page img, .next-page img{width:18%; }
@@ -501,14 +507,37 @@ position: absolute;
 	}
 	
 	/** Set side by side */
-	#short-infos, #reservation{display:inline-block;}
+	#short-infos{display:inline-block;}
 
+	#reservation-block{
+		display: inline-block;
+		vertical-align: top;
+		height: 150px;
+		position:relative;
+	}
+
+	#reservation-block select{
+		width: 35%;
+		left:30%;
+	}
+	
+	#hours{
+		margin-top: 5px;
+		margin-bottom: 35px;
+	}
+	
 	/* Color when hover */
 	#reservation:hover{background-color: #0f1e34;}
 	
 	#reservation{
+		position: absolute;
+		display:block;
+		width: 100%;
+		padding: 0 35%;
 		text-align: center;
 		line-height: 30px;
+		box-sizing: padding-box;
+		-moz-box-sizing: padding-box;
 	}
 	
 /** Register and login */
@@ -633,6 +662,9 @@ position: absolute;
 		height: auto;
 		margin: 50px 0;
 	}
+	
+	/* Font error message style */
+	.ferror{font-weight: bold;}
 
 
 /** Media queries */

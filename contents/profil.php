@@ -1,4 +1,4 @@
-<?php include(ROOT."/core/profil.php"); ?>
+<?php include(ROOT."/core/controller/profil.php"); ?>
 
 <section class="profil left outred">
 	<div class="border-top red"></div>
@@ -34,8 +34,8 @@
 
 	<?php endif;
 		if(!isLogged()){ // Vérifie si l'utilisateur est connecté
-			echo "<p class=\"container-review\">Vous êtes perdu ? Vous allez être redirigé.<br/>
-			Si vous n'êtes pas redirigé, cliquez <a class=\"fred\" href='".BASE_URL."/'>ici</a></p>";
+			echo "<p class=\"fred ferror container-review\">Vous êtes perdu ? Vous allez être redirigé.<br/>
+			Si vous n'êtes pas redirigé, cliquez <a class=\"fblue\" href='".BASE_URL."/'>ici</a></p>";
 			refreshUrl("/",5);
 		}
 	?>

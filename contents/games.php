@@ -1,4 +1,4 @@
-<?php include(ROOT."/core/games.php"); ?>
+<?php include(ROOT."/core/controller/games.php"); ?>
 <aside class="search left outorange">
 	<div class="border-top orange"></div>
 	<div class="border-bottom"></div>
@@ -23,7 +23,7 @@
 
 			<li>
 				<label>Age:</label>
-				<input type="text" name="Age">
+				<input type="text" name="Ages">
 			</li>
 
 			<li>
@@ -93,13 +93,6 @@
 			<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$game->ID_JEUX; ?>"class="more">Lire la suite</a>
 		</article>
 	<?php endif; ?>
-			
-			<!-- //Récupération des informations sur toutes les prochaines sorties -->
-			<?php 	$nextReleases = array("table"=>"vr_grp4_jeux_test", "order" => "Sortie", 
-					"sortBy" => "ASC", "limit" => "6", 
-					"conditions" => "Sortie>'".$today."'");
-					$nextReleases = find($bdd, $nextReleases);
-			?>
 			
 			<?php if(!isset($details)): ?>
 				<li>
