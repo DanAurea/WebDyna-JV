@@ -211,7 +211,7 @@
         function save($bdd, $data, $primaryKey = false){
           $fields =  array(); // Champs à mettre à jour
           $d = array(); // Tableau des données formatées
-          
+
           foreach($data as $k=>$v){
             if($k != $primaryKey && $k != "table"){ // Formate les clés et ne prends pas en compte la clé primaire pour l'insert
               $fields[] = "$k=:$k";

@@ -1,36 +1,42 @@
-<section class="login left outred">
+<?php include(ROOT."/core/profil.php"); ?>
+
+<section class="profil left outred">
 	<div class="border-top red"></div>
 	<h1 class ="fred">Profil</h1>
-	<?php if(isLogged()):/* Afiche seulement si il est connecté*/ ?> 
-	<form method="Post" action="profil_modif.php">
+	
+	<?php if(isLogged()):/* Afiche seulement s'il est connecté*/ ?> 
+	
+	<form method="Post" action="<?php echo BASE_URL."/pages/profil.php"; ?>">
 	<ol>
 		<li>
-			<label for="pseudo">Pseudo : </label>
-			<input type="text" name="pseudo" placeholder="<?php echo $SESSION['user']->Login; ?>"/>
+			<label for="Login">Login : </label>
+			<input type="text" name="Login" placeholder="<?php echo $_SESSION['user']->Login; ?>"/>
 		</li>
 		<li>
-			<label for="password">Mot de passe : </label>
-			<input type="password" name="password" placeholder="<?php echo "****"; ?>"/>
+			<label for="MotDePasse">Mot de passe : </label>
+			<input type="password" name="MotDePasse" placeholder="<?php echo "****"; ?>"/>
 		</li>
 		<li>
-			<label for="prenom">Prenom : </label>
-			<input type="text" name="prenom" placeholder="<?php echo $SESSION['user']->Prenom; ?>"/>
+			<label for="Prenom">Prenom : </label>
+			<input type="text" name="Prenom" placeholder="<?php echo $_SESSION['user']->Prenom; ?>"/>
 		</li>
 		<li>
-			<label for="nom">Nom : </label>
-			<input type="text" name="nom" placeholder="<?php echo $SESSION['user']->Nom; ?>"/>
+			<label for="Nom">Nom : </label>
+			<input type="text" name="Nom" placeholder="<?php echo $_SESSION['user']->Nom; ?>"/>
 		</li>
 		<li>
-			<label for"email">Adresse mail : </label>
-			<input type="text" name="email" placeholder="<?php echo $SESSION['user']->Email; ?>"/>
+			<label for"Email">Adresse mail : </label>
+			<input type="text" name="Email" placeholder="<?php echo $_SESSION['user']->Email; ?>"/>
 		</li>
 	</ol>
-	<input type="submit" value="Modifié">
+	<input type="submit" value="Modifier"/>
 	</form>
+
 	<?php endif;
-	if(!isLogged()){ 
-		echo "<p>Vous etes perdu ? Vous allez etre redirigé.<br/>
-		Si vous n'etes pas redirigé, cliquez <a href="ROOT./">ici</a></p>";
-		refreshUrl("/",5);
-	}
+		if(!isLogged()){ // Vérifie si l'utilisateur est connecté
+			echo "<p class=\"container-review\">Vous êtes perdu ? Vous allez être redirigé.<br/>
+			Si vous n'êtes pas redirigé, cliquez <a class=\"fred\" href='".BASE_URL."/'>ici</a></p>";
+			refreshUrl("/",5);
+		}
 	?>
+</section>

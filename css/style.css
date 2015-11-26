@@ -87,6 +87,12 @@
 	input[type=submit], #reservation{
 		height:30px;
 		margin-top:20px;
+		position: relative;
+		left: 0;
+	}
+
+	.profil input[type=submit]{
+		margin-bottom: 5%;
 	}
 
 	/* Color when clicked */
@@ -143,6 +149,10 @@
 		height:100%;
 		float:right;
 		margin-right: 5%;
+	}
+
+	#header-user-wrapper a:hover{
+		color: #e7743b;
 	}
 
 	#header-user{margin-top:25px;}
@@ -502,6 +512,12 @@
 		background-color: #080c12;
 		width: 48%;
 		height: 300px;
+	}
+
+	.profil{
+		background-color: #080c12;
+		width: 75%;
+		left: 12.5%;
 	}
 
 	#login{margin-top: 60px;}
