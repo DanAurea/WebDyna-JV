@@ -1,17 +1,23 @@
 <!-- //Récupération des informations sur tous les jeux -->
-<?php 	
-	if(empty($_POST)){ // Si pas de recherche on affiche tout les jeux dans l'ordre de saisie dans la bdd
-		$games = array("table"=>"vr_grp4_jeux_test", "order" => "ID_JEUX", "sortBy" => "DESC");
-		$games = find($bdd, $games);
-	}else{
-		$searchFields = array();
+<?php
+
+	$games = array(
+			"table"=>"vr_grp4_jeux_test",
+			"order" => "ID_JEUX", "sortBy" => "DESC");
+	$games = find($bdd, $games);	
+	if(!empty($_POST)){
+
+		$searchFields = array(); // Création d'un tableau qui contiendra les données à rechercher
 		foreach ($_POST as $key => $value) {
 			if(!empty($value) && $key != "research_done"){
 				$searchFields[$key." LIKE "] = "%".$value."%" ; // Construit la requête pour la recherche
 			}
 		}
-		$games = array("table"=>"vr_grp4_jeux_test","conditions" => $searchFields);
-		$games = find($bdd, $games); // Recherche les jeux correspondants
+
+		if(!empty($searchFields)){ // Si pas de recherche on affiche tout les jeux dans l'ordre de saisie dans la bdd
+			$games = array("table"=>"vr_grp4_jeux_test","conditions" => $searchFields);
+			$games = find($bdd, $games); // Recherche les jeux correspondants
+		}
 	}
 		
 		

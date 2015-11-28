@@ -22,4 +22,19 @@
 		return implode(" / ",array_reverse(explode("-",$date)));
 	}
 	
+	// Retourne la page actuelle
+	function currentPage(){
+		if(isset($_GET['page'])){
+        	if(is_numeric($_GET['page'])){
+         		if($_GET['page'] > 0){
+                	$page = round($_GET['page']);
+                	return $page;
+         		}
+         	}
+        }
+        return 1;
+	}
+
+	$currentPage = currentPage(); // Page actuelle
+
 ?>

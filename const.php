@@ -10,6 +10,7 @@
 	}
 
 	$today = date('Y-m-d'); // Date actuelle au format aaaa-mm-jj
+	$perPage = 6; // Nombre de jeux par page
 
 	define('PRE_SALT',"MvDmBd"); // Sel préfixé pour le md5
 	define('SUF_SALT',"JnBnCs"); // Sel suffixé pour le md5

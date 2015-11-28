@@ -24,6 +24,7 @@
 			
 			if(isset($_GET['id'])){
 				echo "<p class=\"fred ferror\" class=\"fred ferror\">Vous ne pouvez réaliser cette action sans être connecté !</p>";
+				refreshUrl("/", 5);
 			}
 
 			$products = array(); // Panier vide (affichage)

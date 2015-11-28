@@ -11,34 +11,41 @@
 	?>
 
 	<!-- Création d'un article par jeu dans la BdD -->
-	<article class="container-review">
+	<article class="container-game-review">
 		<img src="<?php echo BASE_URL."/img/".$game->ID_JEUX.".png" ?>" alt="<?php echo $game->Nom ?>" />
 
 		<section class="brief">
 			
-			<div id="short-infos">
-				<h2 class="fred title-review">
-					<?php echo $game->Nom; ?>
-				</h2>
-				
-				<!-- Affiche le type du jeu -->
-				<ul class="type">
-					<?php $Sortie = formatDate($game->Sortie); ?>
-					<li class="fyellow">Genre du jeu :  <?php echo $game->Genre; ?></li>
-					<li class="fyellow">Date de sortie :  <?php echo $Sortie; ?></li>
-					<li class="fyellow">Âge :  <?php echo $game->Ages; ?></li>
-					<li class="fyellow">Support : <?php echo $game->Support; ?></li>
-					<li class="fyellow">Nombre de joueurs : <?php  echo $game->NbJoueurs?></li>
-				</ul>
-			</div>
+			<h2 class="fred title-review">
+				<?php echo $game->Nom; ?>
+			</h2>
+			
+			<!-- Affiche le type du jeu -->
+			<ul class="type">
+				<?php $Sortie = formatDate($game->Sortie); ?>
+				<li class="fyellow">Genre du jeu :  <?php echo $game->Genre; ?></li>
+				<li class="fyellow">Date de sortie :  <?php echo $Sortie; ?></li>
+				<li class="fyellow">Âge :  <?php echo $game->Ages; ?></li>
+				<li class="fyellow">Support : <?php echo $game->Support; ?></li>
+				<li class="fyellow">Nombre de joueurs : <?php  echo $game->NbJoueurs?></li>
+			</ul>
+			
+
+			<!-- Affiche une description du jeu -->
+			<p class="text-review">
+				<?php echo $game->Desc; ?>
+			</p>
 			<div id="reservation-block">
+				
 				<?php 
 					$today = formatDate($today);
 					$day   = substr($today, 0, 2); // Récupère le jour actuel
 					$month   = substr($today, 4, 4); // Récupère le mois actuel
 					$year   = substr($today, 9, 5); // Récupère l'année actuelle
 				?>
+
 				<form method="post" action="<?php echo BASE_URL."/pages/basket.php?id=".$game->ID_JEUX ?>">
+					
 					<div id="hours">
 						<label for = "Horaire">Horaire : </label> 
 						<select name="Heure">
@@ -99,10 +106,6 @@
 				</form>
 			</div>
 
-			<!-- Affiche une description du jeu -->
-			<p class="text-review">
-				<?php echo $game->Desc; ?>
-			</p>
 
 		</section>
 	</article>

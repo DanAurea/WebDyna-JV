@@ -4,7 +4,7 @@
 	<div class="border-bottom"></div>
 
 	<form action="<?php echo BASE_URL."/pages/games.php"; ?>" method="post">
-		<h2 class="forange">Recherche :</h2>
+		<h2 class="forange">Recherche </h2>
 
 		<ol>
 			<li> 
@@ -15,9 +15,12 @@
 			<li>
 				<label for="Genre">Genre : </label>
 				<select name="Genre">
+					<option value=""></option>
+
 					<?php foreach($genres as $genre): ?>
 						<option value="<?php echo $genre->Genre; ?>"><?php echo $genre->Genre; ?></option>
 					<?php endforeach; ?>
+
 				</select>
 			</li>
 
@@ -29,18 +32,24 @@
 			<li>
 				<label for="Support">Support : </label>
 				<select name="Support">
+					<option value=""></option>
+
 					<?php foreach($supports as $support): ?>
 						<option value="<?php echo $support->Support; ?>"><?php echo $support->Support; ?></option>
 					<?php endforeach; ?>
+
 				</select>
 			</li>
 
 			<li>
 				<label for="NbJoueurs">Multijoueur :</label>
 				<select name="NbJoueurs">
+					<option value=""></option>
+					
 					<?php foreach($nbJoueurs as $nb): ?>
 						<option value="<?php echo $nb->NbJoueurs; ?>"><?php echo $nb->NbJoueurs; ?></option>
 					<?php endforeach; ?>
+
 				</select>
 			</li>
 
@@ -90,14 +99,19 @@
 	<?php if(isset($details)): ?>
 		<article class="reviews">
 			<img src="<?php echo BASE_URL."/img/".$release->ID_JEUX.".png"; ?>" alt="<?php echo $release->Nom; ?>" />
-			<h2 class="fred title-review">
-				<?php echo $release->Nom; ?> :
-			</h2>
-			<p class="type fyellow"> Genre du jeu : <?php echo $release->Genre; ?></p>
-			<p class="text-review">
-				<?php echo troncate($release->Desc, 300); ?> 
-			</p>
-			<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$release->ID_JEUX; ?>"class="more">Lire la suite</a>
+			
+			<!-- Description de l'article -->
+			<div class="brief">
+				<h2 class="fred title-review">
+					<?php echo $release->Nom; ?> :
+				</h2>
+				<p class="type fyellow"> Genre du jeu : <?php echo $release->Genre; ?></p>
+				<p class="text-review">
+					<?php echo troncate($release->Desc, 300); ?> 
+				</p>
+				<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$release->ID_JEUX; ?>"class="more">Lire la suite</a>
+			</div>
+
 		</article>
 	<?php endif; ?>
 			

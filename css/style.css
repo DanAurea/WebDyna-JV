@@ -2,7 +2,7 @@
 
 	html{
 		width: 69%;
-		margin:0 12.5%;
+		margin:0 15.5%;
 		overflow-y:scroll;
 	}
 
@@ -46,7 +46,7 @@
 	/* Set style to label of input */
 	form label{
 		font-weight: bold;
-position: absolute;
+		position: absolute;
 		width: 30%;
 		overflow: hidden;
 		word-wrap:normal;
@@ -372,7 +372,8 @@ position: absolute;
 	}
 
 /** Blocks */
-
+	
+	/* Main container of content page's */
 	#container{
 		margin:65px 0;
 		position: relative;
@@ -398,7 +399,15 @@ position: absolute;
 		width: 50%;
 		left: 1.8%;
 	}
-
+	
+	/** Brief of a game review */
+	.brief{
+		width: 75%;
+		display: inline-block;
+		position: relative;
+		left: 15px;
+	}
+	
 	.title-review{margin:0;}
 
 	/* Manage overflow of title and type from review */
@@ -409,53 +418,58 @@ position: absolute;
 	  	text-overflow: ellipsis; /* all others */
 	}
 
-	/* Style for article review*/
-	.reviews{
-		margin: 0 8% 30px 8%;
-		position: relative;
-		height:200px;
-	}
+	/* Define margin to get a more airy block of reviews */
+	.reviews{margin: 0 8% 80px 8%;}
 
 	/* Set dimensions of img on reviews */
 	.reviews img, .games-reviews img, .container-review img{
 		width: 22%;
-		float: left;
+		display: inline-block;
+		vertical-align: top;
+	}
+	
+	/* Set page link in center */
+	.pagination ul{
+		text-align: center;
+		margin-bottom: 20px;
 	}
 
-	/* Brief review style */
-	.text-review{
-		margin: 0;
-		overflow: hidden;
-		height: 105px;
+	/* Set page link side by side */
+	.pagination ul li{
+		display:inline-block;
+		margin-left: 2%;
 	}
+
+	/* Set page link side by side */
+	.pagination ul li a{
+		background-color:#3db4f2;
+		padding: 0 10px;
+	}
+
+	/* Set page link with a different colour when over */
+	.pagination ul li a:hover{background-color:#e7743b;}
 
 	.next-releases{width: 23.2%;}
 
 
 /** Home page & Game page */
-
+	
+	/* Block of games-reviews content's */
 	.games-reviews{
 		width:75%;
 		left: 3%;
 	}
-
+	
+	/* Block search */
 	.search{
 		width:22%;
 	}
-
+	
+	/* Set style for choice on style of view */
 	#view{float:right; margin-right:15px;}
-
+	
+	/* Link which can be clicked is in a different font size*/
 	#change-view{font-size: 14px;}
-
-	/* Style of reviews on home page principally*/
-	.reviews p, .reviews h2{
-		box-sizing:padding-box;
-		-moz-box-sizing:padding-box;
-		width: 75%;
-		position: absolute;
-		right: 0;
-		line-height: 16px;
-	}
 
 	/* Set a space between short informations from a review and its name*/
 	.reviews .fyellow{top: 10%;}
@@ -465,9 +479,8 @@ position: absolute;
 
 	/* Style to read more */
 	.more{
-		position: absolute;
-		right: 0;
-		bottom: 5px;
+		display:block;
+		text-align: right;
 	}
 
 /* News page*/
@@ -482,10 +495,18 @@ position: absolute;
 /** Game review page */
 
 /** Style of a game review */
-
+	
+	/** For home page */
 	.container-review{
-		width: 75%;
-		left: 12.5%;
+		width: 85%;
+		left: 7.5%;
+		position:relative;
+	}
+	
+	/** For unique game page (/pages/game_review) */
+	.container-game-review{
+		width: 95%;
+		left: 2.5%;
 		position:relative;
 	}
 
@@ -498,47 +519,49 @@ position: absolute;
 		padding-bottom: 8%;
 		height:auto;
 	}
-
-
-	/** Brief style for text of a game review */
-	.brief{
-		position:relative;
-		left: 4%;
-	}
 	
-	/** Set side by side */
-	#short-infos{display:inline-block;}
-
+	/* Set size for reservation block */
 	#reservation-block{
-		display: inline-block;
-		vertical-align: top;
-		height: 150px;
-		position:relative;
-	}
-
-	#reservation-block select{
-		width: 35%;
-		left:30%;
+		width: 80%;
+		margin-bottom: 30px;
 	}
 	
+	/** Init margin on form in game review page */
+	#reservation-block form{margin:0;}
+
+	/** Init margin on form in game review page */
+	#reservation-block form label{
+		margin:0;
+		display: inline-block;
+		position: relative;
+		width: 25%;
+	}
+	
+	/* Set size and position of select in reservation block*/
+	#reservation-block select{
+		width: 20%;
+		left:5%;
+	}
+	
+	/* Set margin for div hours in reservation block*/
 	#hours{
 		margin-top: 5px;
 		margin-bottom: 35px;
 	}
 	
-	/* Color when hover */
-	#reservation:hover{background-color: #0f1e34;}
-	
+	/*	Reservation button */
 	#reservation{
-		position: absolute;
+		position: relative;
+		left:64%;
 		display:block;
-		width: 100%;
-		padding: 0 35%;
-		text-align: center;
-		line-height: 30px;
+		width: 30%;
+		height: 30px;
 		box-sizing: padding-box;
 		-moz-box-sizing: padding-box;
 	}
+
+	/* Color when hover */
+	#reservation:hover{background-color: #0f1e34;}
 	
 /** Register and login */
 	.login, .register{
@@ -564,12 +587,22 @@ position: absolute;
 		display:block;
 	}
 
+	.grid ul a p{
+		white-space: nowrap;
+		overflow: hidden;
+	  	-o-text-overflow: ellipsis; /* Opera 9 */
+	  	text-overflow: ellipsis; /* all others */
+	}
+
 	/* Put list item side by side */
 	.grid ul li{
 		display: inline-block;
 		position: relative;
 	}
-	.grid ul li a{float: left;width:100%;}
+	.grid ul li a{
+		float: left;
+		width:100%;
+	}
 
 
 	/* Responsive img for grid img */
@@ -577,10 +610,6 @@ position: absolute;
 		max-width: 100%;
 		height: auto;
 	}
-
-
-	/* Change size of grid list item in game page */
-	.games-reviews .grid ul{margin: 0 8%;}
 
 	/* Change size of grid list item in game page */
 	.games-reviews .grid ul li{
@@ -673,7 +702,14 @@ position: absolute;
 	
 	/** Return in cascade style for list item, no more float */
 	.grid ul li {float:none;}
-
+	
+	/** Reset ellipsis for game name in grid */
+	.grid ul a p{
+		white-space: initial;
+		overflow: initial;
+	  	-o-text-overflow: initial; /* Opera 9 */
+	  	text-overflow: initial; /* all others */
+	}
 	
 	/** Resize news list items */
 	.news .grid ul li{
@@ -720,7 +756,7 @@ position: absolute;
 @media screen and (max-width: 960px) {
 
 		/* Page displayed in fullscreen */
-		html,body,#container,.center, nav, ul{
+		html,body,.center, nav, ul{
 			width:100%;
 			max-width: 100%;
 			margin:0;
@@ -732,8 +768,9 @@ position: absolute;
 		
 		/* Initialize margin then set margin top to main container*/
 		#container{
-			margin:0;
+			margin:0 5%;
 			margin-top: 100px;
+			width:90%;
 			overflow: hidden;
 		}
 		
@@ -795,29 +832,15 @@ position: absolute;
 		/* Hide outline of any blocks*/
 		.outblue, .outred, .outorange, .outgreen, .outpink, .outyellow, .outpurple{outline: 0;}
 		
-		/* Set size of brief on home page*/
-		.reviews p.text-review{
-			width:75%;
-			max-width: 75%;
-		}
-		
 		/* Set size of article for one review */
 		article.container-review{
 			width:100%;
-			max-width: 90%;
+			max-width: 100%;
 			left:0%;
 		}
 
 		/* Set off margin on brief in a review*/
 		.container-review .text-review{margin:0;}
-		
-		/* Change position of img in a review */
-		.container-review img{
-			position: absolute;
-			left:230px;
-			float:initial;
-			z-index: 2; /* Passe l'image au premier plan */
-		}
 		
 		/* Change display of login and register blocks form*/
 		.login, .register{
