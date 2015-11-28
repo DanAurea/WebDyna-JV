@@ -52,8 +52,14 @@
 					$cond[] = "$k $v";
 				}
 				
-				// Inclus toutes les conditions dans la requête
-				$sql .= implode(' AND ',$cond);
+				if(isset($req["operator"])){
+					// Inclus toutes les conditions dans la requête
+					$sql .= implode(' '.$req["operator"].' ',$cond);
+				}else{
+					// Inclus toutes les conditions dans la requête
+					$sql .= implode(' AND ',$cond);
+				}
+
 			}
 		return $sql;
 		}else{

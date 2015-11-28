@@ -164,9 +164,9 @@
             }
 
             /*  Met à jour les tuples concernés si la clé primaire a été définis 
-            et sa valeur n'est pas vide sinon insère les données
+                et sa valeur n'est pas false sinon insère les données
             */
-            if($primaryKey){
+            if(isset($primaryKey) && $primaryKey){
                 $sql = 'UPDATE '.$data['table'].' SET '.implode(',',$fields).' WHERE '.$primaryKey.'=:'.$primaryKey;
             }
             else
@@ -225,5 +225,74 @@
 
             $bdd->query($sql);
             return $sql;
+        }
+
+        /**
+        *   Vérifie que le mot de passe est valide
+        *   @param $password Mot de passe à valider
+        *   @return Retourne true si valide
+        */
+        function validPassword($password){
+            
+            if(preg_match("#^[a-zA-Z0-9]{4,32}$#", $password)){ // Expression régulière vérifiant la validité du mot de passe
+                return true;
+            }
+
+            return false;
+        }
+
+        /**
+        *   Vérifie que le pseudo est valide
+        *   @param $pseudo Pseudo à valider
+        *   @return Retourne true si valide
+        */
+        function validPseudo($pseudo){
+            
+            if(preg_match("#^[a-zA-Z0-9]{4,16}$#", $pseudo)){ // Expression régulière vérifiant la validité du pseudo
+                return true;
+            }
+
+            return false;
+        }
+
+
+        /**
+        * Vérifie que les données ont le bon format
+        * @param  $validate Tableau de paramètre vérifiant l'authenticité des données
+        * @param  $data Données à vérifier
+        * @return Retourne vraie si bon format
+        */
+        function validates($validate, $datas){
+            $errors = array();
+        
+            foreach($validate as $k => $v){
+                if(!isset($datas["$k"])){
+                    $errors[$k] = $v['message']; // Dans le cas d'une donnée vide
+                }else{
+
+                    if($v['rule'] == 'password'){ // Vérifie les données en cas de règle de validation password
+
+                        if(!validPassword($datas["$k"])){ // Si le mot de passe n'est pas de la bonne forme
+                            $errors["$k"] = $v["message"]; // On remplis le tableau d'une erreur
+                        }
+
+                    }
+
+                    if($v['rule'] == 'pseudo'){ // Vérifie les données en cas de règle de validation password
+
+                        if(!validPseudo($datas["$k"])){ // Si le pseudo n'est pas de la bonne forme
+                            $errors["$k"] = $v["message"]; // On remplis le tableau d'une erreur
+                        }
+
+                    }
+
+                }
+
+            }
+
+             if(empty($errors)){
+                    return true;
+                }
+                    return $errors;
         }
 ?>

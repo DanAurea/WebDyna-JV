@@ -1,10 +1,23 @@
 <!-- //Récupération des informations sur tous les jeux -->
 <?php
+	
 
 	$games = array(
 			"table"=>"vr_grp4_jeux_test",
+			'limit'      => ($perPage*($currentPage-1)).','.$perPage, // limite le nombre de jeux sur la page
 			"order" => "ID_JEUX", "sortBy" => "DESC");
-	$games = find($bdd, $games);	
+	$games = find($bdd, $games);
+
+	
+	$total = findFirst($bdd, array(
+				"table"=>"vr_grp4_jeux_test",
+	          	"fields" => 'COUNT(ID_JEUX) as count' // On compte le nombre de jeux pour la pagination
+         	));
+
+	$pages = ceil($total->count / $perPage); // On calcule le total de page
+	$where = "pages/games.php"; // On indique à la pagination vers quel script rediriger
+	
+	
 	if(!empty($_POST)){
 
 		$searchFields = array(); // Création d'un tableau qui contiendra les données à rechercher
@@ -14,20 +27,10 @@
 			}
 		}
 
-		if(!empty($searchFields)){ // Si pas de recherche on affiche tout les jeux dans l'ordre de saisie dans la bdd
+		if(!empty($searchFields)){ // Si recherche on affiche tout les jeux correspondant
 			$games = array("table"=>"vr_grp4_jeux_test","conditions" => $searchFields);
 			$games = find($bdd, $games); // Recherche les jeux correspondants
 		}
 	}
-		
-		
-	$genres = array("distinct"=>"Genre", "fields"=>"Genre", "table"=>"vr_grp4_jeux_test"); // Cherche tout les genres dans la bdd
-	$genres = find($bdd, $genres);
-	
-	$supports = array("distinct"=>"Support", "fields"=>"Support", "table"=>"vr_grp4_jeux_test"); // Cherche tout les supports dans la bdd
-	$supports = find($bdd, $supports);
-	
-	$nbJoueurs = array("distinct"=>"NbJoueurs", "fields"=>"NbJoueurs", "table"=>"vr_grp4_jeux_test"); // Cherche tout les nombres de joueurs dans la bdd
-	$nbJoueurs = find($bdd, $nbJoueurs);
 
 ?>

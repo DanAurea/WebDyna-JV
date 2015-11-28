@@ -1,64 +1,4 @@
-<?php include(ROOT."/core/controller/games.php"); ?>
-<aside class="search left outorange">
-	<div class="border-top orange"></div>
-	<div class="border-bottom"></div>
-
-	<form action="<?php echo BASE_URL."/pages/games.php"; ?>" method="post">
-		<h2 class="forange">Recherche </h2>
-
-		<ol>
-			<li> 
-				<label for="Nom">Nom :</label> 
-				<input type="text" name="Nom"/>
-			</li>
-
-			<li>
-				<label for="Genre">Genre : </label>
-				<select name="Genre">
-					<option value=""></option>
-
-					<?php foreach($genres as $genre): ?>
-						<option value="<?php echo $genre->Genre; ?>"><?php echo $genre->Genre; ?></option>
-					<?php endforeach; ?>
-
-				</select>
-			</li>
-
-			<li>
-				<label>Age:</label>
-				<input type="text" name="Ages">
-			</li>
-
-			<li>
-				<label for="Support">Support : </label>
-				<select name="Support">
-					<option value=""></option>
-
-					<?php foreach($supports as $support): ?>
-						<option value="<?php echo $support->Support; ?>"><?php echo $support->Support; ?></option>
-					<?php endforeach; ?>
-
-				</select>
-			</li>
-
-			<li>
-				<label for="NbJoueurs">Multijoueur :</label>
-				<select name="NbJoueurs">
-					<option value=""></option>
-					
-					<?php foreach($nbJoueurs as $nb): ?>
-						<option value="<?php echo $nb->NbJoueurs; ?>"><?php echo $nb->NbJoueurs; ?></option>
-					<?php endforeach; ?>
-
-				</select>
-			</li>
-
-		</ol>
-
-		<input type="submit" value="Rechercher" name="research_done">
-	</form>
-
-</aside>
+<?php include(ROOT."/core/search.php"); ?>
 
 <section class="news-page games-reviews center outred">
 	<div class="border-top red"></div>
@@ -80,12 +20,17 @@
 
 	<h1 class="fred">Prochaines sorties</h1>
 	
-	<!-- //Récupération des informations sur toutes les prochaines sorties -->
-	<?php 	$nextReleases = array("table"=>"vr_grp4_jeux_test", "order" => "Sortie", 
+	<?php 	
+			//Récupération des informations sur toutes les prochaines sorties en limitant
+			//le nombre de jeux par page.
+			$nextReleases = array("table"=>"vr_grp4_jeux_test", "order" => "Sortie",
+			'limit'      => ($perPage*($currentPage-1)).','.$perPage, 
 			"sortBy" => "ASC", "limit" => "6", 
 			"conditions" => "Sortie>'".$today."'");
+
 			$nextReleases = find($bdd, $nextReleases);
 	?>
+			
 
 	<?php if(!isset($details)): ?>
 		<div class="grid">
@@ -103,7 +48,7 @@
 			<!-- Description de l'article -->
 			<div class="brief">
 				<h2 class="fred title-review">
-					<?php echo $release->Nom; ?> :
+					<?php echo $release->Nom; ?> 
 				</h2>
 				<p class="type fyellow"> Genre du jeu : <?php echo $release->Genre; ?></p>
 				<p class="text-review">
@@ -115,12 +60,6 @@
 		</article>
 	<?php endif; ?>
 			
-			<!-- //Récupération des informations sur toutes les prochaines sorties -->
-			<?php 	$nextReleases = array("table"=>"vr_grp4_jeux_test", "order" => "Sortie", 
-					"sortBy" => "ASC", "limit" => "6", 
-					"conditions" => "Sortie>'".$today."'");
-					$nextReleases = find($bdd, $nextReleases);
-			?>
 			
 			<?php if(!isset($details)): ?>
 				<li>
@@ -138,5 +77,21 @@
 		</ul>
 		</div>
 	<?php endif; ?>
+
+	<?php 
+
+		$total = findFirst($bdd, array(
+				"table"=>"vr_grp4_jeux_test",
+	          	"fields" => 'COUNT(ID_JEUX) as count',
+	          	 "order" => "Sortie", 
+				"sortBy" => "ASC", "limit" => "6", 
+				"conditions" => "Sortie>'".$today."'" // On compte le nombre de jeux pour la pagination
+         	));
+
+		$pages = ceil($total->count / $perPage); // On calcule le total de page
+		$where = "pages/next-releases.php"; // On indique à la pagination vers quel script rediriger
+		
+		include(ROOT."/core/pagination.php");
+	 ?>
 
 </section>

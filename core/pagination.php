@@ -4,7 +4,12 @@
 					// Crée la pagination en fonction du nombre d'éléments disponible dans la bdd
 					for ($i=1; $i <= $pages ; $i++) { 
 						echo "<li>";
-						echo "<a href =\"".BASE_URL."/".$where."?page=".$i."\" >";
+
+						if(isset($details)){
+							echo "<a href =\"".BASE_URL."/".$where."?page=".$i."&details=".$details."\" >";
+						}else{
+							echo "<a href =\"".BASE_URL."/".$where."?page=".$i."\" >";
+						}
 						echo $i;
 						echo "</a>";
 						echo "</li>";

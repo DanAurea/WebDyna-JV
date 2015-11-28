@@ -4,7 +4,9 @@
 	<h1 class="fred">Jeux</h1>
 
 	<!-- //Récupération des informations sur tous les jeux -->
-	<?php 	$req = array("table"=>"vr_grp4_jeux_test", "conditions" => "ID_JEUX =".$_GET['id']);
+	<?php 	$req = array("conditions" => "ID_JEUX =".$_GET['id'],
+					"join" => array("left" => "vr_grp4_jeux_test", "joinType" => "NATURAL JOIN", "right" => "vr_grp4_jeuxludotheque")
+			);
 			$game = findFirst($bdd, $req);
 
 			if(!$game) redirect("/pages/games.php"); // Redirige si aucun résultat
@@ -22,12 +24,15 @@
 			
 			<!-- Affiche le type du jeu -->
 			<ul class="type">
+
 				<?php $Sortie = formatDate($game->Sortie); ?>
 				<li class="fyellow">Genre du jeu :  <?php echo $game->Genre; ?></li>
 				<li class="fyellow">Date de sortie :  <?php echo $Sortie; ?></li>
 				<li class="fyellow">Âge :  <?php echo $game->Ages; ?></li>
 				<li class="fyellow">Support : <?php echo $game->Support; ?></li>
 				<li class="fyellow">Nombre de joueurs : <?php  echo $game->NbJoueurs?></li>
+				<li class="fyellow">Nombre de jeux disponible : <?php  echo $game->NbJeuxDispos?></li>
+				
 			</ul>
 			
 
@@ -41,7 +46,7 @@
 					$today = formatDate($today);
 					$day   = substr($today, 0, 2); // Récupère le jour actuel
 					$month   = substr($today, 4, 4); // Récupère le mois actuel
-					$year   = substr($today, 9, 5); // Récupère l'année actuelle
+					$year   = substr($today, 10, 5); // Récupère l'année actuelle
 				?>
 
 				<form method="post" action="<?php echo BASE_URL."/pages/basket.php?id=".$game->ID_JEUX ?>">
@@ -55,9 +60,23 @@
 						</select>
 						
 						<select name="Minute">
+
 							<?php for($i = 0; $i <= 59; $i++): ?>
-								<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+								<option value="<?php
+												if($i < 10)
+													echo "0".$i;
+												else
+													echo $i;
+												?>">
+												<?php
+												if($i < 10)
+													echo "0".$i;
+												else
+													echo $i;
+												?>
+								</option>
 							<?php endfor; ?>
+
 						</select>
 					</div>
 
@@ -69,6 +88,7 @@
 								<?php if($i == $day): // Sélectionne le jour actuel ?>
 									<option value="<?php echo $i; ?>" selected><?php echo $i; ?></option>
 								<?php endif; ?>
+
 								<?php if($i != $day): // Remplis le select ?>
 									<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
 								<?php endif; ?>
@@ -82,6 +102,7 @@
 							<?php if($i == $month): // Sélectionne le mois actuel ?>
 								<option value="<?php echo $i; ?>" selected><?php echo $i; ?></option>
 							<?php endif; ?>
+
 							<?php if($i != $month): // Remplis le select ?>
 								<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
 							<?php endif; ?>
@@ -92,9 +113,10 @@
 					<select name="Annee">
 						<?php for($i = $year; $i <= $year + 1; $i++): ?>
 
-							<?php if($i == $year): // Sélectionne le mois actuel ?>
+							<?php if($i == $year): // Sélectionne l'année actuelle ?>
 								<option value="<?php echo $i; ?>" selected><?php echo $i; ?></option>
 							<?php endif; ?>
+
 							<?php if($i != $year): // Remplis le select ?>
 								<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
 							<?php endif; ?>
