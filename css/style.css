@@ -819,7 +819,7 @@
 		/* Hamburger menu style !!!! */
 
 			/* Center bar */
-			#mobile-more span{
+			#mobile-more #hamburger{
 				left: 25%;
 				top: 50%;
 				bottom: auto;
@@ -830,7 +830,7 @@
 			}
 			
 			/* Common style for hamburger */
-			#mobile-more span, #mobile-more::before, #mobile-more::after{
+			#mobile-more #hamburger, #mobile-more::before, #mobile-more::after{
 				background:#ccc none repeat scroll 0% 0%;
 				width: 50%;
 				height: 10%;
@@ -853,7 +853,7 @@
 
 			#mobile-more::after{bottom:15%;} 
 
-			#mobile-more.active span, #mobile-more.active::before,#mobile-more.active::after{
+			#mobile-more.active #hamburger, #mobile-more.active::before,#mobile-more.active::after{
 				background: #121f32;
 			}
 			
@@ -867,13 +867,18 @@
 				width:50%;
 				z-index: 99999;
 				top:50px;
-				height: auto;
-				border-bottom:5px solid  #e7743b;
-				border-right:2px solid #e7743b;
+				height: 100%;
+				border-right:8px solid #e7743b;
 			}
+
+			#mobile-menu li{ height: 25%;}
 			
 			/* Change background of link in mobile menu and start transition */
 			#mobile-menu a{
+				display: table; /* To help vertically center span text */
+				width: 100%; /* Because not anymore in display block */
+				line-height: initial;
+				height: 100%;
 				background-color: #121f32;
 				-moz-transition: all .5s; /* Set animation start */
 		    	-webkit-transition: all .5s; 
@@ -887,6 +892,17 @@
 		    	-webkit-transition: all .5s; 
 		    	-o-transition: all .5s; 
 		   		transition: all .5s;
+		   	}
+
+		   	#mobile-menu a span{
+		   		display: table-cell;
+		   		vertical-align: middle;
+		   	}
+			
+			/* Set position manually because mobile doesn't account url bar for vertical align */
+		   	#soMuchResponsiveness{
+		   		position: relative;
+		   		bottom: 1.5em; 
 		   	}
 				
 			/* Set mobile menu out of screen */
