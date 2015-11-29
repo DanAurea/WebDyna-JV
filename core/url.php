@@ -15,7 +15,6 @@
       */
       function refreshUrl($url, $time){
           header("refresh:".$time.";url= ".BASE_URL.$url);
-          exit();
       }
 
       	// Redirige vers une page 404 en cas d'erreur

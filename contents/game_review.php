@@ -52,11 +52,25 @@
 				<form method="post" action="<?php echo BASE_URL."/pages/basket.php?id=".$game->ID_JEUX ?>">
 					
 					<div id="hours">
-						<label for = "Horaire">Horaire : </label> 
+						<label>Horaire : </label> 
+						
 						<select name="Heure">
+							
 							<?php for($i = 8; $i <= 17; $i++): ?>
-								<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+								<option value="<?php if($i < 10)
+													echo "0".$i;
+												else
+													echo $i;
+												?>">
+												<?php
+												if($i < 10)
+													echo "0".$i;
+												else
+													echo $i;
+												?>
+								</option>
 							<?php endfor; ?>
+
 						</select>
 						
 						<select name="Minute">
@@ -78,10 +92,11 @@
 							<?php endfor; ?>
 
 						</select>
+						
 					</div>
 
 					
-						<label for = "Date">Date : </label> 
+						<label>Date : </label> 
 						<select name="Jour">
 							<?php for($i = 1; $i <= 31; $i++): ?>
 

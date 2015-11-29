@@ -45,7 +45,7 @@
 				<p class="text-review">
 					<?php echo troncate($game->Desc, 300); ?> 
 				</p>
-				<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$game->ID_JEUX; ?>"class="more">Lire la suite</a>
+				<a href="<?php echo BASE_URL."/pages/game_review.php?id=".$game->ID_JEUX; ?>" class="more">Lire la suite</a>
 			</div>
 			
 		</article>

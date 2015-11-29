@@ -39,6 +39,21 @@
 		
 		<?php require_once(ROOT.'/core/footer.php');// Informations rapides sur le site ?>
 		</div>
+
+		<script type="text/javascript" src="<?php echo BASE_URL."/js/classie.js"; ?>"></script> 
+		
+		<script type="text/javascript">
+			var showMobileMenu = document.getElementById('mobile-more'),
+				mobileMenu     = document.getElementById('mobile-menu'),
+				body = document.body;
+
+			showMobileMenu.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( body, 'toRight' );
+				classie.toggle( mobileMenu, 'showMobileMenu' );
+			};
+
+		</script>
 		
 	</body>
 </html>

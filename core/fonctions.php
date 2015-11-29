@@ -1,6 +1,7 @@
 <?php
 	// Donne un résumé du texte passé en paramètre   
 	function troncate($text, $troncate_length) {
+		$text = strip_tags($text);
 		$text_length = strlen($text);
 		
 		//Si le texte est trop petit, inutile de le tronquer

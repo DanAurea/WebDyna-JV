@@ -1,7 +1,7 @@
 <?php require_once(ROOT."/core/controller/basket.php"); ?>
 <table id="basket-table">
 	<tr>
-		<th>
+		<th class="product-image">
 			Image
 		</th>
 		<th>

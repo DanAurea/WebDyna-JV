@@ -22,7 +22,7 @@
 
 		$searchFields = array(); // Création d'un tableau qui contiendra les données à rechercher
 		foreach ($_POST as $key => $value) {
-			if(!empty($value) && $key != "research_done"){
+			if(!empty($value) && $value !=" " && $key != "research_done"){
 				$searchFields[$key." LIKE "] = "%".$value."%" ; // Construit la requête pour la recherche
 			}
 		}

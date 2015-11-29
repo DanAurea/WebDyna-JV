@@ -2,8 +2,8 @@
 	
 	// Régle de validation
 	$validate = array(
-    'pseudo' => array('rule' => 'pseudo','message' => 'Votre pseudo doit faire 4 à 16 caractères alphanumériques !'),
-    'password' => array('rule' => 'password','message' => 'Votre mot de passe doit faire 4 à 32 caractères alphanumériques !')
+    	'pseudo' => array('rule' => 'pseudo','message' => 'Votre pseudo doit faire 4 à 16 caractères alphanumériques !'),
+    	'password' => array('rule' => 'password','message' => 'Votre mot de passe doit faire 4 à 32 caractères alphanumériques !')
     );
 
 	// Traitement du POST

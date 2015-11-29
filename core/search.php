@@ -18,14 +18,14 @@
 
 		<ol>
 			<li> 
-				<label for="Nom">Nom :</label> 
+				<label>Nom :</label> 
 				<input type="text" name="Nom"/>
 			</li>
 
 			<li>
-				<label for="Genre">Genre : </label>
+				<label>Genre : </label>
 				<select name="Genre">
-					<option value=""></option>
+					<option value="">Choix</option>
 
 					<?php foreach($genres as $genre): ?>
 						<option value="<?php echo $genre->Genre; ?>"><?php echo $genre->Genre; ?></option>
@@ -40,9 +40,9 @@
 			</li>
 
 			<li>
-				<label for="Support">Support : </label>
+				<label>Support : </label>
 				<select name="Support">
-					<option value=""></option>
+					<option value="">Choix</option>
 
 					<?php foreach($supports as $support): ?>
 						<option value="<?php echo $support->Support; ?>"><?php echo $support->Support; ?></option>
@@ -52,9 +52,9 @@
 			</li>
 
 			<li>
-				<label for="NbJoueurs">Multijoueur :</label>
+				<label>Multijoueur :</label>
 				<select name="NbJoueurs">
-					<option value=""></option>
+					<option value="">Choix</option>
 					
 					<?php foreach($nbJoueurs as $nb): ?>
 						<option value="<?php echo $nb->NbJoueurs; ?>"><?php echo $nb->NbJoueurs; ?></option>

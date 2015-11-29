@@ -199,7 +199,7 @@
 	}
 
 	/* Hide basket button when not in mobile version */
-	#basket-nav{display:none;}
+	#basket-nav, #mobile-more{display:none;}
 
 	/* Add shadows to main buttons of navigation bar */
 	ul.level1>li:not(:last-child):not(:first-child):after{
@@ -377,6 +377,7 @@
 	#container{
 		margin:65px 0;
 		position: relative;
+		z-index: 3;
 	}
 
 	.border-top{height: 10px;}
@@ -762,6 +763,15 @@
 			margin:0;
 			background-color: #080c12;
 		}
+
+		body{
+			position:relative;
+			left:0;
+			-moz-transition: all .5s; /* Set animation start */
+		    -webkit-transition: all .5s; 
+		    -o-transition: all .5s; 
+		    transition: all .5s;
+		}
 		
 		/* Hide not mandatory blocks */
 		#header-wrapper, .left, .right, .border-top, .border-bottom, #view{display: none;}
@@ -774,11 +784,19 @@
 			overflow: hidden;
 		}
 		
+		/* Set size for select in game review page */
+		#reservation-block select{width:22%;}
+
+		/* Hide projected shadow behind selected blocks */
+		.left:after,.center:not(.error):after,.right:after{
+			display:none;
+		}
+
 		/* Set center as the main content */
 		.center{
 			left:0%;
 			width:100%;
-			padding-bottom: 60px; 
+			padding-bottom: 60px;
 		}
 		
 		/** Navigation style */
@@ -792,8 +810,100 @@
 		/** Set display of button basket from navigation bar */
 		#basket-nav{display:inline-block;}
 
-		/* Commons rules for li*/
-		ul.level1>li{line-height: 55px;width:50%}
+		/* Set size for mobile menu -> dropdown list */
+		#mobile-more{
+			display: inline-block;
+			width:20%;
+		}
+		
+		/* Hamburger menu style !!!! */
+
+			/* Center bar */
+			#mobile-more span{
+				left: 25%;
+				top: 50%;
+				bottom: auto;
+				right: auto;
+				text-indent: 100%;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+			
+			/* Common style for hamburger */
+			#mobile-more span, #mobile-more::before, #mobile-more::after{
+				background:#ccc none repeat scroll 0% 0%;
+				width: 50%;
+				height: 10%;
+				position: absolute;
+				display: inline-block;
+			}
+				
+			#mobile-more::before{top:25%;} 
+
+			#mobile-more::before, #mobile-more::after{
+				content: '';
+				left: 25%;
+				z-index: 1;
+
+				box-shadow: none;
+				-moz-box-shadow: none;
+				-webkit-box-shadow: none;
+				-box-shadow: none;
+			}
+
+			#mobile-more::after{bottom:15%;} 
+
+			#mobile-more.active span, #mobile-more.active::before,#mobile-more.active::after{
+				background: #121f32;
+			}
+			
+			/* Hide mobile menu and init text of li + basic style */
+			#mobile-menu{
+				position: fixed;
+				text-indent: initial;
+				white-space: keep-all;
+				visibility: visible;
+				opacity: 1;
+				width:50%;
+				z-index: 99999;
+				top:50px;
+				height: auto;
+				border-bottom:5px solid  #e7743b;
+				border-right:2px solid #e7743b;
+			}
+			
+			/* Change background of link in mobile menu and start transition */
+			#mobile-menu a{
+				background-color: #121f32;
+				-moz-transition: all .5s; /* Set animation start */
+		    	-webkit-transition: all .5s; 
+		    	-o-transition: all .5s; 
+		   		transition: all .5s;
+		   	}
+			
+			/* Change background of link in mobile menu and animate it */
+			#mobile-menu a:hover{
+				background-color: #1d314e;-moz-transition: all .5s; /* Set animation start */
+		    	-webkit-transition: all .5s; 
+		    	-o-transition: all .5s; 
+		   		transition: all .5s;
+		   	}
+				
+			/* Set mobile menu out of screen */
+			.mobileMenuHidden{left:-51%;}
+			
+			/* Push all contents on right of screen */
+			.toRight{
+				position:relative;
+				left:50%;
+				-moz-transition: all .5s; /* Set animation start */
+		    	-webkit-transition: all .5s; 
+		    	-o-transition: all .5s; 
+		   		transition: all .5s;
+			}
+
+			/** Show mobile menu */
+			.showMobileMenu{left:0;}
 		
 		/* Hide text of any list items in menu */
 		.level1>li>a{
@@ -803,8 +913,8 @@
 		}
 		
 		/* Set icons for main buttons */
-		ul.level1>li:nth-child(2) a,.level1>li:nth-child(4) a,
-		.level1>li:nth-child(3)>a{
+		ul.level1>li:nth-child(3) a,.level1>li:nth-child(4) a,
+		.level1>li:nth-child(5)>a{
 			background: url("../img/sprites_mobile.png") no-repeat;
 			position: relative;
 			top: 7px;
@@ -814,20 +924,20 @@
 		}
 		
 		/* Change position of sprites mobile for the second displayed button */
-		.level1>li:nth-child(3)>a{background-position: -42px 0;}
+		.level1>li:nth-child(4)>a{background-position: -42px 0;}
 
 		/* Change position of sprites mobile for the third displayed button */
-		.level1>li:nth-child(4) a {background-position: -87px 0;}
+		.level1>li:nth-child(5) a {background-position: -87px 0;}
 		
 		/* Set size of each navigation button*/
 		ul.level1>li{
-			width:33.333333%;
-			max-width: 33.3333333%;
+			width:26.66667%;
+			max-width: 26.666667%;
 			height: 50px;
 		}
 
 		/* Hide first and last children of navigation bar */
-		ul.level1>li:first-child,ul.level1>li:last-child,.level1>li:nth-child(5){display: none;}
+		ul.level1>li:first-child,ul.level1>li:last-child,.level1>li:nth-child(6), .level2{display: none;}
 		
 		/* Hide outline of any blocks*/
 		.outblue, .outred, .outorange, .outgreen, .outpink, .outyellow, .outpurple{outline: 0;}
@@ -852,4 +962,26 @@
 		/** Change color of error subtitle message */
 		p#error-subtitle{color: #3DB4F2;}
 
+}
+
+/* Mobile version low res */
+@media screen and (max-width: 640px) {
+		
+		/* Hide image in basket when low res */
+		.product-image, #img-td{display:none;}
+		
+		/* Set static width for label in reservation block when res is too low */
+		#reservation-block> form label{width: 60px;}
+
+		/* Set size of select in game review page */
+		#reservation-block select{
+			display: block;
+			width: 100px;
+		}
+		
+		/* Set size of reservation button in game review page */
+		#reservation{
+			width: 100px;
+			left: 5%;
+		}
 }

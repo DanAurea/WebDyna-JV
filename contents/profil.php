@@ -1,6 +1,6 @@
 <?php include(ROOT."/core/controller/profil.php"); ?>
 
-<section class="profil left outred">
+<section class="profil center outred">
 	<div class="border-top red"></div>
 	<h1 class ="fred">Profil</h1>
 	
@@ -9,23 +9,23 @@
 	<form method="Post" action="<?php echo BASE_URL."/pages/profil.php"; ?>">
 	<ol>
 		<li>
-			<label for="Login">Login : </label>
+			<label>Login : </label>
 			<input type="text" name="Login" placeholder="<?php echo $_SESSION['user']->Login; ?>"/>
 		</li>
 		<li>
-			<label for="MotDePasse">Mot de passe : </label>
+			<label>Mot de passe : </label>
 			<input type="password" name="MotDePasse" placeholder="<?php echo "****"; ?>"/>
 		</li>
 		<li>
-			<label for="Prenom">Prenom : </label>
+			<label>Prenom : </label>
 			<input type="text" name="Prenom" placeholder="<?php echo $_SESSION['user']->Prenom; ?>"/>
 		</li>
 		<li>
-			<label for="Nom">Nom : </label>
+			<label>Nom : </label>
 			<input type="text" name="Nom" placeholder="<?php echo $_SESSION['user']->Nom; ?>"/>
 		</li>
 		<li>
-			<label for"Email">Adresse mail : </label>
+			<label>Adresse mail : </label>
 			<input type="email" name="Email" placeholder="<?php echo $_SESSION['user']->Email; ?>"/>
 		</li>
 	</ol>

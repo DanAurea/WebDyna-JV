@@ -6,7 +6,7 @@
 						echo "<li>";
 
 						if(isset($details)){
-							echo "<a href =\"".BASE_URL."/".$where."?page=".$i."&details=".$details."\" >";
+							echo "<a href =\"".BASE_URL."/".$where."?page=".$i."&amp;details=".$details."\" >";
 						}else{
 							echo "<a href =\"".BASE_URL."/".$where."?page=".$i."\" >";
 						}

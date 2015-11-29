@@ -7,7 +7,8 @@ $subtitle = array(	'break' => 'C\'est malin tout est cassé !',
 $randKey = array_rand($subtitle,1); // Tirage aléatoire parmis les messages
 ?>
 <section class="center error">
+	<h1>Aïe</h1>
 	<p id ="error-message"> Erreur 404: Page Introuvable !</p>
 	<p id ="error-subtitle"> <?php echo $subtitle[$randKey]; ?></p>
-	<img src='<?php echo BASE_URL.'/img/'.$randKey.'.jpg' ?>'>
+	<img src='<?php echo BASE_URL.'/img/'.$randKey.'.jpg' ?>' alt='<?php echo $randKey; ?>'>
 </section>
